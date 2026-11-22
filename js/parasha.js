@@ -72,6 +72,15 @@
           '<a class="btn btn-solid" target="_blank" rel="noopener" href="https://wa.me/972506737715?text='+encodeURIComponent('שלום ליאור, הבר מצווה של הבן שלנו בפרשת '+name+' ('+o.shabbat.getUTCDate()+'/'+(o.shabbat.getUTCMonth()+1)+'/'+o.shabbat.getUTCFullYear()+'), נוסח טעמים: '+nusach+'. נשמח לשמוע על לימוד הפרשה והכנה לבר מצווה, ועל ליווי בעלייה לתורה (גם עם נגנים)')+'">לתיאום לימוד הפרשה עם ליאור</a>'+
           '<a class="btn btn-line" href="/hachana-bar-mitzvah/">על ההכנה לבר מצווה</a>'+
         '</div>';
+      if (item.name && item.name.en){
+        fetch('/js/parashot-map.json').then(function(r){ return r.json(); }).then(function(map){
+          var en = item.name.en, sl = map[en] || (en.indexOf('-') > 0 ? map[en.split('-')[0]] : null);
+          if (!sl) return;
+          var a = document.createElement('a'); a.className = 'btn btn-line'; a.href = '/parasha/' + sl + '/';
+          a.textContent = 'לעמוד הפרשה: עליות, טעמים והאזנה';
+          var row = res.querySelector('div[style*="flex"]'); if (row) row.appendChild(a);
+        }).catch(function(){});
+      }
       if (window.gtag) gtag('event','parasha_calc',{parasha:name});
     })
     .catch(function(){

@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Suez+One&family=Frank+Ruhl+Libre:wght@400;700&family=Assistant:wght@400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Suez+One&family=Frank+Ruhl+Libre:wght@400;700&family=Assistant:wght@400;600;700&display=swap"></noscript>
-<link rel="stylesheet" href="/css/site.css?v=89ac4925">
+<link rel="stylesheet" href="/css/site.css?v=3dc50d80">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "מחשבון פרשת בר מצווה", "url": "https://lior-mamo.netlify.app/parasha/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "he", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "ILS"}, "provider": {"@id": "https://lior-mamo.netlify.app/#business"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ליאור ממו", "item": "https://lior-mamo.netlify.app/"}, {"@type": "ListItem", "position": 2, "name": "מחשבון פרשת בר מצווה", "item": "https://lior-mamo.netlify.app/parasha/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "איך יודעים מה הפרשה לבר מצווה?", "acceptedAnswer": {"@type": "Answer", "text": "לוקחים את התאריך העברי של יום הלידה, מוסיפים 13 שנים עבריות, ובודקים איזו פרשה נקראת בשבת שחלה ביום ההולדת העברי או מיד אחריו. המחשבון בעמוד הזה עושה את כל החישוב בשבילכם."}}, {"@type": "Question", "name": "למה חשוב לסמן אם הלידה הייתה אחרי השקיעה?", "acceptedAnswer": {"@type": "Answer", "text": "היום העברי מתחיל בשקיעה. תינוק שנולד בערב, אחרי השקיעה, נולד בעצם ביום העברי הבא – ולכן גם תאריך הבר מצווה ואולי הפרשה משתנים."}}, {"@type": "Question", "name": "למה יש הבדל בין ישראל לחוץ לארץ?", "acceptedAnswer": {"@type": "Answer", "text": "בחלק מהשנים סדר הפרשות בישראל ובחוץ לארץ שונה לכמה שבועות (בגלל יום טוב שני של גלויות). לכן חשוב לבחור איפה תתקיים הבר מצווה."}}, {"@type": "Question", "name": "מה קורה אם נולדתי באדר בשנה מעוברת?", "acceptedAnswer": {"@type": "Answer", "text": "בשנה מעוברת יש שני חודשי אדר. נער שנולד באדר בשנה רגילה וחוגג בשנה מעוברת – לרוב חוגג באדר ב'. נער שנולד באדר א' או אדר ב' וחוגג בשנה רגילה – חוגג באדר. במקרים כאלה כדאי לאמת עם רב הקהילה."}}, {"@type": "Question", "name": "האם המחשבון מדויק?", "acceptedAnswer": {"@type": "Answer", "text": "המחשבון מבוסס על לוח השנה העברי של Hebcal. הוא מדויק ברוב המקרים, אבל במקרים מיוחדים (אדר בשנה מעוברת, 30 בחשוון או בכסלו, או שבת שחלה ביום טוב) מומלץ לאמת עם רב או חזן."}}]}]}</script>
 </head>
 <body>
@@ -38,10 +38,11 @@
 <header class="nav" id="nav">
   <div class="wrap">
     <nav class="nav-links" aria-label="ניווט ראשי">
-      <a href="/#services">שירותים</a>
       <a href="/bar-mitzvah/">בר מצווה</a>
-      <a href="/shabbat-chatan/">שבת חתן</a>
-      <a href="/parasha/" aria-current="page">מה הפרשה?</a>
+      <a href="/parasha/" aria-current="page">פרשות</a>
+      <a href="/tefilot/">תפילון</a>
+      <a href="/zmanim/">זמני היום</a>
+      <a href="/shiurei-oud/">שיעורי עוד</a>
     </nav>
     <a href="/" class="logo">ליאור ממו<small>חזן · פייטן · נגן</small></a>
     <div class="nav-cta">
@@ -59,6 +60,9 @@
   <a href="/shabbat-chatan/">שבת חתן ושבע ברכות</a>
   <a href="/nagan-oud/">נגן עוד – נסו לנגן</a>
   <a href="/shiurei-oud/">שיעורים פרטיים בעוד</a>
+  <a href="/parasha/#all">פרשות השבוע – האזנה בטעמים</a>
+  <a href="/tefilot/">תפילון – תפילות וברכות</a>
+  <a href="/zmanim/">זמני היום ושבת</a>
   <a href="/#gallery">סרטונים מהבמה</a>
   <a href="/#contact">הזמנת אירוע</a>
   <div class="mnav-cta"><a class="btn btn-solid" href="tel:+972506737715"><svg><use href="#i-phone"/></svg>050-6737715</a><a class="btn btn-wa" href="https://wa.me/972506737715" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>וואטסאפ</a></div>
@@ -121,6 +125,13 @@
   </div>
 </section>
 
+<section class="sec" id="all" style="padding-top:20px"><div class="wrap"><div class="sec-head"><div class="rv in"><span class="label">54 פרשות השבוע</span><h2 class="h2">כל הפרשות<br><em>בטעמים ובהאזנה.</em></h2></div><p class="lede">בחרו פרשה וקבלו את חלוקת העליות עם האזנה לכל עלייה, את המפטיר ואת ההפטרה – עם טעמי המקרא.</p></div>
+<h3 class="pbook">ספר בראשית</h3><div class="plist"><a href="/parasha/bereshit/">בראשית</a><a href="/parasha/noach/">נח</a><a href="/parasha/lech-lecha/">לךלך</a><a href="/parasha/vayera/">וירא</a><a href="/parasha/chayei-sara/">חיי שרה</a><a href="/parasha/toldot/">תולדות</a><a href="/parasha/vayetzei/">ויצא</a><a href="/parasha/vayishlach/">וישלח</a><a href="/parasha/vayeshev/">וישב</a><a href="/parasha/miketz/">מקץ</a><a href="/parasha/vayigash/">ויגש</a><a href="/parasha/vayechi/">ויחי</a></div>
+<h3 class="pbook">ספר שמות</h3><div class="plist"><a href="/parasha/shemot/">שמות</a><a href="/parasha/vaera/">וארא</a><a href="/parasha/bo/">בא</a><a href="/parasha/beshalach/">בשלח</a><a href="/parasha/yitro/">יתרו</a><a href="/parasha/mishpatim/">משפטים</a><a href="/parasha/terumah/">תרומה</a><a href="/parasha/tetzaveh/">תצוה</a><a href="/parasha/ki-tisa/">כי תשא</a><a href="/parasha/vayakhel/">ויקהל</a><a href="/parasha/pekudei/">פקודי</a></div>
+<h3 class="pbook">ספר ויקרא</h3><div class="plist"><a href="/parasha/vayikra/">ויקרא</a><a href="/parasha/tzav/">צו</a><a href="/parasha/shmini/">שמיני</a><a href="/parasha/tazria/">תזריע</a><a href="/parasha/metzora/">מצרע</a><a href="/parasha/achrei-mot/">אחרי מות</a><a href="/parasha/kedoshim/">קדשים</a><a href="/parasha/emor/">אמור</a><a href="/parasha/behar/">בהר</a><a href="/parasha/bechukotai/">בחקתי</a></div>
+<h3 class="pbook">ספר במדבר</h3><div class="plist"><a href="/parasha/bamidbar/">במדבר</a><a href="/parasha/nasso/">נשא</a><a href="/parasha/beha-alotcha/">בהעלתך</a><a href="/parasha/sh-lach/">שלחלך</a><a href="/parasha/korach/">קרח</a><a href="/parasha/chukat/">חקת</a><a href="/parasha/balak/">בלק</a><a href="/parasha/pinchas/">פינחס</a><a href="/parasha/matot/">מטות</a><a href="/parasha/masei/">מסעי</a></div>
+<h3 class="pbook">ספר דברים</h3><div class="plist"><a href="/parasha/devarim/">דברים</a><a href="/parasha/vaetchanan/">ואתחנן</a><a href="/parasha/eikev/">עקב</a><a href="/parasha/re-eh/">ראה</a><a href="/parasha/shoftim/">שופטים</a><a href="/parasha/ki-teitzei/">כיתצא</a><a href="/parasha/ki-tavo/">כיתבוא</a><a href="/parasha/nitzavim/">נצבים</a><a href="/parasha/vayeilech/">וילך</a><a href="/parasha/ha-azinu/">האזינו</a></div>
+</div></section>
 <section class="sec" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head"><div class="rv"><span class="label">שאלות נפוצות</span><h2 class="h2">פרשת בר מצווה<br><em>שאלות ותשובות.</em></h2></div></div>
@@ -170,7 +181,7 @@
 </dialog>
 
 <script src="/js/site.js?v=47373dbe" defer></script>
-<script src="/js/parasha.js?v=4996cd03" defer></script>
+<script src="/js/parasha.js?v=a8728e3a" defer></script>
 <script src="/js/a11y.js?v=28824001" defer></script>
 <script src="/js/promo.js?v=772399d5" defer></script>
 </body>

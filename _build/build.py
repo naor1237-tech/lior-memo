@@ -219,7 +219,7 @@ def sprite():
     s = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
     return re.search(r'<svg width="0" height="0".*?</svg>', s, re.S).group(0)
 
-NAV_ITEMS = [("/#services","שירותים"),("/bar-mitzvah/","בר מצווה"),("/shabbat-chatan/","שבת חתן"),("/parasha/","מה הפרשה?")]
+NAV_ITEMS = [("/bar-mitzvah/","בר מצווה"),("/parasha/","פרשות"),("/tefilot/","תפילון"),("/zmanim/","זמני היום"),("/shiurei-oud/","שיעורי עוד")]
 def nav(active=""):
     links = "\n      ".join(f'<a href="{h}"{" aria-current=\"page\"" if h.strip("/")==active else ""}>{t}</a>' for h,t in NAV_ITEMS)
     return f'''<header class="nav" id="nav">
@@ -243,6 +243,9 @@ def nav(active=""):
   <a href="/shabbat-chatan/">שבת חתן ושבע ברכות</a>
   <a href="/nagan-oud/">נגן עוד – נסו לנגן</a>
   <a href="/shiurei-oud/">שיעורים פרטיים בעוד</a>
+  <a href="/parasha/#all">פרשות השבוע – האזנה בטעמים</a>
+  <a href="/tefilot/">תפילון – תפילות וברכות</a>
+  <a href="/zmanim/">זמני היום ושבת</a>
   <a href="/#gallery">סרטונים מהבמה</a>
   <a href="/#contact">הזמנת אירוע</a>
   <div class="mnav-cta"><a class="btn btn-solid" href="tel:+972506737715"><svg><use href="#i-phone"/></svg>050-6737715</a><a class="btn btn-wa" href="{WA}" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>וואטסאפ</a></div>
@@ -567,6 +570,8 @@ if __name__ == "__main__":
     import prayers as PR
     for it in PR.P: PR.page(it)
     PR.hub(); PR.add_to_sitemap()
+    import parashot as PS; PS.run()
+    import zmanim_page as ZM; ZM.run()
     import review as RV; RV.page()
     import card as CD; CD.vcard(); CD.page()
     import legal; legal.run()
