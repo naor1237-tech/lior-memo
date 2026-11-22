@@ -632,7 +632,7 @@ dialog.lb::backdrop{background:rgba(6,5,4,.95);backdrop-filter:blur(10px)}
   var lb = document.getElementById('lb'), vid = document.getElementById('lbVid'), hero = document.getElementById('heroVid'), list = V, cur = 0;
   function show(i){
     cur = (i + list.length) % list.length; var v = list[cur];
-    vid.src = 'media/'+v.id+'.mp4'; vid.poster = 'media/'+v.id+'.jpg';
+    vid.src = (location.hostname.endsWith('netlify.app') ? 'v/' : 'media/')+v.id+'.mp4'; vid.poster = 'media/'+v.id+'.jpg';
     document.getElementById('lbT').textContent = v.title; document.getElementById('lbS').textContent = v.sub;
     var p = vid.play(); if (p && p.catch) p.catch(function(){});
   }

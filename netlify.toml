@@ -1,6 +1,13 @@
 [build]
   publish = "."
 
+# Large videos are streamed from the GitHub Pages mirror of this repo (Netlify upload size limit).
+[[redirects]]
+  from = "/v/*"
+  to = "https://naor1237-tech.github.io/lior-memo/media/:splat"
+  status = 200
+  force = true
+
 [[headers]]
   for = "/media/*"
   [headers.values]
