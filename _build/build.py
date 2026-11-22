@@ -500,4 +500,5 @@ if __name__ == "__main__":
     import prayers as PR
     for it in PR.P: PR.page(it)
     PR.hub(); PR.add_to_sitemap()
+    import review as RV; RV.page()
     print("built", [p["slug"] for p in PAGES] + ["parasha"])
