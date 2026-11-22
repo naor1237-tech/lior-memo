@@ -227,7 +227,7 @@ def nav(active=""):
     <nav class="nav-links" aria-label="ניווט ראשי">
       {links}
     </nav>
-    <a href="/" class="logo" aria-label="ליאור ממו – דף הבית">ליאור ממו<small>חזן · פייטן · נגן</small></a>
+    <a href="/" class="logo">ליאור ממו<small>חזן · פייטן · נגן</small></a>
     <div class="nav-cta">
       <a class="btn btn-line" href="/#contact">הזמנת אירוע</a>
       <a class="icon-btn" href="{WA}?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%9C%D7%99%D7%90%D7%95%D7%A8%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8" target="_blank" rel="noopener" aria-label="וואטסאפ"><svg><use href="#i-wa"/></svg></a>
@@ -308,7 +308,7 @@ def head(title, desc, path, ld, image="og.jpg"):
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Frank+Ruhl+Libre:wght@400;500;700&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Frank+Ruhl+Libre:wght@400;700&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/site.css">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>

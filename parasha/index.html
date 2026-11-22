@@ -19,8 +19,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Frank+Ruhl+Libre:wght@400;500;700&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/site.css?v=b1b6bd47">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Suez+One&family=Frank+Ruhl+Libre:wght@400;700&family=Assistant:wght@400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Suez+One&family=Frank+Ruhl+Libre:wght@400;700&family=Assistant:wght@400;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="/css/site.css?v=89ac4925">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "מחשבון פרשת בר מצווה", "url": "https://lior-mamo.netlify.app/parasha/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "he", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "ILS"}, "provider": {"@id": "https://lior-mamo.netlify.app/#business"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ליאור ממו", "item": "https://lior-mamo.netlify.app/"}, {"@type": "ListItem", "position": 2, "name": "מחשבון פרשת בר מצווה", "item": "https://lior-mamo.netlify.app/parasha/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "איך יודעים מה הפרשה לבר מצווה?", "acceptedAnswer": {"@type": "Answer", "text": "לוקחים את התאריך העברי של יום הלידה, מוסיפים 13 שנים עבריות, ובודקים איזו פרשה נקראת בשבת שחלה ביום ההולדת העברי או מיד אחריו. המחשבון בעמוד הזה עושה את כל החישוב בשבילכם."}}, {"@type": "Question", "name": "למה חשוב לסמן אם הלידה הייתה אחרי השקיעה?", "acceptedAnswer": {"@type": "Answer", "text": "היום העברי מתחיל בשקיעה. תינוק שנולד בערב, אחרי השקיעה, נולד בעצם ביום העברי הבא – ולכן גם תאריך הבר מצווה ואולי הפרשה משתנים."}}, {"@type": "Question", "name": "למה יש הבדל בין ישראל לחוץ לארץ?", "acceptedAnswer": {"@type": "Answer", "text": "בחלק מהשנים סדר הפרשות בישראל ובחוץ לארץ שונה לכמה שבועות (בגלל יום טוב שני של גלויות). לכן חשוב לבחור איפה תתקיים הבר מצווה."}}, {"@type": "Question", "name": "מה קורה אם נולדתי באדר בשנה מעוברת?", "acceptedAnswer": {"@type": "Answer", "text": "בשנה מעוברת יש שני חודשי אדר. נער שנולד באדר בשנה רגילה וחוגג בשנה מעוברת – לרוב חוגג באדר ב'. נער שנולד באדר א' או אדר ב' וחוגג בשנה רגילה – חוגג באדר. במקרים כאלה כדאי לאמת עם רב הקהילה."}}, {"@type": "Question", "name": "האם המחשבון מדויק?", "acceptedAnswer": {"@type": "Answer", "text": "המחשבון מבוסס על לוח השנה העברי של Hebcal. הוא מדויק ברוב המקרים, אבל במקרים מיוחדים (אדר בשנה מעוברת, 30 בחשוון או בכסלו, או שבת שחלה ביום טוב) מומלץ לאמת עם רב או חזן."}}]}]}</script>
 </head>
 <body>
@@ -43,7 +43,7 @@
       <a href="/shabbat-chatan/">שבת חתן</a>
       <a href="/parasha/" aria-current="page">מה הפרשה?</a>
     </nav>
-    <a href="/" class="logo" aria-label="ליאור ממו – דף הבית">ליאור ממו<small>חזן · פייטן · נגן</small></a>
+    <a href="/" class="logo">ליאור ממו<small>חזן · פייטן · נגן</small></a>
     <div class="nav-cta">
       <a class="btn btn-line" href="/#contact">הזמנת אירוע</a>
       <a class="icon-btn" href="https://wa.me/972506737715?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%9C%D7%99%D7%90%D7%95%D7%A8%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8" target="_blank" rel="noopener" aria-label="וואטסאפ"><svg><use href="#i-wa"/></svg></a>
@@ -169,8 +169,9 @@
   <button class="lb-btn lb-n" id="lbN" aria-label="הסרטון הבא"><svg><use href="#i-l"/></svg></button>
 </dialog>
 
-<script src="/js/site.js?v=8ab3b471" defer></script>
+<script src="/js/site.js?v=7a99d956" defer></script>
 <script src="/js/parasha.js?v=4996cd03" defer></script>
 <script src="/js/a11y.js?v=28824001" defer></script>
+<script src="/js/promo.js?v=772399d5" defer></script>
 </body>
 </html>

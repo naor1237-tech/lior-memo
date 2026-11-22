@@ -63,6 +63,18 @@ SERVICE_CTA = {
  "hachana-bar-mitzvah":("מתכוננים לבר מצווה?","ליאור ממו, חזן ובעל קורא, מלמד קריאה בתורה, טעמים והפטרה – בסבלנות ובגובה העיניים."),
 }
 
+PROMOS = {
+ "bar-mitzvah": ("חזן ופייטן לשמחות", "חוגגים בר מצווה או עלייה לתורה?", "ליאור ממו – חזן, פייטן ונגן עוד – הופך את העלייה לתורה לחגיגה, עם פיוטים ונגנים.", "/bar-mitzvah/", "שלום ליאור, הגעתי מדף התפילות ואשמח לפרטים על בר מצווה"),
+ "shabbat-chatan": ("חזן ופייטן לשמחות", "מתכננים שבת חתן או שבע ברכות?", "ליאור ממו מביא חזנות מרוממת, פיוטים ושירי שבת שכל השולחן מצטרף אליהם.", "/shabbat-chatan/", "שלום ליאור, הגעתי מדף התפילות ואשמח לפרטים על שבת חתן"),
+ "hachana-bar-mitzvah": ("הכנה לבר מצווה", "הבן מתכונן לבר מצווה?", "לימוד הפרשה, המפטיר וההפטרה בטעמים לפי מסורת המשפחה – עם חזן ובעל קורא.", "/hachana-bar-mitzvah/", "שלום ליאור, אשמח לשמוע על הכנה לבר מצווה"),
+ "shiurei-oud": ("שיעורים פרטיים", "תמיד רציתם לנגן על עוד?", "שיעורים פרטיים בעוד עם ליאור ממו – למתחילים ולממשיכים, מקאמים, פיוטים ושירים.", "/shiurei-oud/", "שלום ליאור, אשמח לשמוע על שיעורים פרטיים בעוד"),
+}
+def promo(key):
+    sm, t, d, href, wa = PROMOS[key]
+    return (f'<aside class="promo" aria-label="פרסומת – ליאור ממו"><img src="/media/lior-bima-45.jpg" alt="ליאור ממו" loading="lazy">'
+            f'<div><small>{sm} · ליאור ממו</small><b>{t}</b><p>{d}</p><div class="row"><a class="go" href="{href}">לפרטים</a>'
+            f'<a class="wa" href="{B.WA}?text={B.urlq(wa)}" target="_blank" rel="noopener">וואטסאפ</a></div></div></aside>')
+
 ALLOWED = {"b","big","small","i","br","strong","em"}
 def clean(s):
     s = re.sub(r"<(/?)(\w+)[^>]*>", lambda m: f"<{m.group(1)}{m.group(2).lower()}>" if m.group(2).lower() in ALLOWED else "", s)
@@ -110,6 +122,18 @@ TOOLS = '''<div class="pr-tools" role="toolbar" aria-label="כלי קריאה">
   <button type="button" data-share aria-label="שיתוף בוואטסאפ">שיתוף</button>
 </div>'''
 
+def with_promos(html_text, svc):
+    order = [svc] + [k for k in ("hachana-bar-mitzvah", "shiurei-oud", "bar-mitzvah", "shabbat-chatan") if k != svc]
+    parts = html_text.split("\n"); out = []; count = 0; k = 0
+    for line in parts:
+        out.append(line)
+        if line.startswith('<p class="pr-p'):
+            count += 1
+            if count == 6 or (count > 6 and (count - 6) % 40 == 0):
+                out.append(promo(order[k % len(order)])); k += 1
+    if k == 0: out.append(promo(order[0]))
+    return "\n".join(out)
+
 def page(item):
     slug, name, title, desc, intro, svc = item
     d = DATA[slug]; path = f"/tefilot/{slug}/"
@@ -141,7 +165,7 @@ def page(item):
   <div class="wrap pr-grid">
     <article class="pr-text" id="prText" lang="he">
       {TOOLS}
-      {render(d["text"], d.get("sections"))}
+      {with_promos(render(d["text"], d.get("sections")), svc)}
       <p class="pr-src">הנוסח: סידור עדות המזרח, מהדורת ״תורת אמת״ (נחלת הכלל), באמצעות <a href="https://www.sefaria.org/{d["ref"].replace(" ","_")}" target="_blank" rel="noopener">ספריא</a>. ייתכנו הבדלי מנהג בין קהילות.</p>
     </article>
     <aside class="pr-side">

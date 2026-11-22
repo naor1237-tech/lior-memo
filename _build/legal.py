@@ -110,8 +110,12 @@ def inject_a11y():
         for f in fn:
             if not f.endswith(".html"): continue
             p = os.path.join(dp, f); s = open(p, encoding="utf-8").read()
-            if "/js/a11y.js" in s or "</body>" not in s: continue
-            s = s.replace("</body>", '<script src="/js/a11y.js" defer></script>\n</body>', 1)
+            if "</body>" not in s: continue
+            add = ""
+            if "/js/a11y.js" not in s: add += '<script src="/js/a11y.js" defer></script>\n'
+            if "/js/promo.js" not in s: add += '<script src="/js/promo.js" defer></script>\n'
+            if not add: continue
+            s = s.replace("</body>", add + "</body>", 1)
             open(p, "w", encoding="utf-8").write(s); n += 1
     print("a11y injected into", n, "pages")
 
