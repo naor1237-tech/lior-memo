@@ -3,6 +3,6 @@
 set -e
 OUT="$1"; rm -rf "$OUT"; mkdir -p "$OUT/media"
 git archive HEAD | tar -x -C "$OUT"
-find "$OUT/media" -name '*.mp4' ! -name 'hero.mp4' ! -name 'hero-m.mp4' -delete
+find "$OUT/media" -name '*.mp4' ! -name 'hero.mp4' ! -name 'hero-wide.mp4' -delete
 rm -rf "$OUT/deploy-netlify.sh" "$OUT/_build"
 du -sh "$OUT"

@@ -582,7 +582,7 @@ img,video,svg{max-width:100%}
   .hero .reel-frame{position:absolute;inset:0;width:100%;max-width:none;margin:0;z-index:0;translate:none!important}
   .hero .reel-frame::before,.hero .reel-frame .corner,.hero .reel-play{display:none}
   .hero .reel-frame .shell{position:absolute;top:0;left:0;right:0;height:72%;aspect-ratio:auto;background:var(--black)}
-  .hero .reel-frame .shell video{object-position:50% 30%}
+  .hero .reel-frame .shell video{object-position:50% 40%}
   .hero .reel-frame .shell::after{background:linear-gradient(to top,var(--black) 0%,rgba(11,10,9,.75) 28%,rgba(11,10,9,.1) 62%,rgba(11,10,9,.5) 100%)}
   .hero .hero-grid{display:block;position:static;padding:120px 0 calc(96px + env(safe-area-inset-bottom))}
   .hero .hero-grid>.rv:first-child{position:relative;z-index:2}
@@ -716,4 +716,137 @@ img,video,svg{max-width:100%}
   .jcta .btn,.honor-cta .btn{width:100%}
   .honor-cta{margin-top:28px}
   #bar-mitzvah-journey{padding-bottom:56px}
+}
+
+/* mobile: the big word band becomes a smooth endless ribbon with readable letters */
+@keyframes bandLoop{from{transform:translateX(0)}to{transform:translateX(50%)}}
+@media (max-width:600px){
+  .band{padding:18px 0}
+  .band-track{font-size:44px;gap:26px;animation:bandLoop 26s linear infinite;will-change:transform}
+  .band-track span{color:rgba(230,207,154,.38);-webkit-text-stroke:0}
+  .band-track span.f{color:var(--gold-l);opacity:1}
+  .band-track svg{width:14px;height:14px}
+}
+@media (max-width:600px) and (prefers-reduced-motion:reduce){.band-track{animation:none}}
+
+/* ===== mobile type scale (final) ===== */
+html{text-size-adjust:100%;-webkit-text-size-adjust:100%}
+@media (max-width:600px){
+  body{font-size:16px;line-height:1.7}
+  .wrap{width:calc(100% - 32px)}
+  .sec{padding:60px 0}
+  .sec-head{margin-bottom:28px;gap:6px}
+  .label{font-size:11px;letter-spacing:.12em}
+  .h2{font-size:31px;line-height:1.12;margin:10px 0 14px}
+  .lede{font-size:16px;line-height:1.7}
+  .btn{font-size:15px;padding:14px 18px;letter-spacing:.03em}
+  .logo{font-size:22px}
+  .logo small{font-size:8.5px;letter-spacing:.26em;margin-top:4px}
+  .icon-btn,.menu-btn{width:42px;height:42px}
+  .nav{padding:10px 0}
+
+  .hero h1{font-size:60px;line-height:1}
+  .hero .roles{font-size:15.5px}
+  .hero p.lede{font-size:15.5px}
+  .hero .label{font-size:11px}
+
+  .statement{padding:60px 0 52px}
+  .statement p{font-size:23px;line-height:1.35;margin-top:24px}
+  .statement .sig{font-size:11px;margin-top:22px}
+  .band-track{font-size:38px;gap:22px}
+
+  .journey a{padding:22px 2px}
+  .journey .n{font-size:30px}
+  .journey h3{font-size:21px;margin:8px 0 4px}
+  .journey p{font-size:15px}
+  .jcta{margin-top:24px}
+
+  .svc{grid-template-columns:38px 1fr;gap:4px 12px;padding:20px 0}
+  .svc .n{font-size:16px}
+  .svc h3{font-size:21px}
+  .svc p{font-size:15px}
+
+  .feature{padding:60px 0}
+  .feature-grid{gap:40px}
+  .feature li{font-size:14px;padding:12px 0}
+
+  .oud-fig figcaption>b{font-size:24px}
+  .oud-fig figcaption>p{font-size:15.5px}
+  .oud-facts b{font-size:17px}
+  .oud-facts span{font-size:14px}
+  .strum .s{height:40px}
+  .mood{font-size:15px;min-height:0}
+  .pad b{font-size:14px}
+
+  .tabs{margin-bottom:28px}
+  .tab{font-size:13.5px}
+  .gallery{gap:34px}
+  .item h3{font-size:21px}
+  .item .sub{font-size:14px}
+  .item .dur{font-size:12px}
+
+  .about{gap:56px}
+  .about-body p{font-size:16px}
+  .about-body p:first-of-type::first-letter{font-size:3.4em}
+  .facts b{font-size:21px}
+  .facts span{font-size:13px}
+
+  .steps .step{padding:22px 0}
+  .step .n{font-size:38px}
+  .step h3{font-size:22px;margin:10px 0 6px}
+  .step p{font-size:15px}
+
+  .home-faq .faq summary,.faq summary{font-size:18px;padding:18px 0}
+  .faq .ans{font-size:15.5px}
+
+  .phone{font-size:40px;margin:22px 0 6px}
+  .form{padding:24px 18px}
+  .form h3{font-size:24px;margin-bottom:18px}
+  .fgrid{gap:18px}
+  .f label{font-size:11px;letter-spacing:.14em}
+
+  .cta-band{padding:60px 0}
+  .cta-band h2{font-size:32px}
+
+  footer{padding:40px 0 100px;font-size:13px}
+
+  /* inner pages */
+  .page-hero{padding:96px 0 44px}
+  .page-hero h1{font-size:40px;line-height:1.08;margin:12px 0 14px}
+  .page-hero .reel-frame{width:min(220px,64%)}
+  .ph-grid{gap:40px}
+  .prose h2{font-size:25px;margin:40px 0 12px}
+  .prose h3{font-size:19px}
+  .prose p,.prose li{font-size:16px}
+  .vids{gap:28px}
+  .aside h3{font-size:22px}
+  .aside .ph-num{font-size:28px}
+  .rel b{font-size:19px}
+  .rel span{font-size:14px}
+
+  /* parasha */
+  .calc h3{font-size:24px!important}
+  .result .big{font-size:38px}
+  .result dt{font-size:11px}
+  .result dd{font-size:16.5px}
+
+  /* prayers */
+  .pr-hero h1{font-size:40px}
+  .pr-text{font-size:calc(20px * var(--fs));line-height:1.95}
+  .pr-cta h3{font-size:22px}
+
+  /* digital card */
+  .dc h1{font-size:34px}
+  .dc-photo{width:116px;height:116px}
+  .dc-list a{font-size:15.5px;padding:13px 4px}
+
+  /* menu */
+  .mnav{padding-top:84px}
+  .mnav>a{font-size:21px;padding:12px 4px}
+}
+@media (max-width:370px){
+  .hero h1{font-size:52px}
+  .h2{font-size:28px}
+  .page-hero h1{font-size:35px}
+  .phone{font-size:34px}
 }
