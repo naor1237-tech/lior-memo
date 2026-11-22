@@ -919,3 +919,22 @@ html.a11y-still .cur,html.a11y-still .cur-dot{display:none}
   #bar-mitzvah-journey + .band + #services{padding-top:60px}
 }
 @media (prefers-reduced-motion:reduce){.band-track{animation:none}}
+
+/* desktop & tablet hero: cinematic full-height video of Lior on the left, fading into the text side */
+@media (min-width:601px){
+  .hero{padding:0;min-height:100vh;min-height:100svh;align-items:center}
+  .hero-bg{display:none}
+  .hero .hero-grid{position:static;grid-template-columns:1fr;padding:140px 0 90px}
+  .hero .hero-grid>.rv:first-child{position:relative;z-index:2;max-width:640px}
+  .hero .reel-frame{position:absolute;top:0;bottom:0;left:0;width:min(52vw,760px);margin:0;z-index:0;translate:none!important}
+  .hero .reel-frame::before,.hero .reel-frame .corner{display:none}
+  .hero .reel-frame .shell{position:absolute;inset:0;aspect-ratio:auto;-webkit-mask-image:linear-gradient(to left,transparent 0%,#000 38%),linear-gradient(to top,transparent 0%,#000 22%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to left,transparent 0%,#000 38%);}
+  .hero .reel-frame .shell video{object-position:50% 38%}
+  .hero .reel-frame .shell::after{background:linear-gradient(to top,rgba(11,10,9,.85) 0%,transparent 30%),linear-gradient(to bottom,rgba(11,10,9,.55) 0%,transparent 18%)}
+  .hero .reel-play{bottom:44px;left:44px;inset-inline:auto;right:auto}
+  .hero .scroll-ind{left:auto;right:50%}
+}
+@media (min-width:601px) and (max-width:900px){
+  .hero .reel-frame{width:58vw;opacity:.55}
+  .hero .hero-grid>.rv:first-child{max-width:none}
+}
