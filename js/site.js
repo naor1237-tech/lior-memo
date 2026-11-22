@@ -73,7 +73,7 @@
   function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 40); }
   window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
   // phones get a vertical close-up of Lior as the hero background
-  if (hero){ var small = window.matchMedia('(max-width:600px)').matches; hero.poster = '/media/hero-wide.jpg?v=5'; hero.src = small ? '/media/hero-wide-m.mp4?v=1' : '/media/hero-wide.mp4?v=5'; if (!reduce){ var hp = hero.play(); if (hp && hp.catch) hp.catch(function(){}); } }
+  if (hero){ var small = window.matchMedia('(max-width:600px)').matches; hero.poster = '/media/hero-wide.webp?v=1'; hero.src = small ? '/media/hero-wide-m.mp4?v=1' : '/media/hero-wide.mp4?v=5'; if (!reduce){ var hp = hero.play(); if (hp && hp.catch) hp.catch(function(){}); } }
   if (reduce && hero){ hero.removeAttribute('autoplay'); hero.pause(); }
 
   // scroll-linked motion
