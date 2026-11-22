@@ -60,7 +60,23 @@
       var nx = box.querySelector('[data-z=next]'); if (nx) nx.innerHTML = 'הזמן הבא: <b>'+next.querySelector('span').textContent+'</b> בעוד '+(hh?hh+':':'')+String(mm).padStart(2,'0')+':'+String(ss).padStart(2,'0'); }
   }
 
+  // home bar: Friday (and Shabbat) show candle lighting/havdalah, other days show today's key zmanim
+  function weekBar(box){
+    if (!box) return;
+    var wd = new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short'}).format(new Date());
+    var fri = (wd === 'Fri' || wd === 'Sat');
+    box.classList.toggle('is-fri', fri);
+    if (fri) return;
+    var c = C();
+    get('https://www.hebcal.com/zmanim?cfg=json&geonameid='+c[0]+'&date='+ymd(new Date())).then(function(d){
+      var t = d.times || {};
+      box.querySelector('[data-z=sunrise]').textContent = hm(t.sunrise);
+      box.querySelector('[data-z=shma]').textContent = hm(t.sofZmanShma);
+      box.querySelector('[data-z=sunset]').textContent = hm(t.sunset);
+      var c2 = box.querySelector('[data-z=city2]'); if (c2) c2.textContent = c[1];
+    }).catch(function(){});
+  }
   var sb = document.getElementById('shabbatBar'), zb = document.getElementById('zmanimBoard'), zs = document.getElementById('zmanimShabbat');
-  shabbat(sb); shabbat(zs); board(zb);
+  shabbat(sb); weekBar(sb); shabbat(zs); board(zb);
   document.querySelectorAll('[data-z=picker]').forEach(function(el){ cityPicker(el, function(){ shabbat(sb); shabbat(zs); board(zb); document.querySelectorAll('[data-z=picker]').forEach(function(o){ o.value = city; }); }); });
 })();

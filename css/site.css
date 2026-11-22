@@ -1033,3 +1033,28 @@ html.a11y-contrast .promo,html.a11y-contrast .promo *{color:#fff!important;backg
 .zs-row b a{color:var(--gold-l)}
 @media (max-width:900px){.zgrid{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:600px){.zboard{padding:18px}.zlist{grid-template-columns:minmax(0,1fr)}.zhead b{font-size:22px}}
+
+.shabbat-bar .sb-fri{display:none}
+.shabbat-bar.is-fri .sb-fri{display:block}
+.shabbat-bar.is-fri .sb-week{display:none}
+@media (max-width:600px){.shabbat-bar:not(.is-fri) .sb-in{grid-template-columns:1fr 1fr 1fr}.shabbat-bar:not(.is-fri) .sb-item b{font-size:19px}.shabbat-bar:not(.is-fri) .sb-item small{font-size:10.5px;letter-spacing:.04em}}
+
+/* in-site listening */
+button.ls{font:inherit;cursor:pointer;background:transparent;border:1px solid rgba(201,169,106,.5);color:var(--gold-2,#e6cf9a);border-radius:999px;padding:5px 12px;font-size:13px;white-space:nowrap}
+button.ls:hover,button.ls.on{background:#c9a96a;color:#0b0a09}
+.ls.off{opacity:.4}
+.ttsbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:6px 0 14px}
+.ttsbar small{color:#a39a8c;font-size:12.5px}
+.tts{font:inherit;cursor:pointer;background:rgba(201,169,106,.12);border:1px solid rgba(201,169,106,.45);color:#f3ece0;border-radius:999px;padding:7px 16px;font-size:14px}
+.tts:hover{background:rgba(201,169,106,.25)}
+.lplayer{position:fixed;inset-inline:12px;bottom:12px;z-index:90;display:flex;align-items:center;gap:10px;background:rgba(18,16,14,.96);border:1px solid rgba(201,169,106,.5);border-radius:18px;padding:10px 14px;box-shadow:0 12px 40px rgba(0,0,0,.5);backdrop-filter:blur(10px);max-width:720px;margin-inline:auto}
+.lplayer[hidden]{display:none}
+.lplayer button{font:inherit;cursor:pointer;background:transparent;border:1px solid rgba(201,169,106,.4);color:#f3ece0;border-radius:50%;width:40px;height:40px;flex:none;font-size:14px}
+.lplayer .lp-pp{background:#c9a96a;color:#0b0a09;border:0;width:46px;height:46px;font-size:16px}
+.lplayer .lp-sp{border-radius:999px;width:auto;padding:0 10px;font-size:13px}
+.lp-mid{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.lp-t{font-size:14px;color:#e6cf9a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lp-r{width:100%;accent-color:#c9a96a}
+.lp-time{font-size:11.5px;color:#a39a8c;direction:ltr;text-align:end}
+body.lp-on{padding-bottom:90px}
+body.lp-on .fab,body.lp-on .wa-fab,body.lp-on .a11y-btn{bottom:96px}

@@ -7,8 +7,11 @@ import build as B
 SHABBAT_BAR = '''<section class="shabbat-bar" id="shabbatBar" aria-label="זמני השבת הקרובה">
   <div class="wrap sb-in">
     <div class="sb-item sb-par"><small>פרשת השבוע</small><b data-z="par">…</b></div>
-    <div class="sb-item"><small>🕯️ כניסת שבת · <span data-z="city">ירושלים</span></small><b data-z="in">…</b></div>
-    <div class="sb-item"><small>✨ צאת שבת</small><b data-z="out">…</b></div>
+    <div class="sb-item sb-fri"><small>🕯️ כניסת שבת · <span data-z="city">ירושלים</span></small><b data-z="in">…</b></div>
+    <div class="sb-item sb-fri"><small>✨ צאת שבת</small><b data-z="out">…</b></div>
+    <div class="sb-item sb-week"><small>🌅 הנץ החמה · <span data-z="city2">ירושלים</span></small><b data-z="sunrise">…</b></div>
+    <div class="sb-item sb-week"><small>📖 סוף זמן ק״ש (גר״א)</small><b data-z="shma">…</b></div>
+    <div class="sb-item sb-week"><small>🌇 שקיעה</small><b data-z="sunset">…</b></div>
     <a class="sb-more" href="/zmanim/">לוח זמני היום ←</a>
   </div>
 </section>'''

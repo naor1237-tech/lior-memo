@@ -35,9 +35,14 @@ def he_haft(s):
             if m2 and book: out.append(he_ref(book, m2.group(1), m2.group(2) or m2.group(1)).split(" ", 1)[1] if False else he_ref(book, m2.group(1), m2.group(2) or m2.group(1)))
     return "; ".join(out)
 def slug(en): return re.sub(r"[^a-z0-9]+", "-", en.lower()).strip("-")
-def listen(a):
-    c, v = a["b"].split(":")
-    return f'https://www.sefaria.org/{a["k"].replace(" ", "_")}.{c}.{v}?lang=he&with=Torah%20Readings'
+AUDIO = json.load(open(os.path.join(B.ROOT, "_build", "data", "pocket_audio.json"), encoding="utf-8"))
+def audio(p, n):
+    name = AUDIO["map"].get(p["en"])
+    if not name: return None
+    return AUDIO["urls"].get(f"{name}-{'7' if n == 'M' else n}.mp3")
+def lbtn(url, label):
+    if not url: return '<span class="ls off">—</span>'
+    return f'<button type="button" class="ls" data-audio="{url}" data-label="{html.escape(label)}">▶ האזנה</button>'
 
 def verses(lines, cls):
     return "".join(f'<p class="{cls}">{html.escape(t)}</p>' for t in (lines or []))
@@ -48,7 +53,8 @@ def page(p):
     title = f"פרשת {he} לבר מצווה – עליות, מפטיר והפטרה בטעמים והאזנה"
     desc = f"פרשת {he} (ספר {book}): חלוקת העליות, המפטיר וההפטרה בנוסח ספרד ואשכנז, טקסט עם טעמי המקרא והאזנה לקריאה לכל עלייה. הכנה לבר מצווה עם ליאור ממו."
     rows = "".join(f'<tr><td><b>{ALIYA[a["n"]]}</b></td><td>{he_ref(a["k"], a["b"], a["e"])}</td><td>{a.get("v") or ""}</td>'
-                   f'<td><a class="ls" href="{listen(a)}" target="_blank" rel="noopener" aria-label="האזנה לעלייה {ALIYA[a["n"]]}">▶ האזנה</a></td></tr>' for a in p["aliyot"])
+                   f'<td>{lbtn(audio(p, a["n"]), f"פרשת {p['he']} – {ALIYA[a['n']]}")}</td></tr>' for a in p["aliyot"])
+    hbtn = lbtn(audio(p, "H"), f"הפטרת פרשת {p['he']}")
     hs = he_haft(p.get("haftara_seph")); ha = he_haft(p.get("haftara_ashk"))
     hafts = f'<li><b>נוסח ספרד ועדות המזרח:</b> {hs}</li>' + (f'<li><b>נוסח אשכנז:</b> {ha}</li>' if ha and ha != hs else "")
     idx = next(i for i, x in enumerate(DATA) if x["num"] == p["num"])
@@ -81,17 +87,20 @@ def page(p):
     <article class="pr-text ptext" id="prText" lang="he">
       <div class="pr-tools" role="toolbar" aria-label="כלי קריאה"><button type="button" data-fs="-1" aria-label="הקטנת גופן">א−</button><button type="button" data-fs="1" aria-label="הגדלת גופן">א+</button><button type="button" data-print>הדפסה</button><button type="button" data-share>שיתוף</button></div>
       <h2 class="pr-h">העליות בפרשה</h2>
-      <p class="pr-note">לחצו על "האזנה" כדי לשמוע את קריאת העלייה בטעמים (נפתח באתר ספריא, הקלטות PocketTorah בנוסח אשכנז). ליאור מלמד את הקריאה בנוסח הטעמים של המשפחה.</p>
+      <p class="pr-note">לחצו על "האזנה" כדי לשמוע את קריאת העלייה בטעמים – הנגן נפתח כאן בתחתית העמוד, עם אפשרות להאט את הקצב. ההקלטות בנוסח אשכנז. ליאור מלמד את הקריאה בנוסח הטעמים של המשפחה.</p>
       <div class="tblwrap"><table class="aliyot"><thead><tr><th>עלייה</th><th>פסוקים</th><th>מס׳</th><th></th></tr></thead><tbody>{rows}</tbody></table></div>
       <h2 class="pr-h">המפטיר בטעמים</h2>
-      {verses(p.get("maftir_text"), "pr-p")}
+      <div class="ttsbar"><button type="button" class="tts" data-tts=".maftir-p">🔊 הקראת המפטיר</button><small>הקראה בקול המכשיר (ללא טעמים) – לתרגול המילים</small></div>
+      {verses(p.get("maftir_text"), "pr-p maftir-p")}
       {B_promo()}
       <h2 class="pr-h">ההפטרה</h2>
       <ul class="hafl">{hafts}</ul>
+      <div class="ttsbar"><span>הפטרה מושרת (אשכנז):</span> {hbtn}</div>
       <h3 class="pr-h3">נוסח ההפטרה (ספרד ועדות המזרח) בטעמים</h3>
-      {verses(p.get("haftara_text"), "pr-p")}
+      <div class="ttsbar"><button type="button" class="tts" data-tts=".haft-p">🔊 הקראת ההפטרה</button></div>
+      {verses(p.get("haftara_text"), "pr-p haft-p")}
       {nav}
-      <p class="pr-src">הטקסט: תנ״ך עם טעמי המקרא (כתב יד לנינגרד, נחלת הכלל) באמצעות <a href="https://www.sefaria.org" target="_blank" rel="noopener">ספריא</a>. חלוקת העליות וההפטרות: <a href="https://www.hebcal.com" target="_blank" rel="noopener">Hebcal.com</a> (CC BY 4.0), לפי המנהג בישראל. ההקלטות שייכות למפיקיהן ומושמעות באתר ספריא.</p>
+      <p class="pr-src">הטקסט: תנ״ך עם טעמי המקרא (כתב יד לנינגרד, נחלת הכלל) באמצעות <a href="https://www.sefaria.org" target="_blank" rel="noopener">ספריא</a>. חלוקת העליות וההפטרות: <a href="https://www.hebcal.com" target="_blank" rel="noopener">Hebcal.com</a> (CC BY 4.0), לפי המנהג בישראל. הקלטות הקריאה: <a href="https://github.com/rneiss/PocketTorah" target="_blank" rel="noopener">PocketTorah</a> (נוסח אשכנז), רישיון CC BY-SA.</p>
     </article>
     <aside class="pr-side">
       <div class="pr-cta">
@@ -113,6 +122,7 @@ def page(p):
 
 <script src="/js/site.js" defer></script>
 <script src="/js/prayer.js" defer></script>
+<script src="/js/listen.js" defer></script>
 </body>
 </html>
 '''
