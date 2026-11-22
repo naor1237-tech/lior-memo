@@ -1067,3 +1067,5 @@ body.lp-on .fab,body.lp-on .wa-fab,body.lp-on .a11y-btn{bottom:96px}
 .soc-foot{margin:22px 0 6px}
 .soc-menu{margin-top:14px;justify-content:flex-start}
 .soc-card{margin:18px 0 4px}
+.pr-rec{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin:6px 0 18px;padding:14px 16px;border:1px solid rgba(201,169,106,.4);border-radius:14px;background:rgba(201,169,106,.08)}
+.pr-rec p{margin:0;flex:1 1 260px;font-size:15px;line-height:1.6}

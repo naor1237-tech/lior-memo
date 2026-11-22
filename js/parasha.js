@@ -77,7 +77,7 @@
           var en = item.name.en, sl = map[en] || (en.indexOf('-') > 0 ? map[en.split('-')[0]] : null);
           if (!sl) return;
           var a = document.createElement('a'); a.className = 'btn btn-line'; a.href = '/parasha/' + sl + '/';
-          a.textContent = 'לעמוד הפרשה: עליות, טעמים והאזנה';
+          a.textContent = 'לעמוד הפרשה: עליות, מפטיר והפטרה בטעמים';
           var row = res.querySelector('div[style*="flex"]'); if (row) row.appendChild(a);
         }).catch(function(){});
       }

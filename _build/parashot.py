@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""54 parasha pages: /parasha/<slug>/ – aliyot with chanted-audio links (Sefaria / PocketTorah), maftir and Sephardi haftarah
+"""54 parasha pages: /parasha/<slug>/ – aliyot, maftir and Sephardi haftarah
 text with cantillation (Tanach with Ta'amei Hamikra – Public Domain), plus a book-by-book index injected into /parasha/."""
 import json, os, re, sys, html
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -35,26 +35,17 @@ def he_haft(s):
             if m2 and book: out.append(he_ref(book, m2.group(1), m2.group(2) or m2.group(1)).split(" ", 1)[1] if False else he_ref(book, m2.group(1), m2.group(2) or m2.group(1)))
     return "; ".join(out)
 def slug(en): return re.sub(r"[^a-z0-9]+", "-", en.lower()).strip("-")
-AUDIO = json.load(open(os.path.join(B.ROOT, "_build", "data", "pocket_audio.json"), encoding="utf-8"))
-def audio(p, n):
-    name = AUDIO["map"].get(p["en"])
-    if not name or (n == "M" and p.get("simchat_torah")): return None
-    return AUDIO["urls"].get(f"{name}-{'7' if n == 'M' else n}.mp3")
-def lbtn(url, label):
-    if not url: return '<span class="ls off">—</span>'
-    return f'<button type="button" class="ls" data-audio="{url}" data-label="{html.escape(label)}">▶ האזנה</button>'
-
 def verses(lines, cls):
     return "".join(f'<p class="{cls}">{html.escape(t)}</p>' for t in (lines or []))
 
 def page(p):
     s = slug(p["en"]); path = f"/parasha/{s}/"; he = p["he"]
     book = BOOKS.get(p["aliyot"][0]["k"], "") if p["aliyot"] else ""
-    title = f"פרשת {he} לבר מצווה – עליות, מפטיר והפטרה בטעמים והאזנה"
-    desc = f"פרשת {he} (ספר {book}): חלוקת העליות, המפטיר וההפטרה בנוסח ספרד ואשכנז, טקסט עם טעמי המקרא והאזנה לקריאה לכל עלייה. הכנה לבר מצווה עם ליאור ממו."
+    title = f"פרשת {he} לבר מצווה – עליות, מפטיר והפטרה בטעמים"
+    desc = f"פרשת {he} (ספר {book}): חלוקת העליות, המפטיר וההפטרה בנוסח ספרד ואשכנז, טקסט עם טעמי המקרא. הכנה לבר מצווה עם ליאור ממו."
     rows = "".join(f'<tr><td><b>{ALIYA[a["n"]]}</b></td><td>{he_ref(a["k"], a["b"], a["e"])}</td><td>{a.get("v") or ""}</td>'
-                   f'<td>{lbtn(audio(p, a["n"]), f"פרשת {p['he']} – {ALIYA[a['n']]}")}</td></tr>' for a in p["aliyot"])
-    hbtn = lbtn(audio(p, "H"), f"הפטרת פרשת {p['he']}")
+                   f'</tr>' for a in p["aliyot"])
+    wa_rec = B.urlq(f"שלום ליאור, אשמח לשמוע את הקריאה של פרשת {he} בטעמים")
     hs = he_haft(p.get("haftara_seph")); ha = he_haft(p.get("haftara_ashk"))
     hafts = f'<li><b>נוסח ספרד ועדות המזרח:</b> {hs}</li>' + (f'<li><b>נוסח אשכנז:</b> {ha}</li>' if ha and ha != hs else "")
     idx = next(i for i, x in enumerate(DATA) if x["num"] == p["num"])
@@ -77,7 +68,7 @@ def page(p):
     <ol class="crumbs" aria-label="פירורי לחם"><li><a href="/">ליאור ממו</a></li><li><a href="/parasha/">פרשות השבוע</a></li><li aria-current="page">פרשת {he}</li></ol>
     <span class="label">ספר {book} · פרשה {p["num"]} מתוך 54</span>
     <h1>פרשת <em>{he}</em></h1>
-    <p class="lede">{"פרשת וזאת הברכה נקראת בשמחת תורה (ולא בשבת), ואחריה מתחילים מחדש בבראשית. כאן: חלוקת העליות עם האזנה, המפטיר של שמחת תורה וההפטרה – עם טעמי המקרא." if p.get("simchat_torah") else f"כל מה שצריך לבר מצווה בפרשת {he}: חלוקת העליות עם האזנה לכל עלייה, המפטיר וההפטרה – עם טעמי המקרא."}</p>
+    <p class="lede">{"פרשת וזאת הברכה נקראת בשמחת תורה (ולא בשבת), ואחריה מתחילים מחדש בבראשית. כאן: חלוקת העליות, המפטיר של שמחת תורה וההפטרה – עם טעמי המקרא." if p.get("simchat_torah") else f"כל מה שצריך לבר מצווה בפרשת {he}: חלוקת העליות, המפטיר וההפטרה – עם טעמי המקרא."}</p>
     <div class="hero-ctas"><a class="btn btn-solid" href="{B.WA}?text={wa}" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>לימוד הפרשה עם ליאור</a><a class="btn btn-line" href="/parasha/">מחשבון הפרשה</a></div>
   </div>
 </section>
@@ -87,20 +78,17 @@ def page(p):
     <article class="pr-text ptext" id="prText" lang="he">
       <div class="pr-tools" role="toolbar" aria-label="כלי קריאה"><button type="button" data-fs="-1" aria-label="הקטנת גופן">א−</button><button type="button" data-fs="1" aria-label="הגדלת גופן">א+</button><button type="button" data-print>הדפסה</button><button type="button" data-share>שיתוף</button></div>
       <h2 class="pr-h">העליות בפרשה</h2>
-      <p class="pr-note">לחצו על "האזנה" כדי לשמוע את קריאת העלייה בטעמים – הנגן נפתח כאן בתחתית העמוד, עם אפשרות להאט את הקצב. ההקלטות בנוסח אשכנז. ליאור מלמד את הקריאה בנוסח הטעמים של המשפחה.</p>
-      <div class="tblwrap"><table class="aliyot"><thead><tr><th>עלייה</th><th>פסוקים</th><th>מס׳</th><th></th></tr></thead><tbody>{rows}</tbody></table></div>
+      <div class="pr-rec"><p><b>רוצים לשמוע את הקריאה?</b> ליאור – חזן ובעל קורא – מלמד את הפרשה בנוסח הטעמים של המשפחה (ספרדי־ירושלמי, מרוקאי ועוד) ושולח הקלטות לתרגול.</p><a class="btn btn-solid" href="{B.WA}?text={wa_rec}" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>לשמוע את הקריאה מליאור</a></div>
+      <div class="tblwrap"><table class="aliyot"><thead><tr><th>עלייה</th><th>פסוקים</th><th>מס׳</th></tr></thead><tbody>{rows}</tbody></table></div>
       <h2 class="pr-h">המפטיר בטעמים</h2>
-      <div class="ttsbar"><button type="button" class="tts" data-tts=".maftir-p">🔊 הקראת המפטיר</button><small>הקראה בקול המכשיר (ללא טעמים) – לתרגול המילים</small></div>
       {verses(p.get("maftir_text"), "pr-p maftir-p")}
       {B_promo()}
       <h2 class="pr-h">ההפטרה</h2>
       <ul class="hafl">{hafts}</ul>
-      <div class="ttsbar"><span>הפטרה מושרת (אשכנז):</span> {hbtn}</div>
       <h3 class="pr-h3">נוסח ההפטרה (ספרד ועדות המזרח) בטעמים</h3>
-      <div class="ttsbar"><button type="button" class="tts" data-tts=".haft-p">🔊 הקראת ההפטרה</button></div>
       {verses(p.get("haftara_text"), "pr-p haft-p")}
       {nav}
-      <p class="pr-src">הטקסט: תנ״ך עם טעמי המקרא (כתב יד לנינגרד, נחלת הכלל) באמצעות <a href="https://www.sefaria.org" target="_blank" rel="noopener">ספריא</a>. חלוקת העליות וההפטרות: <a href="https://www.hebcal.com" target="_blank" rel="noopener">Hebcal.com</a> (CC BY 4.0), לפי המנהג בישראל. הקלטות הקריאה: <a href="https://github.com/rneiss/PocketTorah" target="_blank" rel="noopener">PocketTorah</a> (נוסח אשכנז), רישיון CC BY-SA.</p>
+      <p class="pr-src">הטקסט: תנ״ך עם טעמי המקרא (כתב יד לנינגרד, נחלת הכלל) באמצעות <a href="https://www.sefaria.org" target="_blank" rel="noopener">ספריא</a>. חלוקת העליות וההפטרות: <a href="https://www.hebcal.com" target="_blank" rel="noopener">Hebcal.com</a> (CC BY 4.0), לפי המנהג בישראל.</p>
     </article>
     <aside class="pr-side">
       <div class="pr-cta">
@@ -122,7 +110,6 @@ def page(p):
 
 <script src="/js/site.js" defer></script>
 <script src="/js/prayer.js" defer></script>
-<script src="/js/listen.js" defer></script>
 </body>
 </html>
 '''
@@ -137,7 +124,7 @@ def B_promo():
 
 def index_html():
     order = ["Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy"]
-    out = ['<section class="sec" id="all" style="padding-top:20px"><div class="wrap"><div class="sec-head"><div class="rv in"><span class="label">54 פרשות השבוע</span><h2 class="h2">כל הפרשות<br><em>בטעמים ובהאזנה.</em></h2></div><p class="lede">בחרו פרשה וקבלו את חלוקת העליות עם האזנה לכל עלייה, את המפטיר ואת ההפטרה – עם טעמי המקרא.</p></div>']
+    out = ['<section class="sec" id="all" style="padding-top:20px"><div class="wrap"><div class="sec-head"><div class="rv in"><span class="label">54 פרשות השבוע</span><h2 class="h2">כל הפרשות<br><em>בטעמים.</em></h2></div><p class="lede">בחרו פרשה וקבלו את חלוקת העליות, את המפטיר ואת ההפטרה – עם טעמי המקרא.</p></div>']
     for bk in order:
         items = [x for x in DATA if x["aliyot"] and x["aliyot"][0]["k"] == bk]
         out.append(f'<h3 class="pbook">ספר {BOOKS[bk]}</h3><div class="plist">' + "".join(f'<a href="/parasha/{slug(x["en"])}/">{x["he"]}</a>' for x in items) + '</div>')
