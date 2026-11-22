@@ -1058,3 +1058,12 @@ button.ls:hover,button.ls.on{background:#c9a96a;color:#0b0a09}
 .lp-time{font-size:11.5px;color:#a39a8c;direction:ltr;text-align:end}
 body.lp-on{padding-bottom:90px}
 body.lp-on .fab,body.lp-on .wa-fab,body.lp-on .a11y-btn{bottom:96px}
+
+/* social profiles */
+.soc{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.soc a{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid rgba(201,169,106,.4);border-radius:999px;color:#f3ece0;text-decoration:none;font-size:14px;transition:background .2s,color .2s}
+.soc a:hover,.soc a:focus-visible{background:#c9a96a;color:#0b0a09}
+.soc svg{width:18px;height:18px;flex:none}
+.soc-foot{margin:22px 0 6px}
+.soc-menu{margin-top:14px;justify-content:flex-start}
+.soc-card{margin:18px 0 4px}

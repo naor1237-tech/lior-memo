@@ -539,6 +539,7 @@ def patch_home():
     s = s.replace('<section class="sec" id="gallery">', OUD() + '\n<section class="sec" id="gallery">', 1)
     if '/js/oud.js' not in s:
         s = s.replace('<script src="/js/site.js" defer></script>', '<script src="/js/site.js" defer></script>\n<script src="/js/oud.js" defer></script>', 1)
+    s = re.sub(r'\n?<nav class="mnav" id="mnav".*?\n</nav>', '', s, flags=re.S)  # nav() re-adds exactly one
     s = re.sub(r'<header class="nav" id="nav">.*?</header>', lambda m: nav(""), s, count=1, flags=re.S)
     s = re.sub(r'<footer>.*?</footer>', lambda m: footer(), s, count=1, flags=re.S)
     open(f, "w", encoding="utf-8").write(s)
@@ -575,5 +576,6 @@ if __name__ == "__main__":
     import review as RV; RV.page()
     import card as CD; CD.vcard(); CD.page()
     import legal; legal.run()
+    import social; social.run()
     import cachebust; cachebust.run()
     print("built", [p["slug"] for p in PAGES] + ["parasha"])

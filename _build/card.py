@@ -15,6 +15,9 @@ def vcard():
     v = ("BEGIN:VCARD\r\nVERSION:3.0\r\nN:ממו;ליאור;;;\r\nFN:ליאור ממו\r\nORG:ליאור ממו – חזן ופייטן\r\n"
          "TITLE:חזן\\, פייטן\\, בעל קורא ונגן עוד\r\nTEL;TYPE=CELL,VOICE:+972506737715\r\n"
          f"URL:{B.SITE}/\r\nURL;TYPE=WhatsApp:https://wa.me/972506737715\r\n"
+         "X-SOCIALPROFILE;TYPE=facebook:https://www.facebook.com/mmolior\r\n"
+         "X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/liormamo9725/\r\n"
+         "X-SOCIALPROFILE;TYPE=youtube:https://www.youtube.com/@liormamo405\r\n"
          "ADR;TYPE=WORK:;;;ירושלים;;;ישראל\r\n"
          "NOTE:ליווי והכנה לבר מצווה\\, עליות לתורה\\, שבת חתן\\, פיוטים ונגן עוד לאירועים.\r\n"
          + photo + "END:VCARD\r\n")
@@ -51,6 +54,7 @@ def page():
       <a href="/nagan-oud/?utm_source=card"><b>🪕</b>נגן עוד – נסו לנגן<i>←</i></a>
       <a href="/r"><b>⭐</b>כתבו לי ביקורת<i>←</i></a>
     </nav>
+    {__import__("social").icons("soc soc-card")}
 
     <div class="dc-foot">
       <button type="button" class="dc-mini" id="dcShare">שיתוף הכרטיס</button>
