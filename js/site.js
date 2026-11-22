@@ -83,7 +83,6 @@
     ticking = false; var y = window.scrollY, vh = innerHeight;
     if (heroBg && y < vh*1.2) heroBg.style.transform = 'scale(1.2) translateY('+(y*0.25)+'px)';
     if (frame && y < vh*1.2) frame.style.translate = '0 '+(y*-0.08)+'px';
-    if (band){ var r = band.parentElement.getBoundingClientRect(); if (r.bottom > 0 && r.top < vh) band.style.transform = 'translateX('+((vh - r.top)*0.45 - 300)+'px)'; }
     if (port){ var p = port.getBoundingClientRect(); if (p.bottom > 0 && p.top < vh) port.style.transform = 'scale(1.12) translateY('+((p.top + p.height/2 - vh/2)*-0.06)+'px)'; }
   }
   if (!reduce){ window.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(motion); } }, {passive:true}); motion(); }

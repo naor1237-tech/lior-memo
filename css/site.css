@@ -901,3 +901,21 @@ html.a11y-still .cur,html.a11y-still .cur-dot{display:none}
 .legal-links a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 .legal-links a:hover{color:var(--gold-l)}
 @media (max-width:600px){.legal h2{font-size:23px}.legal p,.legal li{font-size:16px}.a11y-btn{width:44px;height:44px}}
+
+/* desktop + all sizes: readable endless word ribbon and tighter rhythm around it */
+.band{padding:26px 0}
+.band-track{font-size:clamp(40px,5.2vw,84px);gap:clamp(22px,3vw,44px);animation:bandLoop 34s linear infinite;will-change:transform}
+.band-track span{color:rgba(230,207,154,.32);-webkit-text-stroke:0}
+.band-track span.f{color:var(--gold-l);opacity:1}
+.band-track svg{width:.2em;height:.2em}
+#bar-mitzvah-journey{padding-bottom:80px}
+#bar-mitzvah-journey + .band + #services{padding-top:90px}
+@media (min-width:901px){
+  .sec{padding:110px 0}
+  .statement{padding:110px 0 90px}
+}
+@media (max-width:600px){
+  .band-track{font-size:38px;gap:22px;animation-duration:26s}
+  #bar-mitzvah-journey + .band + #services{padding-top:60px}
+}
+@media (prefers-reduced-motion:reduce){.band-track{animation:none}}
