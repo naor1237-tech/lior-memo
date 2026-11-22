@@ -29,9 +29,9 @@ def page():
         .replace('<link rel="stylesheet" href="/css/site.css">', '<link rel="stylesheet" href="/css/site.css">\n<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js" defer></script>')
     body += B.sprite() + f'''
 <main class="dcard">
-  <div class="dc-bg" aria-hidden="true"><img src="/media/hero.jpg" alt=""></div>
+  <div class="dc-bg" aria-hidden="true"><img src="/media/lior-oud.jpg" alt=""></div>
   <section class="dc">
-    <div class="dc-photo"><img src="/media/card-photo.jpg" alt="ליאור ממו"></div>
+    <div class="dc-photo"><img src="/media/card-photo.jpg" alt="ליאור ממו מנגן בעוד"></div>
     <h1>ליאור ממו</h1>
     <p class="dc-role">חזן · פייטן · בעל קורא · נגן עוד</p>
     <p class="dc-tag">ליווי והכנה לבר מצווה · עליות לתורה · שבת חתן · אירועים</p>
