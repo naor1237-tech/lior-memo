@@ -8,6 +8,18 @@ import build as B
 DATA = json.load(open(os.path.join(B.ROOT, "_build", "data", "prayers.json"), encoding="utf-8"))
 
 P = [  # slug, short name, title, description, intro, related service page
+ ("birkot-hashachar","ברכות השחר","ברכות השחר – נוסח עדות המזרח המלא, מנוקד (מודה אני וברכות התורה)",
+  "ברכות השחר המלאות בנוסח עדות המזרח: מודה אני, נטילת ידיים, אלהי נשמה, ברכות השחר וברכות התורה – מנוקד ונוח לקריאה מהטלפון.",
+  "ברכות השחר נאמרות בכל בוקר עם הקימה – מ״מודה אני״ ועד ברכות התורה. זהו הנוסח המלא לפי מנהג עדות המזרח.","hachana-bar-mitzvah"),
+ ("shacharit","תפילת שחרית","תפילת שחרית לחול – נוסח עדות המזרח המלא, מנוקד",
+  "תפילת שחרית לימות החול בנוסח עדות המזרח: ציצית ותפילין, קרבנות, פסוקי דזמרה, קריאת שמע, עמידה, אשרי, ובא לציון ועלינו – מנוקד, עם תוכן עניינים.",
+  "תפילת שחרית לימות החול, מהנחת הטלית והתפילין ועד ״עלינו לשבח״, לפי מנהג עדות המזרח. השתמשו בתוכן העניינים כדי לקפוץ לכל חלק בתפילה.","hachana-bar-mitzvah"),
+ ("mincha","תפילת מנחה","תפילת מנחה לחול – נוסח עדות המזרח המלא, מנוקד",
+  "תפילת מנחה לימות החול בנוסח עדות המזרח: קרבנות, אשרי, עמידה, וידוי ועלינו – מנוקדת ונוחה לקריאה מהטלפון.",
+  "תפילת מנחה נאמרת אחר הצהריים, עד השקיעה. זהו הנוסח המלא לימות החול לפי מנהג עדות המזרח.","hachana-bar-mitzvah"),
+ ("arvit","תפילת ערבית","תפילת ערבית לחול – נוסח עדות המזרח המלא, מנוקד",
+  "תפילת ערבית לימות החול בנוסח עדות המזרח: ברכו, קריאת שמע וברכותיה, עמידה ועלינו – מנוקדת ונוחה לקריאה מהטלפון.",
+  "תפילת ערבית נאמרת בלילה, אחרי צאת הכוכבים. זהו הנוסח המלא לימות החול לפי מנהג עדות המזרח.","hachana-bar-mitzvah"),
  ("birkat-hamazon","ברכת המזון","ברכת המזון – נוסח עדות המזרח (ספרדי) המלא, מנוקד",
   "ברכת המזון המלאה בנוסח עדות המזרח (ספרדי), מנוקדת וקריאה – כולל תוספות לשבת, ראש חודש וחגים. נוח לקריאה מהטלפון ולהדפסה.",
   "ברכת המזון נאמרת אחרי סעודה שאכלו בה לחם (כזית ומעלה). זהו הנוסח המלא לפי מנהג עדות המזרח, כולל ״רצה״ לשבת, ״יעלה ויבוא״ לראש חודש וחגים, ו״על הניסים״ לחנוכה ופורים.","bar-mitzvah"),
@@ -56,8 +68,8 @@ def clean(s):
     s = re.sub(r"<(/?)(\w+)[^>]*>", lambda m: f"<{m.group(1)}{m.group(2).lower()}>" if m.group(2).lower() in ALLOWED else "", s)
     return s.strip()
 
-def render(text):
-    out = []
+def render(text, sections=None):
+    out = []; toc = []
     def walk(t):
         if isinstance(t, list):
             for x in t: walk(x)
@@ -65,14 +77,21 @@ def render(text):
             c = clean(t)
             plain = re.sub(r"<[^>]+>", "", c).strip()
             if re.fullmatch(r"<big>\s*(<b>)?[^<]{1,60}(</b>)?\s*</big>", c):
-                out.append(f'<h2 class="pr-h">{plain}</h2>')
+                if out and out[-1].startswith('<h2') and out[-1].endswith(f'>{plain}</h2>'):
+                    return
+                hid = f"s{len(out)}"
+                if sections is None or plain in sections: toc.append((hid, plain))
+                out.append(f'<h2 class="pr-h" id="{hid}">{plain}</h2>')
             elif c.startswith("<small>") and c.endswith("</small>") and c.count("<small>") == 1:
                 inner = c[7:-8]
                 out.append(f'<p class="pr-note">{inner}</p>' if len(plain) < 160 and not re.search(r"[ְ-ּ]", plain) else f'<p class="pr-p pr-sm">{inner}</p>')
             else:
                 out.append(f'<p class="pr-p">{c}</p>')
     walk(text)
-    return "\n".join(out)
+    nav = ""
+    if sections and len(toc) > 2:
+        nav = '<nav class="pr-toc" aria-label="תוכן עניינים"><b>תוכן עניינים</b>' + "".join(f'<a href="#{i}">{t}</a>' for i, t in toc) + '</nav>'
+    return nav + "\n".join(out)
 
 def first_words(text, n=40):
     flat = []
@@ -122,7 +141,7 @@ def page(item):
   <div class="wrap pr-grid">
     <article class="pr-text" id="prText" lang="he">
       {TOOLS}
-      {render(d["text"])}
+      {render(d["text"], d.get("sections"))}
       <p class="pr-src">הנוסח: סידור עדות המזרח, מהדורת ״תורת אמת״ (נחלת הכלל), באמצעות <a href="https://www.sefaria.org/{d["ref"].replace(" ","_")}" target="_blank" rel="noopener">ספריא</a>. ייתכנו הבדלי מנהג בין קהילות.</p>
     </article>
     <aside class="pr-side">

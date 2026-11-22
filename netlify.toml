@@ -3,6 +3,11 @@
 
 # Large videos are streamed from the GitHub Pages mirror of this repo (Netlify upload size limit).
 [[redirects]]
+  from = "/c"
+  to = "/card/"
+  status = 301
+
+[[redirects]]
   from = "/r"
   to = "/review/"
   status = 301
@@ -17,3 +22,9 @@
   for = "/media/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/lior-mamo.vcf"
+  [headers.values]
+    Content-Type = "text/vcard; charset=utf-8"
+    Content-Disposition = "attachment; filename=lior-mamo.vcf"

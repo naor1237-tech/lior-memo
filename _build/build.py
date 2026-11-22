@@ -511,4 +511,5 @@ if __name__ == "__main__":
     for it in PR.P: PR.page(it)
     PR.hub(); PR.add_to_sitemap()
     import review as RV; RV.page()
+    import card as CD; CD.vcard(); CD.page()
     print("built", [p["slug"] for p in PAGES] + ["parasha"])
