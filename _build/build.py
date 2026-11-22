@@ -169,6 +169,44 @@ PAGES = [
    ("מה ההרכב שמגיע?", "מנגן עוד יחיד ועד הרכב עם כינור, כלי הקשה וקלידים – לפי מה שמתאים לאירוע."),
    ("איזה סגנון מוזיקה?", "פיוטים, שירי קודש, מוזיקה מזרחית וזמר ישראלי. את הרפרטואר מתאימים מראש לקהל ולאירוע."),
   ]),
+ dict(slug="shiurei-oud", nav="שיעורי עוד",
+  title="מורה לעוד בירושלים | שיעורים פרטיים בעוד למתחילים – ליאור ממו",
+  desc="שיעורים פרטיים בעוד עם ליאור ממו – נגן עוד, חזן ופייטן. לימוד נגינה על עוד למתחילים ולממשיכים: אחיזה ורישה, מקאמים ורבעי טונים, פיוטים ושירים. ירושלים והסביבה. 050-6737715",
+  label="שיעורים פרטיים · למתחילים ולממשיכים", h1="ללמוד לנגן<br><em>על עוד</em>",
+  lede="שיעורים פרטיים בעוד עם ליאור ממו – נגן עוד שמופיע באירועים ובערבי פיוט. מהאקורד הראשון ועד טקסים במקאם חיג׳אז, בקצב שלכם ובגובה העיניים.",
+  poster="ensemble", img="lior-oud.jpg", cta="לתיאום שיעור", service="שיעורים פרטיים בעוד",
+  body="""
+<h2>שיעורי עוד – אחד על אחד</h2>
+<p>העוד הוא אחד הכלים היפים והמרגשים במוזיקה המזרחית, אבל גם כלי שכדאי ללמוד נכון מההתחלה: בלי סריגים על הצוואר, עם רבעי טונים ועם ריש׳ה במקום אצבעות. בשיעור פרטי ליאור מלווה כל תלמיד באופן אישי – מתקן אחיזה, מסביר את ה״למה״ ובונה רפרטואר שאתם אוהבים.</p>
+<p>לא בטוחים אם זה בשבילכם? <a href="#oud">נסו לנגן על העוד הווירטואלי כאן למטה</a> – ותשמעו איך נשמעים המקאמים.</p>
+<h2>מה לומדים</h2>
+<ul>
+<li><b>יסודות</b> – אחיזת העוד והריש׳ה, ישיבה נכונה, כיוון הכלי ופריטה נקייה.</li>
+<li><b>סולמות ומקאמים</b> – ראסט, ביאתי, חיג׳אז, סבא ונהוונד, כולל רבעי הטונים שנותנים למוזיקה המזרחית את הצבע שלה.</li>
+<li><b>שירים ופיוטים</b> – מנגינות מוכרות, פיוטים ושירי שבת שתוכלו לנגן בבית ובשולחן החג.</li>
+<li><b>מקצב וליווי</b> – לנגן יחד עם שירה, ולהבין את המקצבים הנפוצים במוזיקה המזרחית.</li>
+<li><b>טקסים ואלתור</b> – לממשיכים: לבנות טקסים קצר במקאם ולפתח סגנון אישי.</li>
+</ul>
+<h2>למי זה מתאים</h2>
+<p>למתחילים שמעולם לא החזיקו כלי, לנגני גיטרה או כלים אחרים שרוצים לעבור לעוד, ולמי שניגן פעם ורוצה לחזור. מתאימים את התוכנית לגיל, לרמה ולמטרה – מהנאה בבית ועד נגינה בשמחות המשפחה.</p>
+<h2>איך מתחילים</h2>
+<h3>1. שיחה קצרה</h3>
+<p>מספרים לליאור על הניסיון שלכם ומה הייתם רוצים לנגן, ומתאמים מקום ושעה.</p>
+<h3>2. שיעור ראשון</h3>
+<p>מכירים את הכלי, בודקים אחיזה וכיוון, ויוצאים עם תרגיל ראשון ומנגינה פשוטה.</p>
+<h3>3. התקדמות בקצב שלכם</h3>
+<p>כל שיעור בונה על הקודם – עם חומרים לתרגול בבית ומטרות ברורות.</p>
+<p>רוצים לשמוע את ליאור מנגן? <a href="/nagan-oud/">נגן עוד לאירועים</a> · <a href="/#gallery">סרטונים מהבמה</a>.</p>
+""",
+  vids=["ya-ozel","ensemble","zman-lisloach"],
+  faq=[
+   ("צריך עוד משלי כדי להתחיל?", "מומלץ שיהיה לכם כלי לתרגול בבית. לא בטוחים איזה עוד לקנות? ליאור ישמח לייעץ לפני הרכישה, כדי שתתחילו עם כלי מתאים."),
+   ("מאיזה גיל אפשר ללמוד עוד?", "אפשר להתחיל גם בגיל צעיר וגם כמבוגרים. את קצב השיעורים והחומרים מתאימים לגיל ולרמה של כל תלמיד."),
+   ("כמה זמן לוקח ללמוד לנגן על עוד?", "כבר בשיעורים הראשונים מנגנים מנגינה פשוטה. נגינה בטוחה של שירים ופיוטים דורשת תרגול קבוע – הקצב תלוי בזמן שמשקיעים בבית."),
+   ("כמה עולה שיעור עוד פרטי?", "המחיר תלוי באורך השיעור, בתדירות ובמיקום. שלחו הודעה לליאור ותקבלו פרטים מדויקים."),
+   ("איפה מתקיימים השיעורים?", "בירושלים והסביבה, בתיאום אישי. שאלו את ליאור על האפשרויות."),
+   ("אני כבר מנגן בגיטרה – זה יעזור?", "בהחלט. ההיכרות עם מיתרים ועם מוזיקה מקצרת את הדרך, ונתמקד במה שייחודי לעוד: הריש׳ה, רבעי הטונים והמקאמים."),
+  ]),
 ]
 
 PARASHA = dict(slug="parasha", nav="מה הפרשה?",
@@ -204,6 +242,7 @@ def nav(active=""):
   <a href="/bar-mitzvah/">עלייה לתורה עם נגנים</a>
   <a href="/shabbat-chatan/">שבת חתן ושבע ברכות</a>
   <a href="/nagan-oud/">נגן עוד – נסו לנגן</a>
+  <a href="/shiurei-oud/">שיעורים פרטיים בעוד</a>
   <a href="/#gallery">סרטונים מהבמה</a>
   <a href="/#contact">הזמנת אירוע</a>
   <div class="mnav-cta"><a class="btn btn-solid" href="tel:+972506737715"><svg><use href="#i-phone"/></svg>050-6737715</a><a class="btn btn-wa" href="{WA}" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>וואטסאפ</a></div>
@@ -297,7 +336,7 @@ def related(current):
     items = []
     for p in PAGES+[PARASHA]:
         if p["slug"] == current: continue
-        sub = {"bar-mitzvah":"עלייה לתורה עם נגנים","shabbat-chatan":"חזנות ופיוטים","hachana-bar-mitzvah":"קריאה בתורה והפטרה","nagan-oud":"עוד והרכב מזרחי","parasha":"מחשבון חינמי"}[p["slug"]]
+        sub = {"bar-mitzvah":"עלייה לתורה עם נגנים","shabbat-chatan":"חזנות ופיוטים","hachana-bar-mitzvah":"קריאה בתורה והפטרה","nagan-oud":"עוד והרכב מזרחי","shiurei-oud":"שיעורים פרטיים","parasha":"מחשבון חינמי"}[p["slug"]]
         items.append(f'<a class="rel rv" href="/{p["slug"]}/"><small>עוד באתר</small><b>{p["nav"] if p["slug"]!="parasha" else "מה הפרשה שלי?"}</b><span>{sub}</span></a>')
     return '<div class="related">' + "".join(items) + '</div>'
 
@@ -326,12 +365,12 @@ def page(p):
         {"@type":"Service","name":p["service"],"serviceType":p["service"],"description":p["desc"],
          "provider":{"@id":BUSINESS_ID},"areaServed":{"@type":"City","name":"ירושלים"},"url":SITE+path},
         crumbs_ld(p["nav"], path), faq_ld(p["faq"])] + [video_ld(v) for v in p["vids"]]}
-    wa_text = "שלום ליאור, הגעתי מהאתר (עמוד " + p["nav"] + ")"
+    wa_text = "שלום ליאור, הגעתי מהאתר (עמוד " + p["nav"] + ")" + (" ואשמח לשמוע על שיעורים פרטיים בעוד" if p["slug"] == "shiurei-oud" else "")
     body = head(p["title"], p["desc"], path, ld, image=f'{p["poster"]}.jpg') + sprite() + "\n\n" + nav(p["slug"]) + f'''
 
 <main id="top">
 <section class="page-hero">
-  <div class="hero-bg" aria-hidden="true"><img src="/media/{p["poster"]}.jpg" alt=""></div>
+  <div class="hero-bg" aria-hidden="true"><img src="/media/{p.get("img", p["poster"] + ".jpg")}?v=4" alt=""></div>
   <div class="wrap ph-grid">
     <div class="rv">
       <ol class="crumbs" aria-label="פירורי לחם"><li><a href="/">ליאור ממו</a></li><li aria-current="page">{p["nav"]}</li></ol>
@@ -339,13 +378,13 @@ def page(p):
       <h1>{p["h1"]}</h1>
       <p class="lede">{p["lede"]}</p>
       <div class="hero-ctas">
-        <a class="btn btn-solid" href="{WA}?text={urlq(wa_text)}" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>לבדיקת תאריך</a>
+        <a class="btn btn-solid" href="{WA}?text={urlq(wa_text)}" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>{p.get("cta","לבדיקת תאריך")}</a>
         <a class="btn btn-line" href="tel:+972506737715"><svg><use href="#i-phone"/></svg>{PHONE}</a>
       </div>
     </div>
     <div class="reel-frame rv">
       <span class="corner c1"></span><span class="corner c2"></span>
-      <div class="shell"><img src="/media/{p["poster"]}.jpg" alt="{html.escape(VIDEOS[p["poster"]][0], quote=True)}"></div>
+      <div class="shell"><img src="/media/{p.get("img", p["poster"] + ".jpg")}?v=4" alt="{html.escape("ליאור ממו מנגן בעוד" if p.get("img") else VIDEOS[p["poster"]][0], quote=True)}"></div>
       <button class="reel-play" data-open="{p["poster"]}" aria-label="צפייה בסרטון">
         <span class="ring"><svg><use href="#i-play"/></svg></span>
         <span><small>VIDEO<span class="bars"><i></i><i></i><i></i><i></i><i></i></span></small><b>{CARD[p["poster"]][0]}</b></span>
@@ -354,7 +393,7 @@ def page(p):
   </div>
 </section>
 
-{OUD() if p["slug"]=="nagan-oud" else ""}
+{OUD() if p["slug"] in ("nagan-oud","shiurei-oud") else ""}
 <section class="sec">
   <div class="wrap content">
     <article class="prose rv">
@@ -385,7 +424,7 @@ def page(p):
 {TAIL}
 
 <script src="/js/site.js" defer></script>
-{'<script src="/js/oud.js" defer></script>' if p["slug"]=="nagan-oud" else ""}
+{'<script src="/js/oud.js" defer></script>' if p["slug"] in ("nagan-oud","shiurei-oud") else ""}
 </body>
 </html>
 '''
