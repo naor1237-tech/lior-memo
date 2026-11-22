@@ -38,7 +38,7 @@ def slug(en): return re.sub(r"[^a-z0-9]+", "-", en.lower()).strip("-")
 AUDIO = json.load(open(os.path.join(B.ROOT, "_build", "data", "pocket_audio.json"), encoding="utf-8"))
 def audio(p, n):
     name = AUDIO["map"].get(p["en"])
-    if not name: return None
+    if not name or (n == "M" and p.get("simchat_torah")): return None
     return AUDIO["urls"].get(f"{name}-{'7' if n == 'M' else n}.mp3")
 def lbtn(url, label):
     if not url: return '<span class="ls off">—</span>'
@@ -77,7 +77,7 @@ def page(p):
     <ol class="crumbs" aria-label="פירורי לחם"><li><a href="/">ליאור ממו</a></li><li><a href="/parasha/">פרשות השבוע</a></li><li aria-current="page">פרשת {he}</li></ol>
     <span class="label">ספר {book} · פרשה {p["num"]} מתוך 54</span>
     <h1>פרשת <em>{he}</em></h1>
-    <p class="lede">כל מה שצריך לבר מצווה בפרשת {he}: חלוקת העליות עם האזנה לכל עלייה, המפטיר וההפטרה – עם טעמי המקרא.</p>
+    <p class="lede">{"פרשת וזאת הברכה נקראת בשמחת תורה (ולא בשבת), ואחריה מתחילים מחדש בבראשית. כאן: חלוקת העליות עם האזנה, המפטיר של שמחת תורה וההפטרה – עם טעמי המקרא." if p.get("simchat_torah") else f"כל מה שצריך לבר מצווה בפרשת {he}: חלוקת העליות עם האזנה לכל עלייה, המפטיר וההפטרה – עם טעמי המקרא."}</p>
     <div class="hero-ctas"><a class="btn btn-solid" href="{B.WA}?text={wa}" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>לימוד הפרשה עם ליאור</a><a class="btn btn-line" href="/parasha/">מחשבון הפרשה</a></div>
   </div>
 </section>

@@ -576,6 +576,7 @@ if __name__ == "__main__":
     import review as RV; RV.page()
     import card as CD; CD.vcard(); CD.page()
     import legal; legal.run()
+    import notfound; notfound.run()
     import social; social.run()
     import cachebust; cachebust.run()
     print("built", [p["slug"] for p in PAGES] + ["parasha"])
