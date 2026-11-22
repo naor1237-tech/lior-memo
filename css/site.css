@@ -12,7 +12,7 @@
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;overflow-x:clip}
-body{margin:0;background:var(--black);color:var(--text);font-family:var(--sans);font-weight:400;font-size:18px;line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--black);color:var(--text);font-family:var(--sans);font-weight:400;font-size:18px;line-height:1.75;-webkit-font-smoothing:antialiased}
 img,video{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 button{font:inherit;cursor:pointer;color:inherit}
@@ -525,3 +525,182 @@ dialog.lb::backdrop{background:rgba(6,5,4,.95);backdrop-filter:blur(10px)}
 .dc-qr svg{width:100%;height:auto;display:block}
 .dc-qr p{margin:8px 0 0;color:var(--black);font-size:13px;font-weight:600}
 .dc-num{margin:20px 0 0;font-family:var(--display);font-size:26px;color:var(--gold-l)}
+
+/* ===================================================================
+   MOBILE & CROSS-BROWSER POLISH
+   =================================================================== */
+html{overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+@supports not (overflow:clip){body{overflow-x:hidden}}
+body{-webkit-tap-highlight-color:transparent;text-rendering:optimizeLegibility}
+.hero{min-height:100vh;min-height:100svh}
+.dcard{min-height:100vh;min-height:100svh}
+img,video,svg{max-width:100%}
+.fab{bottom:calc(18px + env(safe-area-inset-bottom));left:calc(16px + env(safe-area-inset-left))}
+
+/* hamburger + mobile menu */
+.menu-btn{display:none;width:46px;height:46px;border:1px solid var(--line);border-radius:50%;background:rgba(11,10,9,.4);flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0}
+.menu-btn i{display:block;width:18px;height:1.6px;background:var(--gold-l);transition:transform .35s var(--ease),opacity .25s}
+.menu-open .menu-btn i:nth-child(1){transform:translateY(6.6px) rotate(45deg)}
+.menu-open .menu-btn i:nth-child(2){opacity:0}
+.menu-open .menu-btn i:nth-child(3){transform:translateY(-6.6px) rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:45;background:rgba(11,10,9,.97);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);display:flex;flex-direction:column;padding:96px 24px calc(30px + env(safe-area-inset-bottom));overflow-y:auto;animation:mnavIn .35s var(--ease)}
+.mnav[hidden]{display:none}
+@keyframes mnavIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+.mnav>a{font-family:var(--display);font-size:25px;color:var(--ivory);padding:14px 4px;border-bottom:1px solid var(--line-soft);line-height:1.25}
+.mnav>a:active{color:var(--gold-l)}
+.mnav-cta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
+.mnav-cta .btn{padding:15px 10px;letter-spacing:.04em}
+.btn-wa{background:#25d366;border-color:#25d366;color:#05290f}
+.menu-open{overflow:hidden}
+.menu-open .fab{display:none}
+
+@media (max-width:900px){
+  .menu-btn{display:flex}
+  .nav{padding:14px 0}
+  .nav .wrap{grid-template-columns:1fr auto}
+  .nav-cta{gap:8px}
+  .logo{font-size:24px}
+  .logo small{font-size:9px;letter-spacing:.32em}
+}
+
+/* ---------- phones ---------- */
+@media (max-width:600px){
+  body{font-size:17px;line-height:1.7}
+  .wrap{width:calc(100% - 36px)}
+  .sec{padding:72px 0}
+  .sec-head{margin-bottom:36px}
+  .h2{font-size:clamp(34px,10vw,44px);margin:14px 0 16px}
+  .label{font-size:11.5px;letter-spacing:.16em;gap:10px;line-height:1.6}
+  .label::before{width:22px;flex:none}
+  .lede{font-size:17px}
+  .btn{letter-spacing:.06em;padding:16px 22px;font-size:15.5px}
+
+  /* hero: Lior's video becomes the full-screen background */
+  .hero{padding:0;align-items:flex-end}
+  .hero-bg{display:none}
+  .hero .reel-frame{position:absolute;inset:0;width:100%;max-width:none;margin:0;z-index:0;translate:none!important}
+  .hero .reel-frame::before,.hero .reel-frame .corner,.hero .reel-play{display:none}
+  .hero .reel-frame .shell{position:absolute;top:0;left:0;right:0;height:72%;aspect-ratio:auto;background:var(--black)}
+  .hero .reel-frame .shell video{object-position:50% 30%}
+  .hero .reel-frame .shell::after{background:linear-gradient(to top,var(--black) 0%,rgba(11,10,9,.75) 28%,rgba(11,10,9,.1) 62%,rgba(11,10,9,.5) 100%)}
+  .hero .hero-grid{display:block;position:static;padding:120px 0 calc(96px + env(safe-area-inset-bottom))}
+  .hero .hero-grid>.rv:first-child{position:relative;z-index:2}
+  .hero .label{margin-bottom:14px;color:var(--gold-l)}
+  .hero h1{font-size:clamp(62px,19vw,84px)}
+  .hero h1 .l2{padding-inline-start:.5em}
+  .hero .roles{margin-top:16px;gap:4px 14px;font-size:17px}
+  .hero .roles li{gap:14px}
+  .hero p.lede{margin-top:14px;color:#e4dccf;font-size:16.5px}
+  .hero-ctas{display:grid;grid-template-columns:1fr;gap:10px;margin-top:24px}
+  .hero-ctas .btn{width:100%}
+  .hero-ctas .btn-line{background:rgba(11,10,9,.45)}
+
+  .statement{padding:80px 0 70px}
+  .statement p{font-size:clamp(26px,7.6vw,34px)}
+  .band{padding:24px 0}
+  .band-track{font-size:clamp(56px,17vw,80px);gap:34px}
+
+  .journey a{padding:26px 4px}
+  .journey .n{font-size:38px}
+  .svc{padding:24px 0}
+  .svc h3{font-size:26px}
+  .svc p{font-size:16px}
+
+  .feature{padding:72px 0}
+  .feature-player{width:min(300px,80vw)}
+  .feature li{font-size:15px}
+
+  .tabs{gap:18px;overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{white-space:nowrap;font-size:14px;letter-spacing:.08em}
+  .item h3{font-size:24px}
+
+  .about{gap:70px}
+  .about-body p{font-size:17px}
+  .facts b{font-size:24px}
+  .portrait figcaption{bottom:-44px}
+
+  .honor-media{max-width:none}
+  .steps .step{padding:26px 0}
+  .step .n{font-size:48px}
+
+  .contact{gap:48px}
+  .phone{font-size:clamp(40px,12vw,54px);margin:28px 0 8px}
+  .contact .alt{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .contact .alt .btn{padding:15px 10px}
+  .f input,.f select,.f textarea{font-size:16px}
+
+  .cta-band{padding:80px 0}
+  .cta-band .row{display:grid;grid-template-columns:1fr;gap:10px}
+  .cta-band .row .btn{width:100%}
+
+  footer{padding:50px 0 110px}
+  .foot{flex-direction:column;align-items:flex-start;gap:18px}
+  .foot-links{flex-wrap:wrap;gap:10px 18px}
+  .gift{flex-direction:column;gap:8px}
+
+  /* inner pages */
+  .page-hero{padding:110px 0 56px}
+  .page-hero h1{font-size:clamp(42px,12.5vw,58px)}
+  .page-hero .reel-frame{width:min(250px,70%)}
+  .crumbs{font-size:12px;letter-spacing:.06em;margin-bottom:18px}
+  .prose h2{font-size:30px;margin-top:50px}
+  .prose p{font-size:17.5px}
+  .aside{padding:26px 20px}
+  .faq summary{font-size:20px;padding:20px 0}
+  .faq .ans{font-size:16.5px}
+  .rel{padding:22px 18px}
+  .rel b{font-size:22px}
+
+  /* oud */
+  .oud-grid{gap:40px}
+  .strum .s{height:42px}
+  .mq{font-size:15px;padding:8px 13px}
+  .mq-foot .btn{width:100%}
+
+  /* parasha */
+  .calc{padding:24px 16px}
+  .result .big{font-size:clamp(38px,11vw,52px)}
+  .result dd{font-size:18px}
+  .note-prep{font-size:15.5px;padding:16px 16px}
+
+  /* prayers */
+  .pr-hero{padding:110px 0 44px}
+  .pr-wrap{padding:36px 0 90px}
+  .pr-text{font-size:calc(21px * var(--fs))}
+  .pr-tools{top:70px;gap:6px}
+  .pr-tools button{padding:7px 12px;font-size:14px}
+  .pr-toc{padding:14px}
+  .pr-toc a{font-size:14px;padding:5px 10px}
+
+  /* lightbox */
+  .lb-btn{width:44px;height:44px}
+}
+
+/* small phones (iPhone SE / Galaxy A) */
+@media (max-width:370px){
+  .hero h1{font-size:56px}
+  .logo{font-size:21px}
+  .icon-btn,.menu-btn{width:42px;height:42px}
+  .contact .alt,.mnav-cta{grid-template-columns:1fr}
+  .dc-main{grid-template-columns:1fr 1fr}
+  .dc-main .dc-btn:last-child{grid-column:1/-1}
+  .pads{gap:6px}
+}
+
+/* tablets */
+@media (min-width:601px) and (max-width:900px){
+  .hero-grid{gap:50px}
+  .hero .reel-frame{width:min(300px,60%)}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .item,.item.w{grid-column:span 1}
+}
+
+/* touch devices: lighter effects for smooth scrolling */
+@media (hover:none),(pointer:coarse){
+  body::after{animation:none;opacity:.035}
+  .item:hover img,.feature-player button:hover img,.honor-media button:hover img{transform:none}
+  .svc:hover{padding-inline:0}
+}
+@media (prefers-reduced-motion:reduce){.mnav{animation:none}}

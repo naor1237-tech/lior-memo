@@ -191,9 +191,21 @@ def nav(active=""):
     <div class="nav-cta">
       <a class="btn btn-line" href="/#contact">הזמנת אירוע</a>
       <a class="icon-btn" href="{WA}?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%9C%D7%99%D7%90%D7%95%D7%A8%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8" target="_blank" rel="noopener" aria-label="וואטסאפ"><svg><use href="#i-wa"/></svg></a>
+      <button type="button" class="menu-btn" id="menuBtn" aria-label="פתיחת תפריט" aria-expanded="false" aria-controls="mnav"><i></i><i></i><i></i></button>
     </div>
   </div>
-</header>'''
+</header>
+<nav class="mnav" id="mnav" aria-label="תפריט" hidden>
+  <a href="/">דף הבית</a>
+  <a href="/hachana-bar-mitzvah/">ליווי והכנה לבר מצווה</a>
+  <a href="/parasha/">מה הפרשה של הבר מצווה?</a>
+  <a href="/bar-mitzvah/">עלייה לתורה עם נגנים</a>
+  <a href="/shabbat-chatan/">שבת חתן ושבע ברכות</a>
+  <a href="/nagan-oud/">נגן עוד – נסו לנגן</a>
+  <a href="/#gallery">סרטונים מהבמה</a>
+  <a href="/#contact">הזמנת אירוע</a>
+  <div class="mnav-cta"><a class="btn btn-solid" href="tel:+972506737715"><svg><use href="#i-phone"/></svg>050-6737715</a><a class="btn btn-wa" href="{WA}" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>וואטסאפ</a></div>
+</nav>'''
 
 def footer():
     links = "".join(f'<a href="/{p["slug"]}/">{p["nav"] if p["slug"]!="parasha" else "מחשבון פרשה"}</a>' for p in PAGES+[PARASHA])
@@ -512,4 +524,5 @@ if __name__ == "__main__":
     PR.hub(); PR.add_to_sitemap()
     import review as RV; RV.page()
     import card as CD; CD.vcard(); CD.page()
+    import cachebust; cachebust.run()
     print("built", [p["slug"] for p in PAGES] + ["parasha"])

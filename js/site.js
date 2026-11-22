@@ -58,10 +58,21 @@
     lb.addEventListener('keydown', function(e){ if (e.key==='ArrowLeft') show(cur+1); if (e.key==='ArrowRight') show(cur-1); });
   }
 
+  // mobile menu
+  var mb = document.getElementById('menuBtn'), mn = document.getElementById('mnav');
+  if (mb && mn){
+    function setMenu(open){ mn.hidden = !open; mb.setAttribute('aria-expanded', open); document.body.classList.toggle('menu-open', open); }
+    mb.addEventListener('click', function(){ setMenu(mn.hidden); });
+    mn.addEventListener('click', function(e){ if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setMenu(false); });
+  }
+
   // nav
   var nav = document.getElementById('nav');
   function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 40); }
   window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  // phones get a vertical close-up of Lior as the hero background
+  if (hero && window.matchMedia('(max-width:600px)').matches){ hero.poster = '/media/hero-m.jpg'; hero.src = '/media/hero-m.mp4'; if (!reduce){ var hp = hero.play(); if (hp && hp.catch) hp.catch(function(){}); } }
   if (reduce && hero){ hero.removeAttribute('autoplay'); hero.pause(); }
 
   // scroll-linked motion
