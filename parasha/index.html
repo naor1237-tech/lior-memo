@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Frank+Ruhl+Libre:wght@400;500;700&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/site.css?v=cd3bf6a2">
+<link rel="stylesheet" href="/css/site.css?v=ab4a0505">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "מחשבון פרשת בר מצווה", "url": "https://lior-mamo.netlify.app/parasha/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "he", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "ILS"}, "provider": {"@id": "https://lior-mamo.netlify.app/#business"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ליאור ממו", "item": "https://lior-mamo.netlify.app/"}, {"@type": "ListItem", "position": 2, "name": "מחשבון פרשת בר מצווה", "item": "https://lior-mamo.netlify.app/parasha/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "איך יודעים מה הפרשה לבר מצווה?", "acceptedAnswer": {"@type": "Answer", "text": "לוקחים את התאריך העברי של יום הלידה, מוסיפים 13 שנים עבריות, ובודקים איזו פרשה נקראת בשבת שחלה ביום ההולדת העברי או מיד אחריו. המחשבון בעמוד הזה עושה את כל החישוב בשבילכם."}}, {"@type": "Question", "name": "למה חשוב לסמן אם הלידה הייתה אחרי השקיעה?", "acceptedAnswer": {"@type": "Answer", "text": "היום העברי מתחיל בשקיעה. תינוק שנולד בערב, אחרי השקיעה, נולד בעצם ביום העברי הבא – ולכן גם תאריך הבר מצווה ואולי הפרשה משתנים."}}, {"@type": "Question", "name": "למה יש הבדל בין ישראל לחוץ לארץ?", "acceptedAnswer": {"@type": "Answer", "text": "בחלק מהשנים סדר הפרשות בישראל ובחוץ לארץ שונה לכמה שבועות (בגלל יום טוב שני של גלויות). לכן חשוב לבחור איפה תתקיים הבר מצווה."}}, {"@type": "Question", "name": "מה קורה אם נולדתי באדר בשנה מעוברת?", "acceptedAnswer": {"@type": "Answer", "text": "בשנה מעוברת יש שני חודשי אדר. נער שנולד באדר בשנה רגילה וחוגג בשנה מעוברת – לרוב חוגג באדר ב'. נער שנולד באדר א' או אדר ב' וחוגג בשנה רגילה – חוגג באדר. במקרים כאלה כדאי לאמת עם רב הקהילה."}}, {"@type": "Question", "name": "האם המחשבון מדויק?", "acceptedAnswer": {"@type": "Answer", "text": "המחשבון מבוסס על לוח השנה העברי של Hebcal. הוא מדויק ברוב המקרים, אבל במקרים מיוחדים (אדר בשנה מעוברת, 30 בחשוון או בכסלו, או שבת שחלה ביום טוב) מומלץ לאמת עם רב או חזן."}}]}]}</script>
 </head>
 <body>
@@ -102,6 +102,7 @@
           <li><b>שלב 3</b> – מוצאים את השבת שחלה ביום הזה או מיד אחריו – זו שבת העלייה לתורה.</li>
           <li><b>שלב 4</b> – בודקים איזו פרשה והפטרה נקראות באותה שבת, בישראל או בחוץ לארץ.</li>
         </ul>
+        <p class="upd" style="font-size:14px;color:var(--muted)">נתוני הלוח העברי: <a href="https://www.hebcal.com" target="_blank" rel="noopener">Hebcal.com</a> (רישיון CC BY 4.0).</p>
         <p>הרבה משפחות עורכות את העלייה לתורה גם ביום שני או חמישי שאחרי יום ההולדת – גם אז קוראים בתורה (מתחילת הפרשה של השבת הקרובה).</p>
         <h2>ובאיזו פרשה נולדתם?</h2>
         <p>פרשת הבר מצווה נקבעת לפי יום הולדת 13 – אבל יש גם את <b>פרשת הלידה</b>: הפרשה של השבוע שבו נולדתם. אפשר לגלות אותה ב<a href="https://hilel.link/parasha?utm_source=lior-mamo&amp;utm_medium=referral&amp;utm_campaign=parasha-crosslink" target="_blank" rel="noopener">מחשבון פרשת הלידה של שירה הלל</a>.</p>
@@ -147,6 +148,7 @@
       <nav class="foot-links" aria-label="קישורים"><a href="/bar-mitzvah/">בר מצווה</a><a href="/shabbat-chatan/">שבת חתן</a><a href="/hachana-bar-mitzvah/">הכנה לבר מצווה</a><a href="/nagan-oud/">נגן עוד</a><a href="/parasha/">מחשבון פרשה</a></nav>
       <div class="foot-links"><a href="tel:+972506737715" dir="ltr">050-6737715</a><a href="https://wa.me/972506737715" target="_blank" rel="noopener">וואטסאפ</a></div>
     </div>
+    <nav class="legal-links" aria-label="מידע משפטי"><a href="/negishut/">הצהרת נגישות</a><a href="/privacy/">מדיניות פרטיות</a><a href="/terms/">תנאי שימוש וזכויות יוצרים</a></nav>
     <div class="gift">
       <span>© <span id="yr">2026</span> ליאור ממו · חזן, פייטן ונגן עוד · ירושלים</span>
       <span>האתר נבנה במתנה, בהוקרה לאנשי המילואים, ע"י <a href="https://solutions.hilel.link/?utm_source=lior-mamo&utm_medium=footer&utm_campaign=gift-site" target="_blank" rel="noopener">הלל פתרונות</a></span>
@@ -168,5 +170,6 @@
 
 <script src="/js/site.js?v=c82849b5" defer></script>
 <script src="/js/parasha.js?v=4996cd03" defer></script>
+<script src="/js/a11y.js?v=28824001" defer></script>
 </body>
 </html>

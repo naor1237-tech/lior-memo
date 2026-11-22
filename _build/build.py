@@ -218,6 +218,7 @@ def footer():
       <nav class="foot-links" aria-label="קישורים">{links}</nav>
       <div class="foot-links"><a href="tel:{PHONE_INTL.replace('-','')}" dir="ltr">{PHONE}</a><a href="{WA}" target="_blank" rel="noopener">וואטסאפ</a></div>
     </div>
+    <nav class="legal-links" aria-label="מידע משפטי"><a href="/negishut/">הצהרת נגישות</a><a href="/privacy/">מדיניות פרטיות</a><a href="/terms/">תנאי שימוש וזכויות יוצרים</a></nav>
     <div class="gift">
       <span>© <span id="yr">2026</span> ליאור ממו · חזן, פייטן ונגן עוד · ירושלים</span>
       <span>האתר נבנה במתנה, בהוקרה לאנשי המילואים, ע"י <a href="https://solutions.hilel.link/?utm_source=lior-mamo&utm_medium=footer&utm_campaign=gift-site" target="_blank" rel="noopener">הלל פתרונות</a></span>
@@ -449,6 +450,7 @@ def parasha_page():
           <li><b>שלב 3</b> – מוצאים את השבת שחלה ביום הזה או מיד אחריו – זו שבת העלייה לתורה.</li>
           <li><b>שלב 4</b> – בודקים איזו פרשה והפטרה נקראות באותה שבת, בישראל או בחוץ לארץ.</li>
         </ul>
+        <p class="upd" style="font-size:14px;color:var(--muted)">נתוני הלוח העברי: <a href="https://www.hebcal.com" target="_blank" rel="noopener">Hebcal.com</a> (רישיון CC BY 4.0).</p>
         <p>הרבה משפחות עורכות את העלייה לתורה גם ביום שני או חמישי שאחרי יום ההולדת – גם אז קוראים בתורה (מתחילת הפרשה של השבת הקרובה).</p>
         <h2>ובאיזו פרשה נולדתם?</h2>
         <p>פרשת הבר מצווה נקבעת לפי יום הולדת 13 – אבל יש גם את <b>פרשת הלידה</b>: הפרשה של השבוע שבו נולדתם. אפשר לגלות אותה ב<a href="https://hilel.link/parasha?utm_source=lior-mamo&amp;utm_medium=referral&amp;utm_campaign=parasha-crosslink" target="_blank" rel="noopener">מחשבון פרשת הלידה של שירה הלל</a>.</p>
@@ -514,6 +516,8 @@ def sitemap():
                      f"<video:description>{html.escape(d)}</video:description><video:content_loc>{SITE}/v/{v}.mp4</video:content_loc>"
                      f"<video:duration>{secs}</video:duration><video:publication_date>{UPLOAD}</video:publication_date></video:video>")
         x.append("  </url>")
+    for lp in ("negishut","privacy","terms"):
+        x.append(f"  <url><loc>{SITE}/{lp}/</loc><lastmod>{UPLOAD}</lastmod><priority>0.3</priority></url>")
     x.append("</urlset>")
     open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write("\n".join(x) + "\n")
 
@@ -526,5 +530,6 @@ if __name__ == "__main__":
     PR.hub(); PR.add_to_sitemap()
     import review as RV; RV.page()
     import card as CD; CD.vcard(); CD.page()
+    import legal; legal.run()
     import cachebust; cachebust.run()
     print("built", [p["slug"] for p in PAGES] + ["parasha"])
