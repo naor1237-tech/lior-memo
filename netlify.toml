@@ -28,3 +28,8 @@
   [headers.values]
     Content-Type = "text/vcard; charset=utf-8"
     Content-Disposition = "attachment; filename=lior-mamo.vcf"
+
+[[headers]]
+  for = "/files/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
