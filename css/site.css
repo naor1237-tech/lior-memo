@@ -704,3 +704,16 @@ img,video,svg{max-width:100%}
   .svc:hover{padding-inline:0}
 }
 @media (prefers-reduced-motion:reduce){.mnav{animation:none}}
+
+/* journey + honor CTAs */
+.jcta{margin-top:44px;display:flex;gap:14px;flex-wrap:wrap}
+.honor-cta{margin-top:40px}
+@media (max-width:900px){
+  .nav,.nav.scrolled{background:rgba(11,10,9,.97);-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom:1px solid var(--line-soft)}
+}
+@media (max-width:600px){
+  .jcta{display:grid;grid-template-columns:1fr;gap:10px;margin-top:30px}
+  .jcta .btn,.honor-cta .btn{width:100%}
+  .honor-cta{margin-top:28px}
+  #bar-mitzvah-journey{padding-bottom:56px}
+}
