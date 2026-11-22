@@ -12,7 +12,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 VIDEOS = {
   "showreel": ("שואוריל – ליאור ממו, חזן ופייטן", "קטעים נבחרים מעליות לתורה, ערבי פיוט ונגינה והופעה לחיילים במילואים.", "PT37S"),
-  "yeled-gadol": ("״ילד גדול״ – עלייה לתורה בבית הכנסת משכן יצחק, ירושלים", "ליאור ממו שר ״ילד גדול״ בעלייה לתורה בבית הכנסת ״משכן יצחק״ בירושלים, בליווי קלידים.", "PT1M35S"),
+  "yeled-gadol": ("״ילד גדול״ – עלייה לתורה בבית הכנסת משכן יצחק, ירושלים", "ליאור ממו שר ״ילד גדול״ בעלייה לתורה בבית הכנסת ״משכן יצחק״ בירושלים, בליווי קלידים.", "PT41S"),
+  "birkat-kohanim": ("ברכת כהנים – ״ישא ה׳ פניו אליך״ בעלייה לתורה", "ליאור ממו שר ברכת כהנים – ״ישא ה׳ פניו אליך וישם לך שלום״ – בעלייה לתורה, בליווי קלידים.", "PT56S"),
   "hazan-tefillin": ("חזנות בעלייה לתורה – ליאור ממו", "תפילה חגיגית ושירה עם הקהל בעלייה לתורה.", "PT1M31S"),
   "shivchei-yerushalayim": ("״שבחי ירושלים״ – עלייה לתורה בליווי הרכב נגנים", "ליאור ממו מעלה לתורה למשפחת כהן, בליווי הרכב נגנים.", "PT55S"),
   "ya-ozel": ("״יא עוזל פלפלו״ – עוד וכינור", "עוד: ליאור ממו · כינור: דניאל זכאי.", "PT48S"),
@@ -21,7 +22,8 @@ VIDEOS = {
   "ensemble": ("ערב מוזיקה מזרחית – עוד, כינור וכלי הקשה", "הרכב מזרחי עם ליאור ממו בעוד.", "PT25S"),
 }
 CARD = {  # gallery card text
-  "yeled-gadol": ("״ילד גדול״", "עלייה לתורה · משכן יצחק, ירושלים", "1:35"),
+  "yeled-gadol": ("״ילד גדול״", "עלייה לתורה · משכן יצחק, ירושלים", "0:41"),
+  "birkat-kohanim": ("ברכת כהנים", "״ישא ה׳ פניו אליך״", "0:56"),
   "hazan-tefillin": ("חזנות בעלייה לתורה", "תפילה חגיגית ושירה עם הקהל", "1:31"),
   "shivchei-yerushalayim": ("״שבחי ירושלים״", "עלייה לתורה בליווי הרכב נגנים", "0:55"),
   "ya-ozel": ("״יא עוזל פלפלו״", "עוד וכינור", "0:48"),
@@ -60,7 +62,7 @@ PAGES = [
 <h3>3. יום השמחה</h3>
 <p>ליאור מגיע מוכן ומתואם, ואתם פשוט נהנים מהרגע.</p>
 """,
-  vids=["yeled-gadol","shivchei-yerushalayim","hazan-tefillin"],
+  vids=["yeled-gadol","birkat-kohanim","shivchei-yerushalayim"],
   faq=[
    ("כמה עולה פייטן לבר מצווה?", "המחיר תלוי בסוג האירוע (עלייה לתורה בלבד או גם סעודה), במשך הזמן, במיקום ובהרכב הנגנים. שלחו את הפרטים בוואטסאפ ותקבלו הצעת מחיר מותאמת – בלי התחייבות."),
    ("האם ליאור מגיע לבית הכנסת שלנו?", "כן – העליות לתורה מתקיימות בבית הכנסת שתבחרו. ליאור פועל בירושלים והסביבה; לאירועים במקומות אחרים צרו קשר לבדיקת זמינות."),
@@ -276,7 +278,7 @@ def head(title, desc, path, ld, image="og.jpg"):
 def vcard(v):
     t, s, d = CARD[v]
     return (f'<button class="item rv" data-open="{v}" aria-label="צפייה: {strip_tags(t).strip("״")}">'
-            f'<span class="media"><img src="/media/{v}.jpg" alt="{html.escape(VIDEOS[v][0], quote=True)}" loading="lazy"><span class="ring"><svg><use href="#i-play"/></svg></span></span>'
+            f'<span class="media"><img src="/media/{v}.jpg?v=4" alt="{html.escape(VIDEOS[v][0], quote=True)}" loading="lazy"><span class="ring"><svg><use href="#i-play"/></svg></span></span>'
             f'<span class="meta"><span><h3>{t}</h3><span class="sub">{s}</span></span><span class="dur">{d}</span></span></button>')
 
 def faq_html(faq):
@@ -498,7 +500,7 @@ def patch_home():
     open(f, "w", encoding="utf-8").write(s)
 
 def sitemap():
-    urls = [("/", "1.0", ["showreel","yeled-gadol","hazan-tefillin","shivchei-yerushalayim","ya-ozel","zman-lisloach","miluim","ensemble"])]
+    urls = [("/", "1.0", ["showreel","yeled-gadol","birkat-kohanim","hazan-tefillin","shivchei-yerushalayim","ya-ozel","zman-lisloach","miluim","ensemble"])]
     urls += [(f'/{p["slug"]}/', "0.9", p["vids"]) for p in PAGES] + [("/parasha/", "0.8", [])]
     x = ['<?xml version="1.0" encoding="UTF-8"?>',
          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">']

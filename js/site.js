@@ -1,9 +1,10 @@
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var MEDIA = '/media/', STREAM = location.hostname.endsWith('netlify.app') ? '/v/' : '/media/';
+  var VER = '?v=4', MEDIA = '/media/', STREAM = location.hostname.endsWith('netlify.app') ? '/v/' : '/media/';
   var V = [
     {id:'showreel', cat:'reel', title:'שואוריל', sub:'רגעים נבחרים מהבמה', dur:'', hide:true},
-    {id:'yeled-gadol', pos:'78% 50%', cat:'shul', title:'״ילד גדול״', sub:'עלייה לתורה · בית הכנסת "משכן יצחק", ירושלים', dur:'1:35'},
+    {id:'yeled-gadol', cat:'shul', title:'״ילד גדול״', sub:'עלייה לתורה · בית הכנסת "משכן יצחק", ירושלים', dur:'0:41'},
+    {id:'birkat-kohanim', cat:'shul', title:'ברכת כהנים', sub:'״ישא ה׳ פניו אליך״ – בעלייה לתורה', dur:'0:56'},
     {id:'ya-ozel', cat:'music', title:'״יא עוזל פלפלו״', sub:'עוד: ליאור ממו · כינור: דניאל זכאי', dur:'0:48', w:true},
     {id:'hazan-tefillin', cat:'shul', title:'חזנות בעלייה לתורה', sub:'תפילה חגיגית ושירה עם הקהל', dur:'1:31'},
     {id:'shivchei-yerushalayim', cat:'shul', title:'״שבחי ירושלים״', sub:'עלייה לתורה למשפחת כהן, בליווי הרכב נגנים', dur:'0:55', w:true},
@@ -18,7 +19,7 @@
   if (gal){
     gal.innerHTML = visible.map(function(v){
       return '<button class="item rv'+(v.w?' w':'')+'" data-open="'+v.id+'" data-cat="'+v.cat+'" aria-label="צפייה: '+v.title.replace(/[״"]/g,'')+'">'+
-        '<span class="media"><img src="'+MEDIA+v.id+'.jpg" alt="'+v.title.replace(/[״"]/g,'')+' – '+v.sub.replace(/"/g,'')+'" loading="lazy"'+(v.pos?' style="object-position:'+v.pos+'"':'')+'><span class="ring"><svg><use href="#i-play"/></svg></span></span>'+
+        '<span class="media"><img src="'+MEDIA+v.id+'.jpg'+VER+'" alt="'+v.title.replace(/[״"]/g,'')+' – '+v.sub.replace(/"/g,'')+'" loading="lazy"'+(v.pos?' style="object-position:'+v.pos+'"':'')+'><span class="ring"><svg><use href="#i-play"/></svg></span></span>'+
         '<span class="meta"><span><h3>'+v.title+'</h3><span class="sub">'+v.sub+'</span></span><span class="dur">'+v.dur+'</span></span></button>';
     }).join('');
     document.querySelectorAll('.tab').forEach(function(t){
@@ -36,7 +37,7 @@
   if (lb){
     var show = function(i){
       cur = (i + list.length) % list.length; var v = list[cur];
-      vid.src = STREAM+v.id+'.mp4'; vid.poster = MEDIA+v.id+'.jpg';
+      vid.src = STREAM+v.id+'.mp4'+VER; vid.poster = MEDIA+v.id+'.jpg'+VER;
       document.getElementById('lbT').textContent = v.title; document.getElementById('lbS').textContent = v.sub;
       var p = vid.play(); if (p && p.catch) p.catch(function(){});
     };
