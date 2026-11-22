@@ -6,19 +6,20 @@
 <title>ליאור ממו · חזן, פייטן, בעל קורא ונגן עוד לאירועים</title>
 <meta name="description" content="ליאור ממו – חזן, פייטן, קורא בתורה ונגן עוד. הכנה לבר מצווה, עליות לתורה, שבתות חתן, פיוטים וזמר לאירועים, בליווי נגנים. ירושלים והסביבה. 050-6737715">
 <meta name="keywords" content="חזן לבר מצווה, הכנה לבר מצווה, עלייה לתורה, פייטן לאירועים, נגן עוד, שבת חתן, חזן ירושלים, קורא בתורה, פיוטים, הרכב מזרחי, ליאור ממו">
-<meta name="theme-color" content="#0f1420">
+<meta name="theme-color" content="#0b0a09">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://lior-memo.netlify.app/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="he_IL">
 <meta property="og:title" content="ליאור ממו · חזן, פייטן ונגן עוד לאירועים">
 <meta property="og:description" content="קול שמרומם את הרגע – בר מצווה, עליות לתורה, שבתות חתן ופיוטים בליווי נגנים.">
-<link rel="canonical" href="https://naor1237-tech.github.io/lior-memo/">
-<meta property="og:url" content="https://naor1237-tech.github.io/lior-memo/">
-<meta property="og:image" content="https://naor1237-tech.github.io/lior-memo/media/og.jpg">
+<meta property="og:url" content="https://lior-memo.netlify.app/">
+<meta property="og:image" content="https://lior-memo.netlify.app/media/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Frank+Ruhl+Libre:wght@300;400;500&family=Assistant:wght@200;300;400;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="media/hero.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -27,474 +28,546 @@
   "description": "חזן, פייטן, קורא בתורה ונגן עוד לכל אירוע: הכנה לבר מצווה, עליות לתורה, שבתות חתן, פיוטים וזמר לאירועים.",
   "telephone": "+972-50-673-7715",
   "areaServed": "ישראל",
-  "image": "https://naor1237-tech.github.io/lior-memo/media/og.jpg",
-  "url": "https://naor1237-tech.github.io/lior-memo/",
+  "image": "https://lior-memo.netlify.app/media/og.jpg",
+  "url": "https://lior-memo.netlify.app/",
   "founder": {"@type": "Person", "name": "ליאור ממו", "jobTitle": "חזן, פייטן ונגן עוד"}
 }
 </script>
 <style>
 :root{
-  --ink:#0f1420; --ink-2:#161d2c; --ink-3:#1f2839;
-  --stone:#f4ecdf; --stone-2:#e9dcc6; --sand:#cdb68f;
-  --gold:#d6a84f; --gold-2:#f0cf86; --gold-deep:#a87a25;
-  --text:#f3ede2; --muted:#b6ad9f; --text-dark:#26201a; --muted-dark:#6d6152;
-  --wa:#25d366;
-  --r:22px; --max:1180px;
-  --serif:"Frank Ruhl Libre", "David", serif;
-  --sans:"Heebo", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --black:#0b0a09; --black-2:#121110; --black-3:#1a1816;
+  --ivory:#f3ece0; --ivory-2:#e8dfcf; --paper:#faf6ef;
+  --gold:#c9a96a; --gold-l:#e6cf9a; --gold-d:#9c7c3f;
+  --line:rgba(201,169,106,.28); --line-soft:rgba(201,169,106,.14);
+  --text:#efe8dc; --muted:#a39a8c; --dim:#6f685e;
+  --text-dark:#1d1a16; --muted-dark:#6e6456;
+  --display:"Bellefair","Frank Ruhl Libre",serif;
+  --serif:"Frank Ruhl Libre","David",serif;
+  --sans:"Assistant",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --max:1240px; --ease:cubic-bezier(.2,.7,.1,1);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.7;overflow-x:hidden}
+html{-webkit-text-size-adjust:100%;overflow-x:clip}
+body{margin:0;background:var(--black);color:var(--text);font-family:var(--sans);font-weight:300;font-size:18px;line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img,video{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer}
-.wrap{width:min(var(--max),100% - 32px);margin-inline:auto;position:relative}
-.serif{font-family:var(--serif)}
-:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px;border-radius:6px}
+button{font:inherit;cursor:pointer;color:inherit}
+::selection{background:var(--gold);color:var(--black)}
+.wrap{width:min(var(--max),100% - 40px);margin-inline:auto;position:relative}
+:focus-visible{outline:1px solid var(--gold-l);outline-offset:4px}
 
-/* ornament pattern */
-.pattern{position:absolute;inset:0;pointer-events:none;opacity:.07;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23d6a84f' stroke-width='1'%3E%3Cpath d='M40 4 L48 32 L76 40 L48 48 L40 76 L32 48 L4 40 L32 32Z'/%3E%3Ccircle cx='40' cy='40' r='10'/%3E%3C/g%3E%3C/svg%3E");
-  background-size:80px 80px}
+/* film grain */
+body::after{content:"";position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.055;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 1.2s steps(4) infinite}
+@keyframes grain{0%{background-position:0 0}25%{background-position:-40px 30px}50%{background-position:30px -50px}75%{background-position:-30px -20px}100%{background-position:0 0}}
+
+/* preloader */
+.loader{position:fixed;inset:0;z-index:100;background:var(--black);display:grid;place-items:center;transition:opacity .9s var(--ease),visibility .9s}
+.loader.done{opacity:0;visibility:hidden}
+.loader .mono{font-family:var(--display);font-size:64px;color:var(--gold-l);letter-spacing:.04em;position:relative;padding:14px 26px}
+.loader .mono::before,.loader .mono::after{content:"";position:absolute;inset-inline:0;height:1px;background:var(--gold);transform:scaleX(0);animation:draw 1s .1s var(--ease) forwards}
+.loader .mono::before{top:0}.loader .mono::after{bottom:0;animation-delay:.3s}
+@keyframes draw{to{transform:scaleX(1)}}
+
+/* type */
+.label{font-family:var(--sans);font-weight:400;font-size:13px;letter-spacing:.32em;color:var(--gold);display:inline-flex;align-items:center;gap:14px}
+.label::before{content:"";width:34px;height:1px;background:currentColor}
+.display{font-family:var(--display);font-weight:400;line-height:.98;letter-spacing:-.005em}
+.h2{font-family:var(--display);font-weight:400;font-size:clamp(40px,6vw,84px);line-height:1.02;margin:22px 0 24px}
+.h2 em{font-style:normal;color:var(--gold-l)}
+.lede{color:var(--muted);font-size:clamp(17px,1.6vw,20px);max-width:560px;margin:0}
+.orn{display:flex;align-items:center;justify-content:center;gap:16px;color:var(--gold)}
+.orn::before,.orn::after{content:"";height:1px;width:80px;background:linear-gradient(to left,var(--gold),transparent)}
+.orn::after{background:linear-gradient(to right,var(--gold),transparent)}
+.orn svg{width:16px;height:16px}
 
 /* buttons */
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:700;font-size:16px;border:1px solid transparent;transition:transform .2s, box-shadow .2s, background .2s;white-space:nowrap}
-.btn svg{width:20px;height:20px;flex:none}
-.btn:hover{transform:translateY(-2px)}
-.btn-gold{background:linear-gradient(135deg,var(--gold-2),var(--gold) 55%,var(--gold-deep));color:#1b1407;box-shadow:0 10px 30px -10px rgba(214,168,79,.7)}
-.btn-wa{background:var(--wa);color:#05290f;box-shadow:0 10px 30px -12px rgba(37,211,102,.7)}
-.btn-ghost{border-color:rgba(240,207,134,.45);color:var(--gold-2);background:rgba(15,20,32,.35)}
-.btn-ghost:hover{background:rgba(214,168,79,.12)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:17px 34px;background:transparent;font-family:var(--sans);font-size:15px;font-weight:400;letter-spacing:.14em;border:1px solid var(--gold);transition:background .4s var(--ease),color .4s var(--ease),border-color .4s;white-space:nowrap;position:relative;overflow:hidden;isolation:isolate}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-solid{background:var(--gold);color:var(--black)}
+.btn-solid:hover{background:var(--gold-l);border-color:var(--gold-l)}
+.btn-line{color:var(--gold-l)}
+.btn-line::before{content:"";position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease);z-index:-1}
+.btn-line:hover{color:var(--black)}
+.btn-line:hover::before{transform:scaleX(1)}
 
 /* nav */
-.nav{position:fixed;inset-inline:0;top:0;z-index:50;transition:background .3s, box-shadow .3s, padding .3s;padding:18px 0}
-.nav.scrolled{background:rgba(15,20,32,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(214,168,79,.18);padding:10px 0}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{display:flex;align-items:center;gap:12px}
-.brand-mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 30% 30%,var(--gold-2),var(--gold-deep));color:#1b1407;font-family:var(--serif);font-weight:900;font-size:20px}
-.brand-name{font-family:var(--serif);font-weight:700;font-size:22px;line-height:1.1}
-.brand-name small{display:block;font-family:var(--sans);font-weight:400;font-size:12px;color:var(--muted);letter-spacing:.04em}
-.nav-links{display:flex;gap:28px;font-size:15px;color:var(--muted)}
-.nav-links a:hover{color:var(--gold-2)}
-.nav .btn{padding:10px 18px;font-size:15px}
-@media (max-width:900px){.nav-links{display:none}}
-@media (max-width:480px){.nav .btn span{display:none}.nav .btn{padding:10px 12px}}
-
-/* hero */
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:120px 0 70px;overflow:hidden;
-  background:radial-gradient(1000px 600px at 15% 30%,rgba(214,168,79,.16),transparent 60%),radial-gradient(800px 500px at 90% 90%,rgba(80,110,170,.18),transparent 60%),var(--ink)}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;position:relative}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold-2);font-size:14px;letter-spacing:.08em;font-weight:500;padding:6px 14px;border:1px solid rgba(214,168,79,.3);border-radius:999px;background:rgba(214,168,79,.06)}
-.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
-.hero h1{font-family:var(--serif);font-weight:900;font-size:clamp(44px,7vw,92px);line-height:1.02;margin:22px 0 18px;letter-spacing:-.01em}
-.hero h1 .gold{background:linear-gradient(120deg,var(--gold-2),var(--gold) 50%,#fff1c9);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p.lead{font-size:clamp(18px,2vw,21px);color:var(--muted);max-width:560px;margin:0 0 32px;font-weight:300}
-.hero p.lead b{color:var(--text);font-weight:500}
-.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
-.hero-meta{display:flex;gap:28px;margin-top:44px;flex-wrap:wrap;color:var(--muted);font-size:14px}
-.hero-meta div{display:flex;flex-direction:column}
-.hero-meta strong{font-family:var(--serif);font-size:26px;color:var(--gold-2);font-weight:700;line-height:1.2}
-
-.arch{position:relative;justify-self:center;width:min(400px,100%);aspect-ratio:9/15}
-.arch-frame{position:absolute;inset:0;border-radius:999px 999px 28px 28px;overflow:hidden;border:1px solid rgba(240,207,134,.5);box-shadow:0 40px 90px -30px rgba(0,0,0,.8),0 0 0 10px rgba(214,168,79,.06),0 0 0 11px rgba(214,168,79,.22)}
-.arch-frame video,.arch-frame img{width:100%;height:100%;object-fit:cover}
-.arch-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(15,20,32,.75),transparent 40%)}
-.arch-tag{position:absolute;bottom:22px;inset-inline:22px;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:10px}
-.arch-tag span{font-family:var(--serif);font-size:20px;font-weight:700}
-.arch-tag small{display:block;font-family:var(--sans);color:var(--muted);font-size:13px;font-weight:400}
-.play-pill{width:52px;height:52px;border-radius:50%;border:0;background:var(--gold);color:#1b1407;display:grid;place-items:center;box-shadow:0 0 0 8px rgba(214,168,79,.2);flex:none}
-.play-pill svg{width:20px;height:20px;margin-inline-start:-3px}
-.arch-glow{position:absolute;inset:-14% -18%;background:radial-gradient(closest-side,rgba(214,168,79,.28),transparent);filter:blur(20px);z-index:-1}
-.scroll-cue{position:absolute;bottom:22px;inset-inline:0;margin:auto;width:max-content;color:var(--muted);font-size:12px;letter-spacing:.2em;display:flex;flex-direction:column;align-items:center;gap:8px}
-.scroll-cue i{width:1px;height:34px;background:linear-gradient(var(--gold),transparent);animation:cue 2s infinite}
-@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.nav{position:fixed;inset-inline:0;top:0;z-index:50;padding:26px 0;transition:padding .5s var(--ease),background .5s}
+.nav.scrolled{padding:14px 0;background:rgba(11,10,9,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line-soft)}
+.nav .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px}
+.nav-links{display:flex;gap:34px;font-size:14px;letter-spacing:.14em;color:var(--muted)}
+.nav-links a{position:relative;padding:4px 0}
+.nav-links a::after{content:"";position:absolute;bottom:0;right:0;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.nav-links a:hover{color:var(--text)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.logo{font-family:var(--display);font-size:30px;color:var(--ivory);letter-spacing:.06em;text-align:center;line-height:1}
+.logo small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.45em;color:var(--gold);margin-top:6px}
+.nav-cta{justify-self:end;display:flex;gap:10px;align-items:center}
+.nav-cta .btn{padding:11px 22px;font-size:13px}
+.icon-btn{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;color:var(--gold-l);transition:all .3s}
+.icon-btn:hover{background:var(--gold);color:var(--black);border-color:var(--gold)}
+.icon-btn svg{width:18px;height:18px}
 @media (max-width:900px){
-  .hero{padding-top:100px}
-  .hero-grid{grid-template-columns:1fr;gap:44px;text-align:center}
-  .hero p.lead{margin-inline:auto}
-  .hero-ctas,.hero-meta{justify-content:center}
-  .arch{width:min(320px,82%)}
-  .scroll-cue{display:none}
+  .nav .wrap{grid-template-columns:auto 1fr auto}
+  .nav-links{display:none}
+  .logo{text-align:right;font-size:26px}
+  .nav-cta .btn{display:none}
 }
 
-/* marquee */
-.marquee{background:linear-gradient(90deg,var(--gold-deep),var(--gold) 50%,var(--gold-deep));color:#1b1407;overflow:hidden;padding:14px 0;font-family:var(--serif);font-weight:700;font-size:20px}
-.marquee-track{display:flex;gap:44px;width:max-content;animation:marq 38s linear infinite}
-.marquee-track span{display:flex;align-items:center;gap:44px;white-space:nowrap}
-.marquee-track span::after{content:"✦";font-size:14px;opacity:.6}
-@keyframes marq{to{transform:translateX(50%)}}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:150px 0 90px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:blur(40px) brightness(.28) saturate(.9);transform:scale(1.2)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,transparent 0%,var(--black) 75%),linear-gradient(to top,var(--black),transparent 30%)}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center;position:relative;z-index:1}
+.hero .label{margin-bottom:34px}
+.hero h1{font-size:clamp(68px,11.5vw,172px);margin:0;color:var(--ivory)}
+.hero h1 .l2{display:block;color:var(--gold-l);padding-inline-start:.9em}
+.hero .roles{display:flex;flex-wrap:wrap;gap:8px 22px;margin:34px 0 0;padding:0;list-style:none;font-family:var(--serif);font-size:clamp(18px,1.8vw,22px);color:var(--text)}
+.hero .roles li{display:flex;align-items:center;gap:22px}
+.hero .roles li+li::before{content:"";width:5px;height:5px;transform:rotate(45deg);background:var(--gold)}
+.hero p.lede{margin-top:26px}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-top:44px}
+.reel-frame{position:relative;justify-self:center;width:min(380px,100%)}
+.reel-frame .shell{position:relative;aspect-ratio:9/16;overflow:hidden;background:var(--black-3)}
+.reel-frame .shell video,.reel-frame .shell img{width:100%;height:100%;object-fit:cover}
+.reel-frame .shell::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(11,10,9,.85),transparent 45%);pointer-events:none}
+.reel-frame::before{content:"";position:absolute;inset:-18px 18px 18px -18px;border:1px solid var(--line);pointer-events:none}
+.reel-frame .corner{position:absolute;width:26px;height:26px;border-color:var(--gold);border-style:solid;z-index:2}
+.reel-frame .c1{top:-8px;right:-8px;border-width:1px 1px 0 0}
+.reel-frame .c2{bottom:-8px;left:-8px;border-width:0 0 1px 1px}
+.reel-play{position:absolute;bottom:26px;inset-inline:26px;z-index:2;display:flex;align-items:center;gap:16px;background:none;border:0;padding:0;text-align:right}
+.ring{width:62px;height:62px;border-radius:50%;border:1px solid var(--gold-l);display:grid;place-items:center;position:relative;flex:none;transition:background .4s}
+.ring::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:1px solid rgba(230,207,154,.35);animation:pulse 2.6s var(--ease) infinite}
+@keyframes pulse{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.25);opacity:0}}
+.ring svg{width:18px;height:18px;color:var(--gold-l);margin-inline-end:-3px}
+.reel-play:hover .ring{background:var(--gold)}
+.reel-play:hover .ring svg{color:var(--black)}
+.reel-play b{display:block;font-family:var(--display);font-weight:400;font-size:24px;line-height:1.1;color:var(--ivory)}
+.reel-play small{font-size:12px;letter-spacing:.24em;color:var(--gold)}
+.scroll-ind{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:1;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:11px;letter-spacing:.4em;color:var(--dim)}
+.scroll-ind i{width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:sc 2.2s var(--ease) infinite;transform-origin:top}
+@keyframes sc{0%{transform:scaleY(0)}60%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);opacity:0}}
+@media (max-width:900px){
+  .hero{padding:120px 0 80px}
+  .hero-grid{grid-template-columns:1fr;gap:70px}
+  .hero h1 .l2{padding-inline-start:.6em}
+  .reel-frame{width:min(310px,80%)}
+  .scroll-ind{display:none}
+}
 
-/* sections */
-section{position:relative}
-.sec{padding:110px 0}
-.sec-head{max-width:720px;margin-bottom:56px}
-.sec-head.center{margin-inline:auto;text-align:center}
-.kicker{color:var(--gold);font-weight:700;font-size:14px;letter-spacing:.12em;display:flex;align-items:center;gap:12px}
-.center .kicker{justify-content:center}
-.kicker::before,.center .kicker::after{content:"";width:28px;height:1px;background:currentColor}
-.sec-head h2{font-family:var(--serif);font-weight:900;font-size:clamp(34px,4.6vw,56px);line-height:1.1;margin:14px 0 16px}
-.sec-head p{color:var(--muted);font-size:18px;margin:0;font-weight:300}
-.light{background:var(--stone);color:var(--text-dark)}
-.light .sec-head p,.light .muted{color:var(--muted-dark)}
-.light .kicker{color:var(--gold-deep)}
-@media (max-width:700px){.sec{padding:80px 0}.sec-head{margin-bottom:40px}}
+/* statement */
+.statement{padding:150px 0 130px;text-align:center;position:relative}
+.statement p{font-family:var(--display);font-size:clamp(30px,4.4vw,60px);line-height:1.25;max-width:1000px;margin:40px auto 0;color:var(--ivory)}
+.statement p span{color:var(--gold-l)}
+.statement .sig{margin-top:40px;font-size:13px;letter-spacing:.35em;color:var(--dim)}
 
-/* services */
-.services{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
-.svc{grid-column:span 2;position:relative;background:#fffaf2;border:1px solid var(--stone-2);border-radius:var(--r);padding:32px 28px;transition:transform .3s, box-shadow .3s;overflow:hidden}
-.svc:nth-child(4),.svc:nth-child(5){grid-column:span 3}
-.svc:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(80,55,20,.35)}
-.svc::before{content:"";position:absolute;top:0;inset-inline:0;height:3px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-2));transform:scaleX(0);transform-origin:right;transition:transform .4s}
-.svc:hover::before{transform:scaleX(1)}
-.svc-ico{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,#21293b,var(--ink));color:var(--gold-2);margin-bottom:22px}
-.svc-ico svg{width:28px;height:28px}
-.svc h3{font-family:var(--serif);font-size:26px;margin:0 0 8px;line-height:1.2}
-.svc p{margin:0;color:var(--muted-dark);font-size:16px}
-.svc .num{position:absolute;top:18px;left:22px;font-family:var(--serif);font-size:54px;font-weight:900;color:rgba(168,122,37,.12);line-height:1}
-@media (max-width:980px){.services{grid-template-columns:1fr 1fr}.svc,.svc:nth-child(4),.svc:nth-child(5){grid-column:span 1}.svc:nth-child(5){grid-column:1/-1}}
-@media (max-width:620px){.services{grid-template-columns:1fr}.svc:nth-child(5){grid-column:auto}}
+/* section shell */
+.sec{padding:140px 0;position:relative}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:80px}
+.sec-head .lede{justify-self:end}
+@media (max-width:900px){.sec{padding:100px 0}.sec-head{grid-template-columns:1fr;gap:10px;margin-bottom:56px}.sec-head .lede{justify-self:start}}
 
-/* videos */
-.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px}
-.chip{padding:9px 18px;border-radius:999px;border:1px solid rgba(240,207,134,.28);background:transparent;color:var(--muted);font-size:15px;transition:all .2s}
-.chip:hover{color:var(--gold-2);border-color:var(--gold)}
-.chip[aria-pressed="true"]{background:var(--gold);color:#1b1407;border-color:var(--gold);font-weight:700}
-.reel{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-flow:dense;gap:18px}
-.vcard{position:relative;border-radius:18px;overflow:hidden;background:var(--ink-3);border:0;padding:0;text-align:right;color:var(--text);aspect-ratio:9/14;isolation:isolate}
-.vcard.wide{grid-column:span 2;aspect-ratio:auto}
-.vcard img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .4s;filter:saturate(.95)}
-.vcard:hover img{transform:scale(1.06);filter:saturate(1.1)}
-.vcard::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,13,22,.92) 0%,rgba(10,13,22,.25) 45%,transparent 70%);z-index:1}
-.vcard .vinfo{position:absolute;inset-inline:18px;bottom:16px;z-index:2}
-.vcard .vtag{display:inline-block;font-size:12px;color:var(--gold-2);border:1px solid rgba(240,207,134,.35);padding:2px 10px;border-radius:999px;margin-bottom:8px;background:rgba(15,20,32,.5)}
-.vcard h3{font-family:var(--serif);font-size:22px;margin:0;line-height:1.2}
-.vcard .vsub{font-size:14px;color:var(--muted);margin-top:4px;line-height:1.4}
-.vcard .vplay{position:absolute;top:16px;left:16px;z-index:2;width:46px;height:46px;border-radius:50%;background:rgba(15,20,32,.55);backdrop-filter:blur(6px);border:1px solid rgba(240,207,134,.5);display:grid;place-items:center;color:var(--gold-2);transition:all .3s}
-.vcard .vplay svg{width:16px;height:16px;margin-inline-start:-2px}
-.vcard:hover .vplay{background:var(--gold);color:#1b1407;transform:scale(1.1)}
-.vcard .vdur{position:absolute;top:22px;right:16px;z-index:2;font-size:12px;background:rgba(0,0,0,.5);padding:2px 8px;border-radius:6px;color:#fff;direction:ltr}
-.vcard[hidden]{display:none}
-@media (max-width:980px){.reel{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:560px){.filters{gap:8px}.chip{padding:7px 13px;font-size:14px}.reel{grid-template-columns:1fr 1fr;gap:12px}.vcard.wide{grid-column:1/-1}.vcard h3{font-size:18px}.vcard .vsub{display:none}.vcard .vinfo{inset-inline:12px;bottom:12px}.vcard .vplay{width:38px;height:38px;top:10px;left:10px}.vcard .vdur{top:16px;right:10px}}
+/* services – editorial list */
+.svc-list{border-top:1px solid var(--line)}
+.svc{display:grid;grid-template-columns:110px 1.1fr 1.4fr 60px;gap:30px;align-items:center;padding:42px 0;border-bottom:1px solid var(--line);position:relative;transition:padding .5s var(--ease)}
+.svc::before{content:"";position:absolute;inset:0;background:linear-gradient(to left,rgba(201,169,106,.07),transparent 70%);opacity:0;transition:opacity .5s}
+.svc:hover::before{opacity:1}
+.svc:hover{padding-inline:18px}
+.svc .n{font-family:var(--display);font-size:20px;color:var(--gold)}
+.svc h3{font-family:var(--display);font-weight:400;font-size:clamp(28px,3.2vw,44px);margin:0;line-height:1.1;color:var(--ivory)}
+.svc p{margin:0;color:var(--muted);font-size:17px}
+.svc .arr{justify-self:end;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--gold);transition:all .4s var(--ease)}
+.svc:hover .arr{background:var(--gold);color:var(--black);transform:rotate(-45deg)}
+.svc .arr svg{width:16px;height:16px}
+@media (max-width:900px){.svc{grid-template-columns:50px 1fr;gap:6px 18px;padding:30px 0}.svc p{grid-column:2}.svc .arr{display:none}.svc:hover{padding-inline:0}}
+
+/* showreel feature */
+.feature{position:relative;padding:140px 0;overflow:hidden;background:var(--black-2)}
+.feature .amb{position:absolute;inset:0;overflow:hidden}
+.feature .amb img{width:100%;height:100%;object-fit:cover;filter:blur(60px) brightness(.35);transform:scale(1.3)}
+.feature-grid{display:grid;grid-template-columns:1fr auto;gap:90px;align-items:center;position:relative}
+.feature-player{position:relative;width:min(400px,80vw);aspect-ratio:9/16;border:1px solid var(--line);padding:12px;background:rgba(11,10,9,.5)}
+.feature-player button{position:relative;width:100%;height:100%;padding:0;border:0;background:none;overflow:hidden;display:block}
+.feature-player img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.feature-player button:hover img{transform:scale(1.05)}
+.feature-player .ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:92px;height:92px;background:rgba(11,10,9,.35);backdrop-filter:blur(6px)}
+.feature-player .ring svg{width:24px;height:24px}
+.feature-player button:hover .ring{background:var(--gold)}
+.feature-player button:hover .ring svg{color:var(--black)}
+.feature ul{list-style:none;padding:0;margin:40px 0 0;display:grid;gap:0;border-top:1px solid var(--line-soft)}
+.feature li{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid var(--line-soft);color:var(--muted);font-size:16px}
+.feature li b{font-family:var(--serif);font-weight:400;color:var(--text)}
+@media (max-width:900px){.feature{padding:100px 0}.feature-grid{grid-template-columns:1fr;gap:60px}.feature-player{justify-self:center}}
+
+/* gallery */
+.tabs{display:flex;gap:34px;flex-wrap:wrap;margin-bottom:50px;border-bottom:1px solid var(--line-soft)}
+.tab{background:none;border:0;padding:0 0 16px;font-size:15px;letter-spacing:.16em;color:var(--dim);position:relative;transition:color .3s}
+.tab::after{content:"";position:absolute;bottom:-1px;right:0;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.tab:hover{color:var(--text)}
+.tab[aria-selected="true"]{color:var(--gold-l)}
+.tab[aria-selected="true"]::after{transform:scaleX(1)}
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:28px 24px}
+.item{grid-column:span 4;background:none;border:0;padding:0;text-align:right;display:block;min-width:0;width:100%}
+.item.w{grid-column:span 8}
+.item .media{position:relative;overflow:hidden;aspect-ratio:4/5;background:var(--black-3)}
+.item.w .media{aspect-ratio:auto;height:100%}
+.item.w{display:flex;flex-direction:column}
+.item.w .media{flex:1;min-height:300px}
+.item img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease),filter .8s;filter:brightness(.88) saturate(.92)}
+.item:hover img{transform:scale(1.06);filter:brightness(1) saturate(1.05)}
+.item .media::after{content:"";position:absolute;inset:14px;border:1px solid rgba(230,207,154,0);transition:border-color .6s var(--ease),inset .6s var(--ease)}
+.item:hover .media::after{border-color:rgba(230,207,154,.6);inset:18px}
+.item .ring{position:absolute;top:50%;left:50%;width:70px;height:70px;transform:translate(-50%,-50%) scale(.8);opacity:0;transition:all .5s var(--ease);background:rgba(11,10,9,.4);backdrop-filter:blur(4px)}
+.item:hover .ring{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.item .ring::after{display:none}
+.item .meta{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-top:18px}
+.item h3{font-family:var(--display);font-weight:400;font-size:28px;margin:0;line-height:1.15;color:var(--ivory)}
+.item .sub{font-size:15px;color:var(--muted);margin-top:4px;line-height:1.5}
+.item .dur{font-size:13px;letter-spacing:.12em;color:var(--gold);direction:ltr;flex:none}
+.item[hidden]{display:none}
+@media (max-width:980px){.item,.item.w{grid-column:span 6}.item.w .media{aspect-ratio:4/5;flex:none;min-height:0}}
+@media (max-width:600px){.gallery{grid-template-columns:minmax(0,1fr);gap:44px}.item,.item.w{grid-column:auto}.item .media,.item.w .media{aspect-ratio:4/5}.item .ring{opacity:1;transform:translate(-50%,-50%) scale(.9)}.tabs{gap:22px}}
+
+/* about – ivory */
+.ivory{background:var(--ivory);color:var(--text-dark)}
+.ivory .label{color:var(--gold-d)}
+.ivory .lede{color:var(--muted-dark)}
+.about{display:grid;grid-template-columns:.95fr 1.05fr;gap:100px;align-items:center}
+.portrait{position:relative}
+.portrait .ph{aspect-ratio:4/5;overflow:hidden;position:relative}
+.portrait .ph img{width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.portrait::before{content:"";position:absolute;inset:26px -26px -26px 26px;border:1px solid var(--gold-d);opacity:.5}
+.portrait figcaption{position:absolute;bottom:-60px;right:0;font-size:12px;letter-spacing:.3em;color:var(--muted-dark)}
+.about h2{color:var(--text-dark)}
+.about h2 em{color:var(--gold-d)}
+.about-body p{font-size:19px;color:#3d362d;margin:0 0 22px}
+.about-body p:first-of-type::first-letter{font-family:var(--display);font-size:4.2em;float:right;line-height:.8;margin:.08em 0 0 .12em;color:var(--gold-d)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:46px;border-top:1px solid #d7cab2}
+.facts div{padding:22px 0 0;border-left:1px solid #d7cab2;padding-inline-start:22px}
+.facts div:last-child{border-left:0}
+.facts div:first-child{padding-inline-start:0}
+.facts b{display:block;font-family:var(--display);font-weight:400;font-size:28px;color:var(--text-dark);line-height:1.2}
+.facts span{font-size:14px;color:var(--muted-dark)}
+@media (max-width:900px){.about{grid-template-columns:1fr;gap:90px}.portrait{max-width:420px;width:calc(100% - 26px)}.facts{grid-template-columns:1fr;}.facts div{border-left:0;border-bottom:1px solid #d7cab2;padding:16px 0}}
+
+/* honor */
+.honor{background:#0e0f0b;position:relative;overflow:hidden}
+.honor-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
+.honor .label{color:#b9b88a}
+.honor .h2 em{color:#d2cf9e}
+.honor-media{position:relative;border:1px solid rgba(185,184,138,.3);padding:12px}
+.honor-media button{display:block;width:100%;padding:0;border:0;background:none;position:relative;overflow:hidden;aspect-ratio:4/5}
+.honor-media img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:saturate(.85);transition:transform 1.2s var(--ease)}
+.honor-media button:hover img{transform:scale(1.05)}
+.honor-media .ring{position:absolute;bottom:24px;right:24px;border-color:#d2cf9e}
+.honor-media .ring svg{color:#d2cf9e}
+@media (max-width:900px){.honor-grid{grid-template-columns:1fr;gap:56px}.honor-media{max-width:440px}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.step{padding:46px 40px 10px 0;border-left:1px solid var(--line-soft)}
+.step:last-child{border-left:0}
+.step+.step{padding-inline-start:40px}
+.step .n{font-family:var(--display);font-size:64px;color:var(--gold);line-height:1;opacity:.85}
+.step h3{font-family:var(--display);font-weight:400;font-size:30px;margin:22px 0 10px;color:var(--ivory)}
+.step p{margin:0;color:var(--muted);font-size:17px}
+@media (max-width:900px){.steps{grid-template-columns:1fr}.step,.step+.step{padding:34px 0;border-left:0;border-bottom:1px solid var(--line-soft)}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start}
+.phone{display:block;font-family:var(--display);font-size:clamp(46px,6vw,86px);color:var(--gold-l);direction:ltr;text-align:right;line-height:1;margin:44px 0 10px;transition:color .3s}
+.phone:hover{color:var(--ivory)}
+.contact .alt{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.form{border:1px solid var(--line);padding:48px;background:linear-gradient(180deg,rgba(201,169,106,.05),transparent)}
+.form h3{font-family:var(--display);font-weight:400;font-size:34px;margin:0 0 30px;color:var(--ivory)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:26px 28px}
+.f{position:relative;display:flex;flex-direction:column}
+.f.full{grid-column:1/-1}
+.f label{font-size:12px;letter-spacing:.24em;color:var(--gold);margin-bottom:6px}
+.f input,.f select,.f textarea{font:inherit;font-size:18px;font-weight:300;color:var(--text);background:transparent;border:0;border-bottom:1px solid var(--line);padding:10px 0;border-radius:0;width:100%;transition:border-color .3s;color-scheme:dark}
+.f select option{background:var(--black-2)}
+.f textarea{resize:vertical;min-height:84px}
+.f input::placeholder,.f textarea::placeholder{color:var(--dim)}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-bottom-color:var(--gold-l)}
+.form .btn{width:100%;margin-top:36px}
+.form .note{font-size:13px;color:var(--dim);text-align:center;margin:14px 0 0}
+@media (max-width:900px){.contact{grid-template-columns:1fr;gap:70px}}
+@media (max-width:560px){.form{padding:30px 22px}.fgrid{grid-template-columns:1fr}}
+
+/* footer */
+footer{border-top:1px solid var(--line-soft);padding:70px 0 120px;color:var(--dim);font-size:14px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+.foot .logo{text-align:right}
+.foot-links{display:flex;gap:26px;letter-spacing:.12em}
+.foot-links a:hover{color:var(--gold-l)}
+.gift{margin-top:46px;padding-top:26px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.gift a{color:var(--gold)}
+.gift a:hover{color:var(--gold-l)}
+
+/* floating */
+.fab{position:fixed;bottom:22px;left:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--gold);color:var(--black);display:grid;place-items:center;box-shadow:0 18px 40px -12px rgba(0,0,0,.8);transition:transform .3s var(--ease),background .3s}
+.fab:hover{transform:scale(1.08);background:var(--gold-l)}
+.fab svg{width:28px;height:28px}
 
 /* lightbox */
 dialog.lb{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%;color:var(--text)}
-dialog.lb::backdrop{background:rgba(5,7,12,.92);backdrop-filter:blur(8px)}
-.lb-inner{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 16px 24px;gap:16px}
-.lb video{max-height:calc(100svh - 190px);max-width:min(1000px,100%);border-radius:14px;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.6)}
-.lb-cap{text-align:center;max-width:640px}
-.lb-cap h3{font-family:var(--serif);font-size:26px;margin:0;line-height:1.2}
+dialog.lb::backdrop{background:rgba(6,5,4,.95);backdrop-filter:blur(10px)}
+.lb-in{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:70px 16px 30px}
+.lb video{max-height:calc(100svh - 210px);max-width:min(1100px,100%);background:#000;outline:1px solid var(--line)}
+.lb-cap{text-align:center}
+.lb-cap h3{font-family:var(--display);font-weight:400;font-size:30px;margin:0;line-height:1.2;color:var(--ivory)}
 .lb-cap p{margin:4px 0 0;color:var(--muted);font-size:15px}
-.lb-btn{position:absolute;width:48px;height:48px;border-radius:50%;border:1px solid rgba(240,207,134,.4);background:rgba(15,20,32,.7);color:var(--gold-2);display:grid;place-items:center}
-.lb-btn:hover{background:var(--gold);color:#1b1407}
-.lb-btn svg{width:20px;height:20px}
-.lb-close{top:16px;left:16px}
-.lb-prev{right:16px;top:50%;transform:translateY(-50%)}
-.lb-next{left:16px;top:50%;transform:translateY(-50%)}
-@media (max-width:700px){.lb-prev,.lb-next{top:auto;bottom:18px;transform:none}.lb-inner{padding-top:76px;padding-bottom:84px}.lb video{max-height:calc(100svh - 250px)}}
+.lb-btn{position:absolute;width:50px;height:50px;border-radius:50%;border:1px solid var(--line);background:rgba(11,10,9,.6);color:var(--gold-l);display:grid;place-items:center;transition:all .3s}
+.lb-btn:hover{background:var(--gold);color:var(--black)}
+.lb-btn svg{width:18px;height:18px}
+.lb-x{top:18px;left:18px}.lb-p{right:18px;top:50%;transform:translateY(-50%)}.lb-n{left:18px;top:50%;transform:translateY(-50%)}
+@media (max-width:700px){.lb-p,.lb-n{top:auto;bottom:20px;transform:none}.lb-in{padding:80px 12px 90px}.lb video{max-height:calc(100svh - 260px)}}
 
-/* about */
-.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
-.about-media{position:relative}
-.about-media .main{border-radius:200px 200px 24px 24px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 40px 80px -40px rgba(60,40,10,.55)}
-.about-media .main img{width:100%;height:100%;object-fit:cover;object-position:center 25%}
-.about-media .float{position:absolute;bottom:-34px;left:-30px;width:52%;border-radius:18px;overflow:hidden;border:6px solid var(--stone);box-shadow:0 30px 60px -25px rgba(60,40,10,.6);aspect-ratio:16/10}
-.about-media .float img{width:100%;height:100%;object-fit:cover}
-.about-media .badge{position:absolute;top:30px;right:-22px;background:var(--ink);color:var(--gold-2);padding:14px 20px;border-radius:16px;font-family:var(--serif);font-weight:700;font-size:18px;box-shadow:0 20px 40px -20px rgba(0,0,0,.6);line-height:1.3}
-.about-media .badge small{display:block;font-family:var(--sans);font-weight:400;color:var(--muted);font-size:12px}
-.about-text h2{font-family:var(--serif);font-weight:900;font-size:clamp(34px,4.4vw,52px);line-height:1.1;margin:14px 0 22px}
-.about-text p{font-size:18px;color:#4a4034;margin:0 0 18px}
-.quote{margin:30px 0 0;padding:22px 26px;border-right:3px solid var(--gold);background:#fffaf2;border-radius:14px 0 0 14px;font-family:var(--serif);font-size:22px;line-height:1.5;color:var(--text-dark)}
-.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-.tags span{padding:7px 14px;border-radius:999px;background:#fffaf2;border:1px solid var(--stone-2);font-size:14px;color:var(--muted-dark)}
-@media (max-width:900px){.about{grid-template-columns:1fr;gap:70px}.about-media{max-width:440px;margin-inline:auto;width:100%}.about-media .badge{right:-6px}.about-media .float{left:-6px}}
+/* gold shimmer on name */
+.hero h1 .l2>span{background:linear-gradient(100deg,var(--gold-d) 0%,var(--gold-l) 30%,#fff7e2 45%,var(--gold-l) 60%,var(--gold-d) 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 6s 2.4s var(--ease) infinite}
+@keyframes shimmer{0%{background-position:100% 0}40%,100%{background-position:-50% 0}}
 
-/* miluim band */
-.honor{background:linear-gradient(135deg,#1c2418,#232c1e 60%,#2a3423);color:var(--text);overflow:hidden}
-.honor-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.honor .sec-head{margin-bottom:28px}
-.honor .kicker{color:#c8d49a}
-.honor .sec-head p{color:#c9c6b4}
-.honor-media{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/3;border:1px solid rgba(200,212,154,.3)}
-.honor-media img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
-.honor-media button{position:absolute;inset:0;width:100%;background:linear-gradient(to top,rgba(0,0,0,.6),transparent 50%);border:0;display:grid;grid-auto-flow:column;align-content:end;justify-content:start;align-items:center;padding:22px;color:#fff;gap:14px}
-.honor-media .play-pill{background:#c8d49a;box-shadow:0 0 0 8px rgba(200,212,154,.22)}
-.honor-media button span{font-family:var(--serif);font-size:20px;font-weight:700;align-self:center}
-@media (max-width:900px){.honor-grid{grid-template-columns:1fr;gap:40px}}
+/* sound bars */
+.bars{display:inline-flex;align-items:flex-end;gap:3px;height:14px;margin-inline-start:8px;vertical-align:middle}
+.bars i{width:2px;background:var(--gold);height:30%;animation:bar 1.1s ease-in-out infinite}
+.bars i:nth-child(2){animation-delay:-.4s}.bars i:nth-child(3){animation-delay:-.8s}.bars i:nth-child(4){animation-delay:-.2s}.bars i:nth-child(5){animation-delay:-.6s}
+@keyframes bar{0%,100%{height:25%}50%{height:100%}}
 
-/* steps */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:s}
-.step{padding:34px 30px;border-radius:var(--r);background:linear-gradient(180deg,var(--ink-2),var(--ink));border:1px solid rgba(214,168,79,.18);position:relative}
-.step::before{counter-increment:s;content:counter(s);font-family:var(--serif);font-weight:900;font-size:22px;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--gold);color:var(--gold-2);margin-bottom:20px}
-.step h3{font-family:var(--serif);font-size:24px;margin:0 0 8px}
-.step p{margin:0;color:var(--muted);font-size:16px}
-@media (max-width:820px){.steps{grid-template-columns:1fr}}
+/* outline band */
+.band{padding:40px 0;overflow:hidden;border-block:1px solid var(--line-soft);white-space:nowrap}
+.band-track{display:inline-flex;gap:60px;align-items:center;font-family:var(--display);font-size:clamp(70px,11vw,170px);line-height:1;will-change:transform}
+.band-track span{color:transparent;-webkit-text-stroke:1px rgba(201,169,106,.55)}
+.band-track span.f{color:var(--gold-l);-webkit-text-stroke:0;opacity:.9}
+.band-track svg{width:.22em;height:.22em;color:var(--gold);flex:none}
 
-/* contact */
-.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
-.contact-card{background:#fffaf2;border:1px solid var(--stone-2);border-radius:26px;padding:36px;box-shadow:0 40px 80px -50px rgba(60,40,10,.45)}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.field{display:flex;flex-direction:column;gap:6px}
-.field.full{grid-column:1/-1}
-.field label{font-size:14px;font-weight:500;color:var(--muted-dark)}
-.field input,.field select,.field textarea{font:inherit;font-size:16px;padding:13px 15px;border-radius:12px;border:1px solid #dccdb3;background:#fff;color:var(--text-dark);width:100%;transition:border .2s, box-shadow .2s}
-.field textarea{min-height:96px;resize:vertical}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(214,168,79,.18)}
-.contact-card .btn{width:100%;justify-content:center;margin-top:20px;font-size:17px;padding:16px}
-.form-note{font-size:13px;color:var(--muted-dark);text-align:center;margin:12px 0 0}
-.direct{display:flex;flex-direction:column;gap:14px;margin-top:30px}
-.direct a{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:18px;background:#fffaf2;border:1px solid var(--stone-2);transition:all .25s}
-.direct a:hover{border-color:var(--gold);transform:translateX(-4px)}
-.direct .ico{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;flex:none}
-.direct .ico svg{width:24px;height:24px}
-.direct b{display:block;font-size:17px}
-.direct small{color:var(--muted-dark);font-size:14px}
-.phone-big{font-family:var(--serif);font-size:clamp(30px,4vw,44px);font-weight:900;direction:ltr;display:inline-block;color:var(--text-dark);margin-top:6px}
-@media (max-width:900px){.contact{grid-template-columns:1fr}}
-@media (max-width:520px){.form-grid{grid-template-columns:1fr}.contact-card{padding:24px}}
-
-/* footer */
-footer{background:#0a0e17;color:var(--muted);padding:56px 0 110px;font-size:15px}
-.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
-.gift{margin-top:36px;padding-top:26px;border-top:1px solid rgba(214,168,79,.15);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px}
-.gift a{color:var(--gold-2);font-weight:700}
-.gift a:hover{text-decoration:underline}
-
-/* floating wa */
-.fab{position:fixed;bottom:20px;left:20px;z-index:60;width:62px;height:62px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 14px 34px -8px rgba(37,211,102,.7);transition:transform .25s}
-.fab:hover{transform:scale(1.08)}
-.fab svg{width:32px;height:32px;color:#fff}
-.fab::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:ping 2.4s infinite}
-@keyframes ping{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.6);opacity:0}}
+/* custom cursor */
+.cur,.cur-dot{position:fixed;top:0;left:0;z-index:95;pointer-events:none;border-radius:50%;transform:translate3d(-100px,-100px,0)}
+.cur-dot{width:6px;height:6px;margin:-3px 0 0 -3px;background:var(--gold-l)}
+.cur{width:40px;height:40px;margin:-20px 0 0 -20px;border:1px solid rgba(230,207,154,.6);display:grid;place-items:center;transition:width .35s var(--ease),height .35s var(--ease),margin .35s var(--ease),background .35s,border-color .35s}
+.cur b{font-family:var(--sans);font-weight:400;font-size:12px;letter-spacing:.2em;color:var(--black);opacity:0;transition:opacity .25s}
+.cur.big{width:96px;height:96px;margin:-48px 0 0 -48px;background:var(--gold-l);border-color:var(--gold-l)}
+.cur.big b{opacity:1}
+.cur.link{width:60px;height:60px;margin:-30px 0 0 -30px;background:rgba(230,207,154,.12)}
+@media (hover:none),(pointer:coarse){.cur,.cur-dot{display:none}}
 
 /* reveal */
-.rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
 .rv.in{opacity:1;transform:none}
+.mask{display:block;overflow:hidden}
+.mask>span{display:block;transform:translateY(105%);transition:transform 1.3s var(--ease)}
+.in .mask>span,.mask.in>span{transform:none}
 @media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .rv{opacity:1;transform:none;transition:none}
-  .marquee-track,.scroll-cue i,.fab::before{animation:none}
+  .rv,.mask>span{opacity:1;transform:none;transition:none}
+  body::after,.ring::after,.scroll-ind i{animation:none}
+  .loader{display:none}
+  .hero h1 .l2>span,.bars i{animation:none}
 }
 </style>
 </head>
 <body>
 
-<!-- SVG icons -->
+<div class="loader" id="loader" aria-hidden="true"><div class="mono">ליאור ממו</div></div>
+
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.48.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.4 9.4 0 0 1-1.44-5.01c0-5.2 4.23-9.43 9.43-9.43 2.52 0 4.89.98 6.67 2.77a9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.23 9.42-9.44 9.42m8.03-17.45A11.27 11.27 0 0 0 12.05.72C5.79.72.7 5.8.7 12.06c0 2 .52 3.95 1.52 5.67L.6 23.6l6.01-1.58a11.33 11.33 0 0 0 5.43 1.38h.01c6.25 0 11.34-5.09 11.35-11.34 0-3.03-1.18-5.88-3.32-8.02"/></symbol>
-  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
-  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M6 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L7.5 3.64A1 1 0 0 0 6 4.5z"/></symbol>
-  <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
-  <symbol id="i-next" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6"/></symbol>
-  <symbol id="i-prev" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4.2v15.6a.8.8 0 0 0 1.2.7l12.4-7.8a.8.8 0 0 0 0-1.4L8.2 3.5A.8.8 0 0 0 7 4.2z"/></symbol>
+  <symbol id="i-arr" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-l" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6"/></symbol>
+  <symbol id="i-r" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-dia" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></symbol>
 </svg>
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <a href="#top" class="brand" aria-label="ליאור ממו – לראש הדף">
-      <span class="brand-mark">ל</span>
-      <span class="brand-name">ליאור ממו<small>חזן · פייטן · נגן עוד</small></span>
-    </a>
     <nav class="nav-links" aria-label="ניווט ראשי">
       <a href="#services">שירותים</a>
-      <a href="#videos">וידאו</a>
+      <a href="#gallery">הופעות</a>
       <a href="#about">אודות</a>
-      <a href="#contact">הזמנת אירוע</a>
     </nav>
-    <a class="btn btn-wa" href="https://wa.me/972506737715?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%9C%D7%99%D7%90%D7%95%D7%A8%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%90%D7%99%D7%A8%D7%95%D7%A2" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span>וואטסאפ</span></a>
+    <a href="#top" class="logo" aria-label="ליאור ממו – לראש הדף">ליאור ממו<small>חזן · פייטן · נגן</small></a>
+    <div class="nav-cta">
+      <a class="btn btn-line" href="#contact">הזמנת אירוע</a>
+      <a class="icon-btn" href="https://wa.me/972506737715?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%9C%D7%99%D7%90%D7%95%D7%A8%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8" target="_blank" rel="noopener" aria-label="וואטסאפ"><svg><use href="#i-wa"/></svg></a>
+    </div>
   </div>
 </header>
 
 <main id="top">
-<!-- HERO -->
+
 <section class="hero">
-  <div class="pattern"></div>
+  <div class="hero-bg" aria-hidden="true"><img src="media/hero.jpg" alt=""></div>
   <div class="wrap hero-grid">
     <div class="rv">
-      <span class="eyebrow"><i></i>חזן · פייטן · בעל קורא · נגן עוד</span>
-      <h1>קול שמרומם<br><span class="gold">את הרגע.</span></h1>
-      <p class="lead">מהעלייה הראשונה לתורה ועד הניגון האחרון בסעודה – <b>חזנות חגיגית ומרגשת, פיוטים ושירים בליווי נגנים</b>, שהופכים כל אירוע לזיכרון של קדושה ושמחה.</p>
+      <span class="label">ירושלים · אירועים בכל הארץ</span>
+      <h1 class="display"><span class="mask"><span>ליאור</span></span><span class="mask l2"><span>ממו</span></span></h1>
+      <ul class="roles"><li>חזן</li><li>פייטן</li><li>בעל קורא</li><li>נגן עוד</li></ul>
+      <p class="lede">חזנות מרוממת, פיוטים ושירה בליווי נגנים – לרגעים שהמשפחה תזכור לתמיד. מהעלייה לתורה ועד הניגון האחרון בסעודה.</p>
       <div class="hero-ctas">
-        <a class="btn btn-gold" href="#contact">לבדיקת תאריך פנוי</a>
-        <a class="btn btn-ghost" href="#videos"><svg><use href="#i-play"/></svg>לצפייה בהופעות</a>
-      </div>
-      <div class="hero-meta">
-        <div><strong>בר מצווה</strong>הכנה ועלייה לתורה</div>
-        <div><strong>שבת חתן</strong>חזנות ופיוטים</div>
-        <div><strong>עוד ונגנים</strong>מוזיקה חיה לכל אירוע</div>
+        <a class="btn btn-solid" href="#contact">לבדיקת תאריך</a>
+        <button class="btn btn-line" data-open="showreel"><svg><use href="#i-play"/></svg>צפייה בשואוריל</button>
       </div>
     </div>
-    <div class="arch rv">
-      <div class="arch-glow"></div>
-      <div class="arch-frame">
+    <div class="reel-frame rv">
+      <span class="corner c1"></span><span class="corner c2"></span>
+      <div class="shell">
         <video id="heroVid" src="media/hero.mp4" poster="media/hero.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
       </div>
-      <div class="arch-tag">
-        <div><span>חזנות בעלייה לתורה</span><small>צפו בקטע המלא</small></div>
-        <button class="play-pill" data-open="hazan-tefillin" aria-label="צפייה בסרטון המלא"><svg><use href="#i-play"/></svg></button>
+      <button class="reel-play" data-open="showreel" aria-label="צפייה בשואוריל עם קול">
+        <span class="ring"><svg><use href="#i-play"/></svg></span>
+        <span><small>SHOWREEL<span class="bars"><i></i><i></i><i></i><i></i><i></i></span></small><b>רגעים מהבמה</b></span>
+      </button>
+    </div>
+  </div>
+  <div class="scroll-ind" aria-hidden="true">גלילה<i></i></div>
+</section>
+
+<section class="statement">
+  <div class="wrap rv">
+    <div class="orn"><svg><use href="#i-dia"/></svg></div>
+    <p>יש רגעים שנחרטים בזיכרון<br>בזכות <span>קול אחד</span> שעומד מול ארון הקודש.</p>
+    <div class="sig">חזנות · פיוט · נגינה</div>
+  </div>
+</section>
+
+<div class="band" aria-hidden="true"><div class="band-track" id="band">
+  <span>חזנות</span><svg><use href="#i-dia"/></svg><span class="f">פיוט</span><svg><use href="#i-dia"/></svg><span>נגינה</span><svg><use href="#i-dia"/></svg><span class="f">שמחה</span><svg><use href="#i-dia"/></svg>
+  <span>חזנות</span><svg><use href="#i-dia"/></svg><span class="f">פיוט</span><svg><use href="#i-dia"/></svg><span>נגינה</span><svg><use href="#i-dia"/></svg><span class="f">שמחה</span><svg><use href="#i-dia"/></svg>
+</div></div>
+
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="label">השירותים</span><h2 class="h2">כל מה שהאירוע<br><em>צריך לשמוע.</em></h2></div>
+      <p class="lede rv">חזן, פייטן ונגנים – תחת ידיים אחת. ליאור מלווה את השמחה מבית הכנסת ועד הסעודה, עם רפרטואר שנבחר יחד איתכם לפי מסורת המשפחה.</p>
+    </div>
+    <div class="svc-list">
+      <a class="svc rv" href="#contact"><span class="n">01</span><h3>הכנה לבר מצווה</h3><p>לימוד קריאה בתורה, טעמי המקרא וההפטרה – בסבלנות ובגובה העיניים, עד שהבר מצווה עולה לבמה בביטחון מלא.</p><span class="arr"><svg><use href="#i-arr"/></svg></span></a>
+      <a class="svc rv" href="#contact"><span class="n">02</span><h3>עליות לתורה</h3><p>תפילה חגיגית ושירים בליווי מוזיקלי, שהופכים את העלייה לתורה לחגיגה של כל המשפחה.</p><span class="arr"><svg><use href="#i-arr"/></svg></span></a>
+      <a class="svc rv" href="#contact"><span class="n">03</span><h3>שבתות חתן</h3><p>חזנות מרוממת ומרגשת בתפילה, ופיוטים ושירים בסעודות – שבת שהחתן והאורחים ידברו עליה שנים.</p><span class="arr"><svg><use href="#i-arr"/></svg></span></a>
+      <a class="svc rv" href="#contact"><span class="n">04</span><h3>פייטן וזמר לאירועים</h3><p>שבע ברכות, חנוכת בית, בריתות ועוד – פיוטים, שירי קודש וזמר, בליווי נגנים.</p><span class="arr"><svg><use href="#i-arr"/></svg></span></a>
+      <a class="svc rv" href="#contact"><span class="n">05</span><h3>נגן עוד והרכב</h3><p>עוד, כינור, כלי הקשה וקלידים לקבלת פנים, לסעודה או לערב שירה – בהרכב מלא או בליווי אינטימי.</p><span class="arr"><svg><use href="#i-arr"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="feature" id="showreel">
+  <div class="amb" aria-hidden="true"><img src="media/showreel.jpg" alt="" loading="lazy"></div>
+  <div class="wrap feature-grid">
+    <div class="rv">
+      <span class="label">שואוריל</span>
+      <h2 class="h2">פחות מדקה.<br><em>כל הסיפור.</em></h2>
+      <p class="lede">קטעים נבחרים מעליות לתורה, מערבי פיוט ונגינה ומהופעה לחיילים במילואים – ערוכים לסרטון אחד.</p>
+      <ul>
+        <li><b>חזנות ועליות לתורה</b><span>בית הכנסת</span></li>
+        <li><b>עוד, כינור וכלי הקשה</b><span>הרכב מזרחי</span></li>
+        <li><b>שירה לחיילים</b><span>במילואים</span></li>
+      </ul>
+    </div>
+    <div class="feature-player rv">
+      <button data-open="showreel" aria-label="ניגון השואוריל">
+        <img src="media/showreel.jpg" alt="ליאור ממו בהופעה – שואוריל" loading="lazy">
+        <span class="ring"><svg><use href="#i-play"/></svg></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="label">מהבמה</span><h2 class="h2">לשמוע<br><em>ולהתרגש.</em></h2></div>
+      <p class="lede rv">הקלטות אמיתיות מאירועים, ערוכות ומשופרות בצבע ובסאונד. לחצו על כל קטע לצפייה עם קול.</p>
+    </div>
+    <div class="tabs rv" role="tablist" aria-label="סינון הופעות">
+      <button class="tab" role="tab" aria-selected="true" data-f="all">הכל</button>
+      <button class="tab" role="tab" aria-selected="false" data-f="shul">בית הכנסת</button>
+      <button class="tab" role="tab" aria-selected="false" data-f="music">פיוט ונגינה</button>
+      <button class="tab" role="tab" aria-selected="false" data-f="army">במילואים</button>
+    </div>
+    <div class="gallery" id="gal"></div>
+  </div>
+</section>
+
+<section class="sec ivory" id="about">
+  <div class="wrap about">
+    <figure class="portrait rv" style="margin:0">
+      <div class="ph"><img src="media/hazan-tefillin.jpg" alt="ליאור ממו שר במיקרופון, עטוף בטלית ותפילין, בבית כנסת" loading="lazy"></div>
+      <figcaption>עלייה לתורה · ירושלים</figcaption>
+    </figure>
+    <div class="about-body rv">
+      <span class="label">נעים להכיר</span>
+      <h2 class="h2">ליאור <em>ממו</em></h2>
+      <p>ליאור הוא חזן, פייטן, קורא בתורה ונגן עוד – אדם שהמוזיקה היהודית והמזרחית היא חלק מהנשמה שלו. בעליות לתורה, בשבתות חתן ובאירועים משפחתיים הוא יודע לקרוא את הקהל, ולהפוך את הרגע לחגיגה שכולם שותפים לה.</p>
+      <p>לצד החזנות ליאור מנגן בעוד ומופיע עם נגנים מוכשרים – מכינור ועד כלי הקשה – בפיוטים, בשירי קודש ובזמר. הוא משרת במילואים, ומביא את הניגון גם אל החיילים.</p>
+      <div class="facts">
+        <div><b>חזנות</b><span>תפילה וקריאה בתורה</span></div>
+        <div><b>פיוט</b><span>שירי קודש וזמר</span></div>
+        <div><b>עוד</b><span>נגינה והרכב</span></div>
       </div>
     </div>
   </div>
-  <div class="scroll-cue" aria-hidden="true">גללו<i></i></div>
 </section>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>בר מצווה</span><span>עלייה לתורה</span><span>שבת חתן</span><span>שבע ברכות</span><span>חנוכת בית</span><span>ברית</span><span>קבלת פנים</span><span>סעודות ואירועים</span>
-    <span>בר מצווה</span><span>עלייה לתורה</span><span>שבת חתן</span><span>שבע ברכות</span><span>חנוכת בית</span><span>ברית</span><span>קבלת פנים</span><span>סעודות ואירועים</span>
-  </div>
-</div>
-
-<!-- SERVICES -->
-<section class="sec light" id="services">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="kicker">מה אני מביא לאירוע שלכם</div>
-      <h2>חזנות, פיוט ונגינה – תחת קורת גג אחת.</h2>
-      <p>במקום לתאם חזן, פייטן ונגנים בנפרד – ליאור מלווה את האירוע מהבית הכנסת ועד הסעודה, עם רפרטואר שמותאם למשפחה ולמסורת שלה.</p>
-    </div>
-    <div class="services">
-      <article class="svc rv">
-        <span class="num">01</span>
-        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M9 7h7M9 11h5"/></svg></div>
-        <h3>הכנה לבר מצווה</h3>
-        <p>לימוד קריאה בתורה, טעמי המקרא וההפטרה – בסבלנות ובגובה העיניים, עד שהבר מצווה עולה לבמה בביטחון.</p>
-      </article>
-      <article class="svc rv">
-        <span class="num">02</span>
-        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.8L20 8l-4 3.9.9 5.6L12 15l-4.9 2.5.9-5.6L4 8l5.6-1.2z"/></svg></div>
-        <h3>עליות לתורה</h3>
-        <p>תפילה חגיגית ושירים בליווי מוזיקלי – שהופכים את העלייה לתורה לחגיגה של כל המשפחה.</p>
-      </article>
-      <article class="svc rv">
-        <span class="num">03</span>
-        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l-1 6a3 3 0 0 1-6 0z"/><path d="M12 11v7M8 22h8M12 18l-3 4M12 18l3 4"/></svg></div>
-        <h3>שבתות חתן</h3>
-        <p>חזנות מרוממת ומרגשת בתפילה, ופיוטים ושירים בסעודות – שבת שהחתן והאורחים ידברו עליה עוד שנים.</p>
-      </article>
-      <article class="svc rv">
-        <span class="num">04</span>
-        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5M8 22h8"/></svg></div>
-        <h3>פייטן וזמר לאירועים</h3>
-        <p>שבע ברכות, חנוכת בית, בריתות ועוד – פיוטים, שירי קודש וזמר ישראלי ומזרחי, בליווי נגנים.</p>
-      </article>
-      <article class="svc rv">
-        <span class="num">05</span>
-        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="9" cy="15" rx="6" ry="6"/><path d="M13.5 10.5L21 3M19 2l3 3"/><circle cx="9" cy="15" r="1.6"/></svg></div>
-        <h3>נגן עוד והרכב נגנים</h3>
-        <p>עוד, כינור, כלי הקשה וקלידים לקבלת פנים, ארוחה או ערב שירה. אפשר בהרכב מלא או בליווי אינטימי.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- VIDEOS -->
-<section class="sec" id="videos">
-  <div class="pattern"></div>
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="kicker">מהאירועים האחרונים</div>
-      <h2>תשמעו בעצמכם.</h2>
-      <p>קטעים אמיתיים מאירועים, בלי עריכה מפוארת – רק הקול, הנגינה והאנשים. לחצו על כל סרטון כדי לצפות עם קול.</p>
-    </div>
-    <div class="filters rv" role="group" aria-label="סינון סרטונים">
-      <button class="chip" aria-pressed="true" data-f="all">הכל</button>
-      <button class="chip" aria-pressed="false" data-f="shul">בבית הכנסת</button>
-      <button class="chip" aria-pressed="false" data-f="music">פיוט ונגינה</button>
-      <button class="chip" aria-pressed="false" data-f="army">במילואים</button>
-    </div>
-    <div class="reel" id="reel"></div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="sec light" id="about">
-  <div class="wrap about">
-    <div class="about-media rv">
-      <div class="main"><img src="media/hazan-tefillin.jpg" alt="ליאור ממו שר עם מיקרופון, עטוף בטלית ותפילין, בבית כנסת" loading="lazy"></div>
-      <div class="float"><img src="media/ensemble.jpg" alt="ליאור ממו מנגן בעוד בהרכב עם כינור וכלי הקשה" loading="lazy"></div>
-      <div class="badge">ירושלים<small>והסביבה · מגיע לכל הארץ</small></div>
-    </div>
-    <div class="about-text rv">
-      <div class="kicker">נעים להכיר</div>
-      <h2>ליאור ממו</h2>
-      <p>ליאור הוא חזן, פייטן, קורא בתורה ונגן עוד – אדם שהמוזיקה היהודית והמזרחית היא חלק מהנשמה שלו. בעליות לתורה, בשבתות חתן ובאירועים משפחתיים, הוא יודע לקרוא את הקהל ולהפוך את הרגע לחגיגה שכולם שותפים לה.</p>
-      <p>לצד החזנות, ליאור מנגן בעוד ומופיע עם נגנים מוכשרים – מכינור ועד כלי הקשה – בפיוטים, בשירי קודש ובזמר. הוא גם משרת במילואים, ומביא את הניגון גם אל החיילים.</p>
-      <blockquote class="quote">חזן, פייטן, קורא בתורה ונגן עוד – לכל אירוע.</blockquote>
-      <div class="tags"><span>חזנות</span><span>קריאה בתורה</span><span>פיוטים</span><span>עוד</span><span>מוזיקה מזרחית</span><span>שירי קודש</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- MILUIM -->
 <section class="sec honor">
   <div class="wrap honor-grid">
     <div class="rv">
-      <div class="sec-head">
-        <div class="kicker">גם במדים</div>
-        <h2 class="serif">ניגון שמחזק את החיילים.</h2>
-        <p>ליאור משרת במילואים, ובין המשימות מביא את השירה גם אל החבר'ה ביחידה. מי שמזמין את ליאור לאירוע – תומך באיש מילואים שנותן מעצמו בכל מקום.</p>
-      </div>
-      <a class="btn btn-gold" href="#contact">להזמנת ליאור לאירוע</a>
+      <span class="label">גם במדים</span>
+      <h2 class="h2">ניגון שמחזק<br><em>את החיילים.</em></h2>
+      <p class="lede" style="color:#a9a891">ליאור משרת במילואים, ובין המשימות מביא את השירה גם אל החבר'ה ביחידה. מי שמזמין את ליאור לאירוע – תומך באיש מילואים שנותן מעצמו בכל מקום.</p>
+      <div style="margin-top:40px"><a class="btn btn-line" href="#contact" style="border-color:#b9b88a;color:#d2cf9e">להזמנת ליאור</a></div>
     </div>
     <div class="honor-media rv">
-      <img src="media/miluim.jpg" alt="הופעה עם גיטרה מול חיילים ביחידת מילואים" loading="lazy">
-      <button data-open="miluim" aria-label="צפייה: שירה לחיילים במילואים"><span class="play-pill"><svg><use href="#i-play"/></svg></span><span>צפו בהופעה ביחידה</span></button>
+      <button data-open="miluim" aria-label="צפייה: שירה לחיילים במילואים">
+        <img src="media/miluim.jpg" alt="הופעה עם גיטרה מול חיילים ביחידת מילואים" loading="lazy">
+        <span class="ring"><svg><use href="#i-play"/></svg></span>
+      </button>
     </div>
   </div>
 </section>
 
-<!-- STEPS -->
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head center rv">
-      <div class="kicker">איך זה עובד</div>
-      <h2>שלושה צעדים לאירוע מרגש.</h2>
+    <div class="sec-head">
+      <div class="rv"><span class="label">התהליך</span><h2 class="h2">פשוט.<br><em>אישי. מדויק.</em></h2></div>
     </div>
     <div class="steps">
-      <div class="step rv"><h3>מדברים</h3><p>שולחים הודעה או מתקשרים – מספרים על האירוע, התאריך והמקום, וליאור בודק זמינות.</p></div>
-      <div class="step rv"><h3>מתאימים את הרפרטואר</h3><p>בוחרים יחד את הניגונים, הפיוטים והנוסח – לפי המסורת של המשפחה, ומחליטים על הרכב הנגנים.</p></div>
-      <div class="step rv"><h3>חוגגים</h3><p>ביום האירוע ליאור מגיע מוכן, ואתם נהנים מהרגע – בלי לדאוג לשום דבר.</p></div>
+      <div class="step rv"><div class="n">01</div><h3>שיחה</h3><p>מספרים על האירוע, התאריך והמקום – וליאור בודק זמינות ומקשיב למה שחשוב לכם.</p></div>
+      <div class="step rv"><div class="n">02</div><h3>רפרטואר</h3><p>בוחרים יחד ניגונים, פיוטים ונוסח לפי מסורת המשפחה, ומחליטים על הרכב הנגנים.</p></div>
+      <div class="step rv"><div class="n">03</div><h3>השמחה</h3><p>ביום האירוע ליאור מגיע מוכן עד הפרט האחרון – ואתם פשוט נהנים מהרגע.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="sec light" id="contact">
+<section class="sec" id="contact" style="padding-top:40px">
   <div class="wrap contact">
     <div class="rv">
-      <div class="sec-head" style="margin-bottom:10px">
-        <div class="kicker">הזמנת אירוע</div>
-        <h2>בואו נדבר על השמחה שלכם.</h2>
-        <p>ממלאים כמה פרטים – וההודעה נשלחת ישירות לוואטסאפ של ליאור. או פשוט מתקשרים.</p>
-      </div>
-      <a href="tel:+972506737715" class="phone-big">050-6737715</a>
-      <div class="direct">
-        <a href="https://wa.me/972506737715" target="_blank" rel="noopener"><span class="ico" style="background:#e3f9ea;color:#128c43"><svg><use href="#i-wa"/></svg></span><span><b>הודעה בוואטסאפ</b><small>מענה מהיר, גם לשאלות קטנות</small></span></a>
-        <a href="tel:+972506737715"><span class="ico" style="background:#f6ead2;color:var(--gold-deep)"><svg><use href="#i-phone"/></svg></span><span><b>שיחת טלפון</b><small>050-6737715</small></span></a>
+      <span class="label">הזמנת אירוע</span>
+      <h2 class="h2">נשמח להיות<br><em>חלק מהשמחה.</em></h2>
+      <p class="lede">מלאו כמה פרטים וההודעה תישלח ישירות לוואטסאפ של ליאור – או פשוט התקשרו.</p>
+      <a href="tel:+972506737715" class="phone">050-6737715</a>
+      <div class="alt">
+        <a class="btn btn-line" href="https://wa.me/972506737715" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>וואטסאפ</a>
+        <a class="btn btn-line" href="tel:+972506737715"><svg><use href="#i-phone"/></svg>חיוג</a>
       </div>
     </div>
-    <form class="contact-card rv" id="leadForm" novalidate>
-      <div class="form-grid">
-        <div class="field"><label for="fName">שם מלא</label><input id="fName" name="name" autocomplete="name" required placeholder="איך קוראים לך?"></div>
-        <div class="field"><label for="fType">סוג האירוע</label>
+    <form class="form rv" id="leadForm" novalidate>
+      <h3>פרטי האירוע</h3>
+      <div class="fgrid">
+        <div class="f"><label for="fName">שם מלא</label><input id="fName" name="name" autocomplete="name" placeholder="איך קוראים לך?"></div>
+        <div class="f"><label for="fType">סוג האירוע</label>
           <select id="fType" name="type">
-            <option>בר מצווה / עלייה לתורה</option>
-            <option>הכנה לבר מצווה</option>
-            <option>שבת חתן</option>
-            <option>שבע ברכות</option>
-            <option>חנוכת בית</option>
-            <option>ברית</option>
-            <option>הופעה עם נגנים / קבלת פנים</option>
-            <option>אחר</option>
+            <option>בר מצווה / עלייה לתורה</option><option>הכנה לבר מצווה</option><option>שבת חתן</option><option>שבע ברכות</option><option>חנוכת בית</option><option>ברית</option><option>הופעה עם נגנים / קבלת פנים</option><option>אחר</option>
           </select></div>
-        <div class="field"><label for="fDate">תאריך משוער</label><input id="fDate" name="date" type="date"></div>
-        <div class="field"><label for="fPlace">מיקום</label><input id="fPlace" name="place" placeholder="עיר / בית כנסת / אולם"></div>
-        <div class="field full"><label for="fMsg">עוד משהו שכדאי לדעת?</label><textarea id="fMsg" name="msg" placeholder="מספר אורחים, מסורת המשפחה, ניגונים שאתם אוהבים..."></textarea></div>
+        <div class="f"><label for="fDate">תאריך משוער</label><input id="fDate" name="date" type="date"></div>
+        <div class="f"><label for="fPlace">מיקום</label><input id="fPlace" name="place" placeholder="עיר / בית כנסת / אולם"></div>
+        <div class="f full"><label for="fMsg">פרטים נוספים</label><textarea id="fMsg" name="msg" placeholder="מספר אורחים, מסורת המשפחה, ניגונים שאתם אוהבים..."></textarea></div>
       </div>
-      <button class="btn btn-wa" type="submit"><svg><use href="#i-wa"/></svg>שליחה לליאור בוואטסאפ</button>
-      <p class="form-note">הפרטים לא נשמרים באתר – הם נפתחים כהודעה בוואטסאפ שלכם.</p>
+      <button class="btn btn-solid" type="submit"><svg><use href="#i-wa"/></svg>שליחה לליאור בוואטסאפ</button>
+      <p class="note">הפרטים לא נשמרים באתר – הם נפתחים כהודעה בוואטסאפ שלכם.</p>
     </form>
   </div>
 </section>
@@ -502,9 +575,9 @@ footer{background:#0a0e17;color:var(--muted);padding:56px 0 110px;font-size:15px
 
 <footer>
   <div class="wrap">
-    <div class="foot-grid">
-      <div class="brand"><span class="brand-mark">ל</span><span class="brand-name">ליאור ממו<small>חזן · פייטן · בעל קורא · נגן עוד</small></span></div>
-      <div><a href="tel:+972506737715" dir="ltr">050-6737715</a> · <a href="https://wa.me/972506737715" target="_blank" rel="noopener">וואטסאפ</a></div>
+    <div class="foot">
+      <a href="#top" class="logo">ליאור ממו<small>חזן · פייטן · נגן</small></a>
+      <div class="foot-links"><a href="tel:+972506737715" dir="ltr">050-6737715</a><a href="https://wa.me/972506737715" target="_blank" rel="noopener">וואטסאפ</a><a href="#gallery">הופעות</a></div>
     </div>
     <div class="gift">
       <span>© <span id="yr">2026</span> ליאור ממו. כל הזכויות שמורות.</span>
@@ -516,102 +589,125 @@ footer{background:#0a0e17;color:var(--muted);padding:56px 0 110px;font-size:15px
 <a class="fab" href="https://wa.me/972506737715?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%9C%D7%99%D7%90%D7%95%D7%A8%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8" target="_blank" rel="noopener" aria-label="שליחת הודעת וואטסאפ לליאור"><svg><use href="#i-wa"/></svg></a>
 
 <dialog class="lb" id="lb" aria-label="נגן וידאו">
-  <div class="lb-inner">
+  <div class="lb-in">
     <video id="lbVid" controls playsinline preload="none"></video>
-    <div class="lb-cap"><h3 id="lbTitle"></h3><p id="lbSub"></p></div>
+    <div class="lb-cap"><h3 id="lbT"></h3><p id="lbS"></p></div>
   </div>
-  <button class="lb-btn lb-close" id="lbClose" aria-label="סגירה"><svg><use href="#i-x"/></svg></button>
-  <button class="lb-btn lb-prev" id="lbPrev" aria-label="הסרטון הקודם"><svg><use href="#i-prev"/></svg></button>
-  <button class="lb-btn lb-next" id="lbNext" aria-label="הסרטון הבא"><svg><use href="#i-next"/></svg></button>
+  <button class="lb-btn lb-x" id="lbX" aria-label="סגירה"><svg><use href="#i-x"/></svg></button>
+  <button class="lb-btn lb-p" id="lbP" aria-label="הסרטון הקודם"><svg><use href="#i-r"/></svg></button>
+  <button class="lb-btn lb-n" id="lbN" aria-label="הסרטון הבא"><svg><use href="#i-l"/></svg></button>
 </dialog>
 
 <script>
 (function(){
-  var VIDEOS = [
-    {id:'yeled-gadol', cat:'shul', tag:'עלייה לתורה', title:'"ילד גדול"', sub:'מתוך עלייה לתורה בבית הכנסת "משכן יצחק", ירושלים', dur:'1:32'},
-    {id:'shivchei-yerushalayim', cat:'shul', tag:'עם הרכב נגנים', title:'"שבחי ירושלים"', sub:'מעלה לתורה למשפחת כהן, בליווי הרכב נגנים', dur:'0:53', wide:true},
-    {id:'hazan-tefillin', cat:'shul', tag:'חזנות', title:'חזנות בעלייה לתורה', sub:'תפילה חגיגית ושירה עם הקהל', dur:'1:29'},
-    {id:'ya-ozel', cat:'music', tag:'עוד וכינור', title:'"יא עוזל פלפלו"', sub:'עוד: ליאור ממו · כינור: דניאל זכאי', dur:'0:46', wide:true},
-    {id:'zman-lisloach', cat:'music', tag:'פיוט', title:'"זה הזמן לסלוח"', sub:'מנגן עם האחים ארז, מול חומות ירושלים', dur:'0:21'},
-    {id:'miluim', cat:'army', tag:'במילואים', title:'שירה לחיילים', sub:'הופעה ביחידה, בין המשימות', dur:'0:28'},
-    {id:'ensemble', cat:'music', tag:'הרכב מזרחי', title:'ערב מוזיקה מזרחית', sub:'עוד, כינור וכלי הקשה', dur:'0:23', wide:true}
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var V = [
+    {id:'showreel', cat:'reel', title:'שואוריל', sub:'רגעים נבחרים מהבמה', dur:'', hide:true},
+    {id:'yeled-gadol', pos:'78% 50%', cat:'shul', title:'״ילד גדול״', sub:'עלייה לתורה · בית הכנסת "משכן יצחק", ירושלים', dur:'1:35'},
+    {id:'ya-ozel', cat:'music', title:'״יא עוזל פלפלו״', sub:'עוד: ליאור ממו · כינור: דניאל זכאי', dur:'0:48', w:true},
+    {id:'hazan-tefillin', cat:'shul', title:'חזנות בעלייה לתורה', sub:'תפילה חגיגית ושירה עם הקהל', dur:'1:31'},
+    {id:'shivchei-yerushalayim', cat:'shul', title:'״שבחי ירושלים״', sub:'עלייה לתורה למשפחת כהן, בליווי הרכב נגנים', dur:'0:55', w:true},
+    {id:'zman-lisloach', cat:'music', title:'״זה הזמן לסלוח״', sub:'עם האחים ארז, מול חומות ירושלים', dur:'0:23', w:true},
+    {id:'miluim', cat:'army', title:'שירה לחיילים', sub:'הופעה ביחידה, בין המשימות', dur:'0:31'},
+    {id:'ensemble', cat:'music', title:'ערב מוזיקה מזרחית', sub:'עוד, כינור וכלי הקשה', dur:'0:25', w:true}
   ];
-  var reel = document.getElementById('reel');
-  reel.innerHTML = VIDEOS.map(function(v){
-    return '<button class="vcard rv'+(v.wide?' wide':'')+'" data-open="'+v.id+'" data-cat="'+v.cat+'" aria-label="צפייה: '+v.title.replace(/"/g,'')+'">'+
-      '<img src="media/'+v.id+'.jpg" alt="" loading="lazy">'+
-      '<span class="vplay"><svg><use href="#i-play"/></svg></span><span class="vdur">'+v.dur+'</span>'+
-      '<span class="vinfo"><span class="vtag">'+v.tag+'</span><h3>'+v.title+'</h3><div class="vsub">'+v.sub+'</div></span></button>';
+  var gal = document.getElementById('gal');
+  gal.innerHTML = V.filter(function(v){return !v.hide}).map(function(v){
+    return '<button class="item rv'+(v.w?' w':'')+'" data-open="'+v.id+'" data-cat="'+v.cat+'" aria-label="צפייה: '+v.title.replace(/[״"]/g,'')+'">'+
+      '<span class="media"><img src="media/'+v.id+'.jpg" alt="" loading="lazy"'+(v.pos?' style="object-position:'+v.pos+'"':'')+'><span class="ring"><svg><use href="#i-play"/></svg></span></span>'+
+      '<span class="meta"><span><h3>'+v.title+'</h3><div class="sub">'+v.sub+'</div></span><span class="dur">'+v.dur+'</span></span></button>';
   }).join('');
 
-  // filters
-  var visible = VIDEOS.slice();
-  document.querySelectorAll('.chip').forEach(function(c){
-    c.addEventListener('click', function(){
-      document.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed', x===c)});
-      var f = c.dataset.f;
-      reel.querySelectorAll('.vcard').forEach(function(card){ card.hidden = !(f==='all' || card.dataset.cat===f); });
-      visible = VIDEOS.filter(function(v){return f==='all'||v.cat===f});
+  var visible = V.filter(function(v){return !v.hide});
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.addEventListener('click', function(){
+      document.querySelectorAll('.tab').forEach(function(x){x.setAttribute('aria-selected', x===t)});
+      var f = t.dataset.f;
+      gal.querySelectorAll('.item').forEach(function(it){ it.hidden = !(f==='all'||it.dataset.cat===f); });
+      visible = V.filter(function(v){return !v.hide && (f==='all'||v.cat===f)});
     });
   });
 
   // lightbox
-  var lb = document.getElementById('lb'), vid = document.getElementById('lbVid'), cur = 0, list = VIDEOS;
-  var heroVid = document.getElementById('heroVid');
+  var lb = document.getElementById('lb'), vid = document.getElementById('lbVid'), hero = document.getElementById('heroVid'), list = V, cur = 0;
   function show(i){
-    cur = (i + list.length) % list.length;
-    var v = list[cur];
+    cur = (i + list.length) % list.length; var v = list[cur];
     vid.src = 'media/'+v.id+'.mp4'; vid.poster = 'media/'+v.id+'.jpg';
-    document.getElementById('lbTitle').textContent = v.title;
-    document.getElementById('lbSub').textContent = v.sub;
+    document.getElementById('lbT').textContent = v.title; document.getElementById('lbS').textContent = v.sub;
     var p = vid.play(); if (p && p.catch) p.catch(function(){});
   }
   function open(id){
-    list = visible.some(function(v){return v.id===id}) ? visible : VIDEOS;
-    var i = list.findIndex(function(v){return v.id===id});
-    if (heroVid) heroVid.pause();
-    if (lb.showModal) lb.showModal(); else lb.setAttribute('open','');
-    show(i);
+    list = visible.some(function(v){return v.id===id}) ? visible : V;
+    if (hero) hero.pause();
+    lb.showModal ? lb.showModal() : lb.setAttribute('open','');
+    show(list.findIndex(function(v){return v.id===id}));
   }
   function close(){ vid.pause(); vid.removeAttribute('src'); vid.load(); lb.close ? lb.close() : lb.removeAttribute('open'); }
-  document.addEventListener('click', function(e){
-    var t = e.target.closest('[data-open]'); if (t){ e.preventDefault(); open(t.dataset.open); }
-  });
-  document.getElementById('lbClose').onclick = close;
-  document.getElementById('lbNext').onclick = function(){show(cur+1)};
-  document.getElementById('lbPrev').onclick = function(){show(cur-1)};
-  lb.addEventListener('click', function(e){ if (e.target === lb || e.target.classList.contains('lb-inner')) close(); });
-  lb.addEventListener('close', function(){ vid.pause(); if (heroVid && !reduce) heroVid.play().catch(function(){}); });
-  lb.addEventListener('keydown', function(e){
-    if (e.key==='ArrowLeft') show(cur+1);
-    if (e.key==='ArrowRight') show(cur-1);
-  });
+  document.addEventListener('click', function(e){ var t = e.target.closest('[data-open]'); if (t){ e.preventDefault(); open(t.dataset.open); } });
+  document.getElementById('lbX').onclick = close;
+  document.getElementById('lbN').onclick = function(){show(cur+1)};
+  document.getElementById('lbP').onclick = function(){show(cur-1)};
+  lb.addEventListener('click', function(e){ if (e.target===lb || e.target.classList.contains('lb-in')) close(); });
+  lb.addEventListener('close', function(){ vid.pause(); if (hero && !reduce) hero.play().catch(function(){}); });
+  lb.addEventListener('keydown', function(e){ if (e.key==='ArrowLeft') show(cur+1); if (e.key==='ArrowRight') show(cur-1); });
 
-  // nav state
+  // nav
   var nav = document.getElementById('nav');
-  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 30); }
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 40); }
   window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
 
-  // reduced motion
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce && heroVid){ heroVid.removeAttribute('autoplay'); heroVid.pause(); }
+  if (reduce && hero){ hero.removeAttribute('autoplay'); hero.pause(); }
 
-  // reveal
+  // scroll-linked motion: parallax + outline band
+  var band = document.getElementById('band'), heroBg = document.querySelector('.hero-bg img'),
+      frame = document.querySelector('.reel-frame'), port = document.querySelector('.portrait .ph img'), ticking = false;
+  function motion(){
+    ticking = false; var y = window.scrollY, vh = innerHeight;
+    if (heroBg && y < vh*1.2) heroBg.style.transform = 'scale(1.2) translateY('+(y*0.25)+'px)';
+    if (frame && y < vh*1.2) frame.style.translate = '0 '+(y*-0.08)+'px';
+    if (band){ var r = band.parentElement.getBoundingClientRect(); if (r.bottom > 0 && r.top < vh) band.style.transform = 'translateX('+((vh - r.top)*0.45 - 300)+'px)'; }
+    if (port){ var p = port.getBoundingClientRect(); if (p.bottom > 0 && p.top < vh) port.style.transform = 'scale(1.12) translateY('+((p.top + p.height/2 - vh/2)*-0.06)+'px)'; }
+  }
+  if (!reduce){ window.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(motion); } }, {passive:true}); motion(); }
+
+  // custom cursor (fine pointers only)
+  if (!reduce && matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var c = document.createElement('div'), d = document.createElement('div');
+    c.className = 'cur'; c.innerHTML = '<b>צפייה</b>'; d.className = 'cur-dot';
+    document.body.append(c, d);
+    var mx = -100, my = -100, cx = -100, cy = -100;
+    addEventListener('mousemove', function(e){ mx = e.clientX; my = e.clientY; d.style.transform = 'translate3d('+mx+'px,'+my+'px,0)'; }, {passive:true});
+    (function loop(){ cx += (mx-cx)*.18; cy += (my-cy)*.18; c.style.transform = 'translate3d('+cx+'px,'+cy+'px,0)'; requestAnimationFrame(loop); })();
+    document.addEventListener('mouseover', function(e){
+      var vidT = e.target.closest('.item,.feature-player button,.honor-media button,.reel-frame');
+      var linkT = !vidT && e.target.closest('a,button,input,select,textarea');
+      c.classList.toggle('big', !!vidT); c.classList.toggle('link', !!linkT);
+    });
+    // magnetic buttons
+    document.querySelectorAll('.btn,.icon-btn,.fab').forEach(function(b){
+      b.addEventListener('mousemove', function(e){ var r = b.getBoundingClientRect(); b.style.translate = ((e.clientX-r.left-r.width/2)*.18)+'px '+((e.clientY-r.top-r.height/2)*.25)+'px'; });
+      b.addEventListener('mouseleave', function(){ b.style.translate = ''; });
+    });
+  }
+
+  // loader + reveal
   var els = document.querySelectorAll('.rv');
-  if ('IntersectionObserver' in window && !reduce){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
-    }, {rootMargin:'0px 0px -8% 0px', threshold:.08});
-    els.forEach(function(el, i){ el.style.transitionDelay = (i%4)*70+'ms'; io.observe(el); });
-  } else els.forEach(function(el){el.classList.add('in')});
+  function start(){
+    var ld=document.getElementById('loader'); ld.classList.add('done'); setTimeout(function(){ld.style.display='none'},1000);
+    if ('IntersectionObserver' in window && !reduce){
+      var io = new IntersectionObserver(function(en){ en.forEach(function(x){ if (x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target); } }); }, {rootMargin:'0px 0px -10% 0px', threshold:.06});
+      els.forEach(function(el,i){ el.style.transitionDelay = (i%3)*110+'ms'; io.observe(el); });
+    } else els.forEach(function(el){el.classList.add('in')});
+  }
+  if (reduce) start();
+  else setTimeout(start, 1100);
 
-  // lead form -> WhatsApp
   document.getElementById('leadForm').addEventListener('submit', function(e){
     e.preventDefault();
     var f = e.target, name = f.name.value.trim();
-    if (!name){ f.name.focus(); f.name.style.borderColor = '#c0392b'; return; }
+    if (!name){ f.name.focus(); f.name.style.borderBottomColor = '#d9705c'; return; }
     var d = f.date.value ? f.date.value.split('-').reverse().join('/') : 'עוד לא נקבע';
-    var lines = ['שלום ליאור, הגעתי מהאתר 🙂', 'שם: '+name, 'סוג האירוע: '+f.type.value, 'תאריך: '+d];
+    var lines = ['שלום ליאור, הגעתי מהאתר', 'שם: '+name, 'סוג האירוע: '+f.type.value, 'תאריך: '+d];
     if (f.place.value.trim()) lines.push('מיקום: '+f.place.value.trim());
     if (f.msg.value.trim()) lines.push('פרטים: '+f.msg.value.trim());
     window.open('https://wa.me/972506737715?text='+encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
