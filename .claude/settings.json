@@ -1,0 +1,90 @@
+{
+  "extraKnownMarketplaces": {
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    },
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    },
+    "claude-hud": {
+      "source": {
+        "source": "github",
+        "repo": "jarrodwatts/claude-hud"
+      }
+    },
+    "ui-ux-pro-max-skill": {
+      "source": {
+        "source": "github",
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill"
+      }
+    },
+    "impeccable": {
+      "source": {
+        "source": "github",
+        "repo": "pbakaus/impeccable"
+      }
+    },
+    "taste-skill": {
+      "source": {
+        "source": "github",
+        "repo": "Leonxlnx/taste-skill"
+      }
+    },
+    "higgsfield": {
+      "source": {
+        "source": "github",
+        "repo": "higgsfield-ai/skills"
+      }
+    },
+    "perplexity-mcp-server": {
+      "source": {
+        "source": "github",
+        "repo": "perplexityai/modelcontextprotocol"
+      }
+    },
+    "last30days-skill": {
+      "source": {
+        "source": "github",
+        "repo": "mvanhorn/last30days-skill"
+      }
+    },
+    "humanizer": {
+      "source": {
+        "source": "github",
+        "repo": "blader/humanizer"
+      }
+    },
+    "caveman": {
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "vercel@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true,
+    "figma@claude-plugins-official": true,
+    "hyperframes@claude-plugins-official": true,
+    "firecrawl@claude-plugins-official": true,
+    "slack@claude-plugins-official": true,
+    "zapier@claude-plugins-official": true,
+    "codex@openai-codex": true,
+    "claude-hud@claude-hud": true,
+    "ui-ux-pro-max@ui-ux-pro-max-skill": true,
+    "impeccable@impeccable": true,
+    "taste-skill@taste-skill": true,
+    "higgsfield@higgsfield": true,
+    "perplexity@perplexity-mcp-server": true,
+    "last30days@last30days-skill": true,
+    "humanizer@humanizer": true,
+    "caveman@caveman": false
+  }
+}
